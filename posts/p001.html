@@ -52,7 +52,7 @@
   .row h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.12rem,3vw,1.32rem);line-height:1.55;
     letter-spacing:.02em;margin:0 0 6px;color:var(--ink);text-wrap:balance}
   .row:hover h2{color:var(--accent-ink)}
-  .excerpt{font-size:14px;color:var(--muted);margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .excerpt{font-size:14px;color:var(--muted);margin:0;line-height:1.85;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
   .arrow{color:var(--faint);margin-left:6px}
   .pending-badge{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;color:#fff;
     background:var(--faint);padding:2px 8px;border-radius:4px}
@@ -67,6 +67,23 @@
     letter-spacing:.03em;margin:0 0 22px;text-wrap:balance}
   .article .abody{font-size:16.5px;line-height:2;color:var(--ink)}
   .article .abody p{margin:0 0 20px}
+  .abody .lead{font-family:var(--serif);color:var(--muted);font-size:1.05rem;line-height:1.95;
+    padding:0 0 18px;margin:0 0 24px;border-bottom:1px solid var(--line-soft)}
+  .abody h2{font-family:var(--serif);font-weight:600;font-size:1.3rem;letter-spacing:.02em;
+    margin:34px 0 12px;line-height:1.5}
+  .abody h3{font-family:var(--serif);font-weight:600;font-size:1.1rem;margin:26px 0 10px}
+  .abody ul,.abody ol{margin:0 0 20px;padding-left:1.4em}
+  .abody li{margin:0 0 7px;line-height:1.85}
+  .abody blockquote{margin:0 0 20px;padding:4px 0 4px 20px;border-left:2px solid var(--accent);
+    color:var(--muted);font-family:var(--serif)}
+  .abody pre{background:var(--surface);border:1px solid var(--line);border-radius:6px;
+    padding:14px 16px;overflow-x:auto;margin:0 0 20px}
+  .abody pre code{font-family:var(--mono);font-size:13px;color:var(--ink);white-space:pre}
+  .abody code{font-family:var(--mono);font-size:.9em;background:var(--surface);
+    border:1px solid var(--line-soft);border-radius:3px;padding:1px 5px}
+  .abody pre code{background:none;border:0;padding:0}
+  .abody hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+  .abody strong{font-weight:700}
   .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:22px}
   .tag{font-family:var(--mono);font-size:11.5px;color:var(--faint);border:1px solid var(--line-soft);border-radius:3px;padding:2px 8px}
   .tag::before{content:"#";color:var(--accent);opacity:.7}
@@ -87,7 +104,247 @@
     
     <div class="ameta"><span class="rdate">2026.06.20</span><span class="cat">AI</span></div>
     <h1>AIの仕組みを、一気に地図にした日。</h1>
-    <div class="abody"><p>LLMから始めて、Transformer・Attention・Token・Embedding・Vector Database・RAG・MCP・Function Calling・AIエージェントまで。バラバラだった用語が、一本の線でつながった。理解とは、点を線にすることなのかもしれない。</p></div>
+    <div class="abody"><p class="lead">LLMから始めて、Transformer・Attention・Token・Embedding・Vector Database・RAG・MCP・Function Calling・AIエージェントまで。バラバラだった用語が、一本の線でつながった。理解とは、点を線にすることなのかもしれない。</p><h2>LLM（Large Language Model）</h2>
+<h2>概要</h2>
+<p>LLM（Large Language Model：大規模言語モデル）は、大量の文章を学習し、人間のような自然な文章を理解・生成できるAIモデルである。</p>
+<p>ChatGPTやGemini、Claudeなど、多くの生成AIの頭脳として利用されている。</p>
+<hr>
+<h2>特徴</h2>
+<ul><li>自然言語を理解する</li><li>文章を生成する</li><li>推論ができる</li><li>プログラムを書く</li><li>要約・翻訳ができる</li></ul>
+<hr>
+<h2>代表的なLLM</h2>
+<ul><li>ChatGPT</li><li>Gemini</li><li>Claude</li></ul>
+<hr>
+<h2>関連ノート</h2>
+<ul><li>AI</li><li>Transformer</li><li>Token</li><li>Attention</li><li>Embedding</li></ul>
+<hr>
+<h2>自分の考え</h2>
+<p>生成AIの中心技術。 AIを理解する上で最初に理解すべき概念。</p>
+<hr>
+<h2>Transformer</h2>
+<h2>概要</h2>
+<p>Transformerは、現在のLLMの基盤となるニューラルネットワークアーキテクチャである。</p>
+<p>2017年にGoogleが発表した 「Attention Is All You Need」 によって提案された。</p>
+<hr>
+<h2>特徴</h2>
+<ul><li>Attentionを利用する</li><li>並列処理が得意</li><li>長文を扱える</li><li>学習効率が高い</li></ul>
+<hr>
+<h2>関連ノート</h2>
+<ul><li>Attention</li><li>LLM</li><li>Token</li></ul>
+<hr>
+<h2>自分の考え</h2>
+<p>Transformerの登場によって生成AIは大きく進化した。</p>
+<hr>
+<h2>Attention</h2>
+<h2>概要</h2>
+<p>Attentionとは、「文章のどこに注目すべきか」を判断する仕組みである。</p>
+<p>人間が文章を読むときと同じように、 重要な単語へ重点を置く。</p>
+<hr>
+<h2>役割</h2>
+<ul><li>文脈理解</li><li>単語同士の関係を理解</li><li>長文理解</li></ul>
+<hr>
+<h2>関連</h2>
+<ul><li>Transformer</li><li>LLM</li><li>Token</li></ul>
+<hr>
+<h2>自分の考え</h2>
+<p>Transformerを理解するために最重要の概念。</p>
+<hr>
+<h2>Token</h2>
+<h2>概要</h2>
+<p>Tokenとは、LLMが文章を処理するときの最小単位である。</p>
+<p>単語や文字の一部がTokenになる。</p>
+<hr>
+<h2>Tokenの例</h2>
+<p>こんにちは</p>
+<p>↓</p>
+<p>こん</p>
+<p>にち</p>
+<p>は</p>
+<p>のように分割されることもある。</p>
+<hr>
+<h2>Tokenが重要な理由</h2>
+<ul><li>AIはToken単位で考える</li><li>利用料金にも影響する</li><li>コンテキスト長にも影響する</li></ul>
+<hr>
+<h2>関連</h2>
+<ul><li>LLM</li><li>Transformer</li><li>Embedding</li></ul>
+<hr>
+<h2>自分の考え</h2>
+<p>AIと会話するときは、文字数ではなくTokenで処理されていることを意識すると理解が深まる。</p>
+<hr>
+<h2><strong>Embedding</strong></h2>
+<h2><strong>概要</strong></h2>
+<p>Embeddingとは、文章や単語をAIが理解できる数値（ベクトル）へ変換する技術である。</p>
+<p>AIは文字そのものではなく、意味の近さを数値として扱っている。</p>
+<hr>
+<h2><strong>役割</strong></h2>
+<ul><li>意味を数値化する</li><li>類似した文章を探せる</li><li>検索性能を向上させる</li></ul>
+<hr>
+<h2><strong>イメージ</strong></h2>
+<p>犬</p>
+<p>↓</p>
+<p>(0.82, -0.14, 0.65, …)</p>
+<p>猫</p>
+<p>↓</p>
+<p>(0.80, -0.11, 0.67, …)</p>
+<p>犬と猫は近い位置になる。</p>
+<hr>
+<h2><strong>関連</strong></h2>
+<ul><li>LLM</li><li>Vector Database</li><li>RAG</li></ul>
+<hr>
+<h2><strong>自分の考え</strong></h2>
+<p>AIは単語ではなく「意味」を扱っている点が面白い。</p>
+<hr>
+<h2><strong>Vector Database</strong></h2>
+<h2><strong>概要</strong></h2>
+<p>Embeddingされたデータを保存し、意味の近い情報を高速に検索するデータベース。</p>
+<hr>
+<h2><strong>役割</strong></h2>
+<ul><li>Embeddingを保存する</li><li>類似検索を行う</li><li>RAGの基盤となる</li></ul>
+<hr>
+<h2><strong>代表例</strong></h2>
+<ul><li>Pinecone</li><li>Weaviate</li><li>Chroma</li><li>FAISS</li></ul>
+<hr>
+<h2><strong>関連</strong></h2>
+<ul><li>Embedding</li><li>RAG</li></ul>
+<hr>
+<h2><strong>自分の考え</strong></h2>
+<p>Google検索がキーワード検索なら、Vector Databaseは意味検索と言える。</p>
+<hr>
+<h2><strong>RAG（Retrieval-Augmented Generation）</strong></h2>
+<h2><strong>概要</strong></h2>
+<p>RAGとは、LLMが回答を生成する前に外部の知識を検索し、その情報を利用して回答を生成する仕組みである。</p>
+<hr>
+<h2><strong>流れ</strong></h2>
+<p>質問</p>
+<p>↓</p>
+<p>Embedding</p>
+<p>↓</p>
+<p>Vector Database</p>
+<p>↓</p>
+<p>関連情報取得</p>
+<p>↓</p>
+<p>LLM</p>
+<p>↓</p>
+<p>回答生成</p>
+<hr>
+<h2><strong>メリット</strong></h2>
+<ul><li>最新情報を扱える</li><li>ハルシネーションを減らせる</li><li>社内文書を利用できる</li></ul>
+<hr>
+<h2><strong>関連</strong></h2>
+<ul><li>Embedding</li><li>Vector Database</li><li>LLM</li><li>AIエージェント</li></ul>
+<hr>
+<h2><strong>自分の考え</strong></h2>
+<p>AI単体よりも、知識と組み合わせることで実用性が大きく向上する。</p>
+<hr>
+<h2><strong>MCP（Model Context Protocol）</strong></h2>
+<h2><strong>概要</strong></h2>
+<p>MCPは、AIが外部ツールやデータと安全かつ統一的に接続するための共通プロトコルである。</p>
+<p>異なるサービスとの連携を標準化し、AIエージェントを構築しやすくする。</p>
+<hr>
+<h2><strong>役割</strong></h2>
+<ul><li>ツール接続の標準化</li><li>コンテキスト共有</li><li>AIエージェントの基盤</li></ul>
+<hr>
+<h2><strong>関連</strong></h2>
+<ul><li>Function Calling</li><li>AIエージェント</li></ul>
+<hr>
+<h2><strong>自分の考え</strong></h2>
+<p>AI版のUSBのような存在。さまざまなツールを同じ方法で接続できる未来を支える技術。</p>
+<hr>
+<h2><strong>Function Calling</strong></h2>
+<h2><strong>概要</strong></h2>
+<p>Function Callingとは、LLMが必要に応じて外部ツールやAPIを呼び出す仕組みである。</p>
+<hr>
+<h2><strong>できること</strong></h2>
+<ul><li>天気取得</li><li>メール送信</li><li>データベース検索</li><li>カレンダー登録</li><li>Python実行</li></ul>
+<hr>
+<h2><strong>関連</strong></h2>
+<ul><li>AIエージェント</li><li>MCP</li></ul>
+<hr>
+<h2><strong>自分の考え</strong></h2>
+<p>AIが「答える存在」から「実行する存在」へ進化する重要な技術。</p>
+<hr>
+<h2><strong>AIエージェント</strong></h2>
+<h2><strong>概要</strong></h2>
+<p>AIエージェントとは、<strong>LLM（大規模言語モデル）に「考える」「記憶する」「ツールを使う」「実行する」能力を組み合わせたシステム</strong>である。</p>
+<p>従来のチャットAIが質問に答えることを主な役割としていたのに対し、AIエージェントは目標を達成するために複数の処理を自律的に実行できる。</p>
+<hr>
+<h2><strong>AIエージェントを構成する要素</strong></h2>
+<h3><strong>1. 頭脳（Brain）</strong></h3>
+<p>中心となるLLM。</p>
+<p>例</p>
+<ul><li>ChatGPT</li><li>Gemini</li><li>Claude</li></ul>
+<p>役割</p>
+<ul><li>考える</li><li>推論する</li><li>文章を生成する</li></ul>
+<hr>
+<h3><strong>2. 記憶（Memory）</strong></h3>
+<p>過去の会話や知識を保持する。</p>
+<p>短期記憶</p>
+<ul><li>今回の会話</li></ul>
+<p>長期記憶</p>
+<ul><li>Obsidian</li><li>Vector Database</li><li>NotebookLM</li></ul>
+<hr>
+<h3><strong>3. ツール（Tools）</strong></h3>
+<p>LLMだけでは実行できない処理を行う。</p>
+<p>例</p>
+<ul><li>Web検索</li><li>Python実行</li><li>メール送信</li><li>カレンダー操作</li><li>GitHub操作</li><li>API呼び出し</li></ul>
+<hr>
+<h3><strong>4. 実行（Action）</strong></h3>
+<p>考えるだけではなく行動する。</p>
+<p>例</p>
+<ul><li>ファイル作成</li><li>スケジュール登録</li><li>ブログ記事作成</li><li>PowerPoint作成</li><li>データ分析</li></ul>
+<hr>
+<h2><strong>AIエージェントの処理フロー</strong></h2>
+<pre><code>ユーザー
+    │
+    ▼
+目標を受け取る
+    │
+    ▼
+LLMが考える
+    │
+    ▼
+必要なツールを判断
+    │
+    ▼
+ツールを実行
+    │
+    ▼
+結果を評価
+    │
+    ▼
+必要なら再度考える
+    │
+    ▼
+ユーザーへ回答</code></pre>
+<hr>
+<h2><strong>AIエージェントとチャットAIの違い</strong></h2>
+<p>|<strong>項目</strong>|<strong>チャットAI</strong>|<strong>AIエージェント</strong>| |---|---|---| |目的|質問に答える|目標を達成する| |ツール利用|限定的|積極的に利用| |複数ステップ|苦手|得意| |記憶|少ない|長期記憶を持てる| |自律性|低い|高い|</p>
+<hr>
+<h2><strong>主な技術</strong></h2>
+<ul><li>LLM</li><li>Transformer</li><li>Attention</li><li>RAG</li><li>Embedding</li><li>Vector Database</li><li>MCP</li><li>Function Calling</li><li>プロンプトエンジニアリング</li></ul>
+<hr>
+<h2><strong>活用例</strong></h2>
+<h3><strong>個人</strong></h3>
+<ul><li>スケジュール管理</li><li>情報収集</li><li>読書要約</li><li>家計管理</li><li>学習サポート</li></ul>
+<h3><strong>企業</strong></h3>
+<ul><li>カスタマーサポート</li><li>営業支援</li><li>社内FAQ</li><li>文書作成</li><li>データ分析</li></ul>
+<hr>
+<h2><strong>Doesman Second Brainとの関係</strong></h2>
+<p>このVaultでは、ChatGPT・Gemini・NotebookLMなどのAIを「知識を生み出すパートナー」として利用し、最終的な知識はObsidianへ蓄積する。</p>
+<p>役割分担は以下の通り。</p>
+<ul><li>AI：考える・比較する・要約する・提案する</li><li>Obsidian：知識を保存・整理・リンクする</li><li>自分：理解する・判断する・価値を生み出す</li></ul>
+<p>この仕組みにより、「知識の蓄積」と「AIによる思考支援」を両立できる。</p>
+<hr>
+<h2><strong>自分の考え</strong></h2>
+<p>AIエージェントは、人間の代わりになる存在ではなく、人間の思考を拡張する存在だと考えている。</p>
+<p>重要なのはAIに任せることではなく、人間が問いを立て、AIと対話しながら知識を育てることである。</p>
+<p>Doesman Second Brainは、その知識を蓄積し続けるための基盤になる。</p>
+<hr>
+<h2><strong>関連ノート</strong></h2>
+<ul><li>AI</li><li>LLM</li><li>ChatGPT</li><li>Gemini</li><li>Claude</li><li>NotebookLM</li><li>RAG</li><li>MCP</li><li>プロンプトエンジニアリング</li></ul>
+<hr>
+<h2><strong>今後調べたいこと</strong></h2>
+<ul><li>マルチエージェント</li><li>AutoGen</li><li>OpenAI Agents SDK</li><li>Model Context Protocol（MCP）</li><li>AIエージェントの設計パターン</li></ul></div>
     <div class="tags"><span class="tag">LLM</span><span class="tag">Transformer</span><span class="tag">Attention</span><span class="tag">Embedding</span><span class="tag">AIエージェント</span></div>
     <nav class="pagenav"><a href="p003.html"><span class="n">← 新しい投稿</span>アイデア ＝ 問い × 静けさ。</a><span></span></nav>
   </article>

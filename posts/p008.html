@@ -52,7 +52,7 @@
   .row h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.12rem,3vw,1.32rem);line-height:1.55;
     letter-spacing:.02em;margin:0 0 6px;color:var(--ink);text-wrap:balance}
   .row:hover h2{color:var(--accent-ink)}
-  .excerpt{font-size:14px;color:var(--muted);margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .excerpt{font-size:14px;color:var(--muted);margin:0;line-height:1.85;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
   .arrow{color:var(--faint);margin-left:6px}
   .pending-badge{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;color:#fff;
     background:var(--faint);padding:2px 8px;border-radius:4px}
@@ -67,6 +67,23 @@
     letter-spacing:.03em;margin:0 0 22px;text-wrap:balance}
   .article .abody{font-size:16.5px;line-height:2;color:var(--ink)}
   .article .abody p{margin:0 0 20px}
+  .abody .lead{font-family:var(--serif);color:var(--muted);font-size:1.05rem;line-height:1.95;
+    padding:0 0 18px;margin:0 0 24px;border-bottom:1px solid var(--line-soft)}
+  .abody h2{font-family:var(--serif);font-weight:600;font-size:1.3rem;letter-spacing:.02em;
+    margin:34px 0 12px;line-height:1.5}
+  .abody h3{font-family:var(--serif);font-weight:600;font-size:1.1rem;margin:26px 0 10px}
+  .abody ul,.abody ol{margin:0 0 20px;padding-left:1.4em}
+  .abody li{margin:0 0 7px;line-height:1.85}
+  .abody blockquote{margin:0 0 20px;padding:4px 0 4px 20px;border-left:2px solid var(--accent);
+    color:var(--muted);font-family:var(--serif)}
+  .abody pre{background:var(--surface);border:1px solid var(--line);border-radius:6px;
+    padding:14px 16px;overflow-x:auto;margin:0 0 20px}
+  .abody pre code{font-family:var(--mono);font-size:13px;color:var(--ink);white-space:pre}
+  .abody code{font-family:var(--mono);font-size:.9em;background:var(--surface);
+    border:1px solid var(--line-soft);border-radius:3px;padding:1px 5px}
+  .abody pre code{background:none;border:0;padding:0}
+  .abody hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+  .abody strong{font-weight:700}
   .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:22px}
   .tag{font-family:var(--mono);font-size:11.5px;color:var(--faint);border:1px solid var(--line-soft);border-radius:3px;padding:2px 8px}
   .tag::before{content:"#";color:var(--accent);opacity:.7}
@@ -87,7 +104,87 @@
     
     <div class="ameta"><span class="rdate">2026.07.21</span><span class="cat">思考OS</span></div>
     <h1>「何のために学ぶのか」で分けたら、しっくりきた。</h1>
-    <div class="abody"><p>ホームページのカテゴリーを、当初はジャンル別（暮らし・IT・経営…）で考えていた。でも、目的で分けるほうが自分には自然だと気づく。世界を知る／自分を育てる／自分を整える／暮らしを整える／未来をつくる——この5つ。</p></div>
+    <div class="abody"><p class="lead">ホームページのカテゴリーを、当初はジャンル別（暮らし・IT・経営…）で考えていた。でも、目的で分けるほうが自分には自然だと気づく。世界を知る／自分を育てる／自分を整える／暮らしを整える／未来をつくる——この5つ。</p><h2>概要(3行)</h2>
+<p>ホームページは自分自身の知識・思考・人生を整理するための「思考OS」として作る。 当初は「暮らし」「IT・経営」など分野（ジャンル）別のカテゴリーを検討していた。 議論を通じて、「何のために学ぶのか（目的）」で分類する方が自然だと気づき、世界を知る／自分を育てる／自分を整える／暮らしを整える／未来をつくる、の5カテゴリー案に至った。</p>
+<h2>ホームページ構想（カテゴリー設計）</h2>
+<h2>背景</h2>
+<p>ホームページは「誰かのため」ではなく、<strong>自分自身の知識・思考・人生を整理するための場所</strong>として作る。</p>
+<p>その結果として、人に説明するときにも活用できるような構成を目指す。</p>
+<hr>
+<h2>基本コンセプト</h2>
+<p>知識を蓄積することではなく、</p>
+<p><strong>人生をより良くするための「思考OS」を可視化するホームページ</strong></p>
+<p>各ページは</p>
+<ul><li>学んだこと</li><li>考えたこと</li><li>実践したこと</li><li>今後改善したいこと</li></ul>
+<p>をまとめる場所とする。</p>
+<hr>
+<h2>当初考えていたカテゴリー</h2>
+<h2>暮らし</h2>
+<ul><li>整理整頓</li><li>片付け</li><li>家事のルーティン化</li><li>掃除</li><li>洗濯</li></ul>
+<hr>
+<h2>IT・経営</h2>
+<ul><li>情報セキュリティ</li><li>DX</li><li>AI活用</li><li>中小企業経営</li></ul>
+<hr>
+<h2>自己成長</h2>
+<ul><li>コーチング</li><li>発達障害（ASD・ADHD）</li><li>英会話</li><li>ナレッジマネジメント</li></ul>
+<hr>
+<h2>思想・価値観</h2>
+<ul><li>原始仏教</li><li>人生を生きる</li><li>バイオフィリア</li></ul>
+<hr>
+<h2>お金</h2>
+<ul><li>配当株投資</li><li>バリュー株投資</li></ul>
+<hr>
+<h2>健康</h2>
+<ul><li>頭痛</li><li>首こり</li><li>肩こり</li><li>ストレス</li><li>睡眠</li><li>炎症対策</li><li>アンチエイジング</li></ul>
+<hr>
+<h2>現在すでに作成しているページ</h2>
+<ul><li>マインドフルネス</li><li>量子力学</li><li>経営戦略</li><li>ナレッジマネジメント</li></ul>
+<hr>
+<h2>議論の中で見えてきたこと</h2>
+<p>カテゴリーを「ジャンル」で分けるよりも、</p>
+<p><strong>何のために学ぶのか（目的）</strong></p>
+<p>で分類した方が、自分には自然である。</p>
+<hr>
+<h2>新しいカテゴリー案（目的ベース）</h2>
+<h2>① 世界を知る</h2>
+<p>世界の仕組みや真理を理解するため。</p>
+<h3>対象</h3>
+<ul><li>量子力学</li><li>物理学</li><li>哲学</li><li>科学</li><li>AI</li><li>DX</li><li>情報セキュリティ</li></ul>
+<hr>
+<h2>② 自分を育てる</h2>
+<p>能力・思考・知識を高めるため。</p>
+<h3>対象</h3>
+<ul><li>ナレッジマネジメント</li><li>コーチング</li><li>英会話</li><li>発達障害理解</li><li>学習法</li><li>思考法</li></ul>
+<hr>
+<h2>③ 自分を整える</h2>
+<p>心身を良い状態に保つため。</p>
+<h3>対象</h3>
+<ul><li>マインドフルネス</li><li>原始仏教</li><li>ストレス対策</li><li>睡眠</li><li>首こり</li><li>肩こり</li><li>頭痛</li><li>炎症対策</li><li>アンチエイジング</li></ul>
+<hr>
+<h2>④ 暮らしを整える</h2>
+<p>生活基盤を最適化するため。</p>
+<h3>対象</h3>
+<ul><li>整理整頓</li><li>片付け</li><li>家事</li><li>ルーティン</li><li>バイオフィリア</li></ul>
+<hr>
+<h2>⑤ 未来をつくる</h2>
+<p>人生・仕事・資産を豊かにするため。</p>
+<h3>対象</h3>
+<ul><li>経営戦略</li><li>投資</li><li>配当株</li><li>バリュー株</li><li>中小企業経営</li><li>キャリア</li></ul>
+<hr>
+<h2>このホームページの本質</h2>
+<p>ホームページは単なる知識集ではない。</p>
+<p><strong>人生を設計するための思考OS</strong>である。</p>
+<p>世界を理解し、</p>
+<p>自分を育て、</p>
+<p>自分を整え、</p>
+<p>暮らしを整え、</p>
+<p>未来をつくる。</p>
+<p>そのための知識・経験・考察を体系的に蓄積する場所として育てていく。</p>
+<hr>
+<h2>今後の検討事項</h2>
+<ul><li>各カテゴリーのトップページ設計</li><li>共通レイアウトの作成</li><li>ページ階層の統一</li><li>新しい記事追加フロー</li><li>カテゴリー間のリンク設計（知識同士を結び付ける）</li></ul>
+<h2>関連ノート</h2>
+<ul><li>ホームページを思考のOSとして育てる — 同じホームページ構想の、ワークフローと価値に関する議論</li><li>トップページを思考の地図にする — このカテゴリー設計から派生したプロジェクト</li><li>アイデアが生まれる環境の設計 — Obsidianへ蓄積するまでの前段プロセス</li></ul></div>
     <div class="tags"><span class="tag">思考OS</span><span class="tag">カテゴリー設計</span></div>
     <nav class="pagenav"><a href="p009.html"><span class="n">← 新しい投稿</span>尊敬する人の助言は、実は自分の中にすでにある知恵</a><a href="p007.html" style="text-align:right"><span class="n">古い投稿 →</span>『火の鳥』は、未来の技術ではなく未来の人間社会を</a></nav>
   </article>

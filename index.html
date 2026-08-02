@@ -52,7 +52,7 @@
   .row h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.12rem,3vw,1.32rem);line-height:1.55;
     letter-spacing:.02em;margin:0 0 6px;color:var(--ink);text-wrap:balance}
   .row:hover h2{color:var(--accent-ink)}
-  .excerpt{font-size:14px;color:var(--muted);margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .excerpt{font-size:14px;color:var(--muted);margin:0;line-height:1.85;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
   .arrow{color:var(--faint);margin-left:6px}
   .pending-badge{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;color:#fff;
     background:var(--faint);padding:2px 8px;border-radius:4px}
@@ -67,6 +67,23 @@
     letter-spacing:.03em;margin:0 0 22px;text-wrap:balance}
   .article .abody{font-size:16.5px;line-height:2;color:var(--ink)}
   .article .abody p{margin:0 0 20px}
+  .abody .lead{font-family:var(--serif);color:var(--muted);font-size:1.05rem;line-height:1.95;
+    padding:0 0 18px;margin:0 0 24px;border-bottom:1px solid var(--line-soft)}
+  .abody h2{font-family:var(--serif);font-weight:600;font-size:1.3rem;letter-spacing:.02em;
+    margin:34px 0 12px;line-height:1.5}
+  .abody h3{font-family:var(--serif);font-weight:600;font-size:1.1rem;margin:26px 0 10px}
+  .abody ul,.abody ol{margin:0 0 20px;padding-left:1.4em}
+  .abody li{margin:0 0 7px;line-height:1.85}
+  .abody blockquote{margin:0 0 20px;padding:4px 0 4px 20px;border-left:2px solid var(--accent);
+    color:var(--muted);font-family:var(--serif)}
+  .abody pre{background:var(--surface);border:1px solid var(--line);border-radius:6px;
+    padding:14px 16px;overflow-x:auto;margin:0 0 20px}
+  .abody pre code{font-family:var(--mono);font-size:13px;color:var(--ink);white-space:pre}
+  .abody code{font-family:var(--mono);font-size:.9em;background:var(--surface);
+    border:1px solid var(--line-soft);border-radius:3px;padding:1px 5px}
+  .abody pre code{background:none;border:0;padding:0}
+  .abody hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+  .abody strong{font-weight:700}
   .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:22px}
   .tag{font-family:var(--mono);font-size:11.5px;color:var(--faint);border:1px solid var(--line-soft);border-radius:3px;padding:2px 8px}
   .tag::before{content:"#";color:var(--accent);opacity:.7}
@@ -94,92 +111,92 @@
     <a class="row" data-cat="explore" href="posts/p019.html">
       <div class="rmeta"><span class="rdate">2026.07.31</span><span class="cat">探求・文化</span></div>
       <h2>セミの一生と生存戦略<span class="arrow">→</span></h2>
-      <p class="excerpt">朝の散歩中にセミの声を聞いたことをきっかけに、セミの一生（産卵→孵化→地中生活→羽化→成虫→繁殖）を整理し、「7年間土の中」という通説は種類・環境によって異なる…</p>
+      <p class="excerpt">朝の散歩中にセミの声を聞いたことをきっかけに、セミの一生（産卵→孵化→地中生活→羽化→成虫→繁殖）を整理し、「7年間土の中」という通説は種類・環境によって異なることを確認した。 地下で長期間過ごすのは天敵の少ない環境で成長するための生存戦略であり、短い地上期間は繁殖に特化した期間として捉えると理…</p>
     </a>
     <a class="row" data-cat="explore" href="posts/p018.html">
       <div class="rmeta"><span class="rdate">2026.07.31</span><span class="cat">探求・文化</span></div>
       <h2>経営戦略の全体像<span class="arrow">→</span></h2>
-      <p class="excerpt">経営戦略とは限られた経営資源を「何をやるか／何をやらないか」に選択・集中させることであり、全社戦略（どの事業をやるか）→事業戦略（どう勝つか）→機能別戦略（どう…</p>
+      <p class="excerpt">経営戦略とは限られた経営資源を「何をやるか／何をやらないか」に選択・集中させることであり、全社戦略（どの事業をやるか）→事業戦略（どう勝つか）→機能別戦略（どう実現するか）という3階層で整理できる。 戦略策定はPurpose/Mission/Visionを起点に、PEST・Five Forces…</p>
     </a>
     <a class="row" data-cat="explore" href="posts/draft-01.html">
       <div class="rmeta"><span class="rdate">2026.07.31</span><span class="cat">探求・文化</span><span class="pending-badge">下書き · 未承認</span></div>
       <h2>請負契約と準委任契約・印紙税の整理<span class="arrow">→</span></h2>
-      <p class="excerpt">印紙税は「契約書という名称」ではなく、その文書が印紙税法上の課税文書に該当し契約成立を証明する内容かどうかで判断する。 請負契約は「仕事の完成」を約束し、準委任…</p>
+      <p class="excerpt">印紙税は「契約書という名称」ではなく、その文書が印紙税法上の課税文書に該当し契約成立を証明する内容かどうかで判断する。 請負契約は「仕事の完成」を約束し、準委任契約は「業務の遂行」を約束するもので、成果物や作業報告書の有無だけでは区別できず、完成自体が契約目的かどうかで判断する。 UTM＋設定＋…</p>
     </a>
     <a class="row" data-cat="thinking" href="posts/p017.html">
       <div class="rmeta"><span class="rdate">2026.07.30</span><span class="cat">思考OS</span></div>
       <h2>戦略思考フレームワーク実践編<span class="arrow">→</span></h2>
-      <p class="excerpt">ビッグピクチャーは一段上の視点から全体構造を俯瞰し、部分最適でなく事業全体の因果関係を捉える思考法。 ルール・オブ・ザ・ゲームは市場を「何を競っているゲームか」…</p>
+      <p class="excerpt">ビッグピクチャーは一段上の視点から全体構造を俯瞰し、部分最適でなく事業全体の因果関係を捉える思考法。 ルール・オブ・ザ・ゲームは市場を「何を競っているゲームか」として捉え、勝敗を決めるKSFと攻略法を明らかにする比喩的思考法で、相互作用を分析するゲーム理論とは別物。 クイック＆ダーティは大きな問…</p>
     </a>
     <a class="row" data-cat="thinking" href="posts/p016.html">
       <div class="rmeta"><span class="rdate">2026.07.30</span><span class="cat">思考OS</span></div>
       <h2>戦略コンサルに学ぶ思考OS<span class="arrow">→</span></h2>
-      <p class="excerpt">戦略コンサルタントの思考力は「頭の良さ」ではなく、観察→視点変更→構造化→仮説→検証→勝ち筋発見という一連の「思考OS」を回す力にある。 コンテクスト・パーセプ…</p>
+      <p class="excerpt">戦略コンサルタントの思考力は「頭の良さ」ではなく、観察→視点変更→構造化→仮説→検証→勝ち筋発見という一連の「思考OS」を回す力にある。 コンテクスト・パーセプション・鳥虫魚の目・イシューツリーなど多様な武器を使い、自分の前提を疑いながら仮説を更新し続けることが核心。 BIG PICTURE→R…</p>
     </a>
     <a class="row" data-cat="explore" href="posts/draft-02.html">
       <div class="rmeta"><span class="rdate">2026.07.29</span><span class="cat">探求・文化</span><span class="pending-badge">下書き · 未承認</span></div>
       <h2>プロンプトエンジニアリング<span class="arrow">→</span></h2>
-      <p class="excerpt">[[LLM]]から望む出力を引き出すための、指示（プロンプト）の設計技術。 役割の指定・手順の分解・例示（Few-shot）などの工夫で精度が変わる。 モデルの…</p>
+      <p class="excerpt">[[LLM]]から望む出力を引き出すための、指示（プロンプト）の設計技術。 役割の指定・手順の分解・例示（Few-shot）などの工夫で精度が変わる。 モデルの性能を最大限に活かすための「問いの立て方」とも言える。</p>
     </a>
     <a class="row" data-cat="ai" href="posts/p015.html">
       <div class="rmeta"><span class="rdate">2026.07.28</span><span class="cat">AI</span></div>
       <h2>組織OSと人間蒸留に関する考察<span class="arrow">→</span></h2>
-      <p class="excerpt">人間蒸留とは、知識だけでなく思考・判断基準・経験・価値観をAIや組織へ継承する考え方で、個人では「自分OS」、企業では「組織OS」の構築につながる。 組織OS構…</p>
+      <p class="excerpt">人間蒸留とは、知識だけでなく思考・判断基準・経験・価値観をAIや組織へ継承する考え方で、個人では「自分OS」、企業では「組織OS」の構築につながる。 組織OS構築は、目的設定→対象業務の絞り込み→判断ログの記録→判断の標準化→AIへの実装、という順で進める。 ナレッジマネジメント（知識を残す）か…</p>
     </a>
     <a class="row" data-cat="thinking" href="posts/p014.html">
       <div class="rmeta"><span class="rdate">2026.07.28</span><span class="cat">思考OS</span></div>
       <h2>起業の教科書 考察メモ<span class="arrow">→</span></h2>
-      <p class="excerpt">『起業の教科書』序章の考察。起業は「会社の作り方」ではなく「事業をどう設計するか」の問題であり、価値は商品ではなく顧客の変化量（Before→After）で決ま…</p>
+      <p class="excerpt">『起業の教科書』序章の考察。起業は「会社の作り方」ではなく「事業をどう設計するか」の問題であり、価値は商品ではなく顧客の変化量（Before→After）で決まる。 利益より生存率を優先し、仮説・実験・学習・改善のサイクルを小さく回すことが重要で、AI時代は知識をAIが担い、人間は顧客理解・問題…</p>
     </a>
     <a class="row" data-cat="explore" href="posts/p013.html">
       <div class="rmeta"><span class="rdate">2026.07.27</span><span class="cat">探求・文化</span></div>
       <h2>デシジョンツリーと期待値による意思決定<span class="arrow">→</span></h2>
-      <p class="excerpt">デシジョンツリーで選択肢と未来のシナリオを木構造に整理し、期待値計算（Σ確率×収支）で各シナリオの平均的な価値を数値化する手法。 投資判断や新規事業判断に応用で…</p>
+      <p class="excerpt">デシジョンツリーで選択肢と未来のシナリオを木構造に整理し、期待値計算（Σ確率×収支）で各シナリオの平均的な価値を数値化する手法。 投資判断や新規事業判断に応用でき、企業経営では期待値に加えてリスクや長期戦略との整合も考慮する。 本質は計算そのものではなく、確率や収支という入力値の精度をどれだけ高…</p>
     </a>
     <a class="row" data-cat="inner" href="posts/p011.html">
       <div class="rmeta"><span class="rdate">2026.07.26</span><span class="cat">内省・学び</span></div>
       <h2>新しい人と話すことは、自分でも知らなかった価値観を掘り当てる作業だ。<span class="arrow">→</span></h2>
-      <p class="excerpt">Salon de GIFTEDと、東大散歩。多様な人との対話を通じて、自分の価値観や人生観を見つめ直した。ビジョンとは、その人が本当に実現したい人生の投影なのか…</p>
+      <p class="excerpt">Salon de GIFTEDと、東大散歩。多様な人との対話を通じて、自分の価値観や人生観を見つめ直した。ビジョンとは、その人が本当に実現したい人生の投影なのかもしれない。新しい誰かと話すたびに、気づいていなかった自分の輪郭が少しずつ見えてくる。経験の量は、そのまま充実感につながっていく気がする。</p>
     </a>
     <a class="row" data-cat="ai" href="posts/p012.html">
       <div class="rmeta"><span class="rdate">2026.07.25</span><span class="cat">AI</span></div>
       <h2>AIエージェントによる学習する組織構想<span class="arrow">→</span></h2>
-      <p class="excerpt">AIを人間の代替ではなく学習サイクルを加速する存在と位置づけ、組織全体の学習速度を競争優位の源泉とする「学習する組織（Learning Organization…</p>
+      <p class="excerpt">AIを人間の代替ではなく学習サイクルを加速する存在と位置づけ、組織全体の学習速度を競争優位の源泉とする「学習する組織（Learning Organization）」構想。 Observation／Analysis／Prototype／Learning／Recommendationの5つのAIエー…</p>
     </a>
     <a class="row" data-cat="inner" href="posts/p010.html">
       <div class="rmeta"><span class="rdate">2026.07.23</span><span class="cat">内省・学び</span></div>
       <h2>間違いを気にせず、まず話す。<span class="arrow">→</span></h2>
-      <p class="excerpt">英語は「勉強する」のではなく「使って考え、話す」もの。ChatGPTを講師にして、会話中はミスを気にせず最後まで話し、終わってからまとめてフィードバックをもらう…</p>
+      <p class="excerpt">英語は「勉強する」のではなく「使って考え、話す」もの。ChatGPTを講師にして、会話中はミスを気にせず最後まで話し、終わってからまとめてフィードバックをもらう。完璧な文法より、毎日口に出す習慣を優先する。</p>
     </a>
     <a class="row" data-cat="inner" href="posts/p009.html">
       <div class="rmeta"><span class="rdate">2026.07.22</span><span class="cat">内省・学び</span></div>
       <h2>尊敬する人の助言は、実は自分の中にすでにある知恵だった。<span class="arrow">→</span></h2>
-      <p class="excerpt">マインドフルネス講座のジャーナリングで、手を止めずに書き続けた。没頭・幸せ・感謝・尊敬する人からの助言という4つの問いに向き合ううちに、自分でも気づいていなかっ…</p>
+      <p class="excerpt">マインドフルネス講座のジャーナリングで、手を止めずに書き続けた。没頭・幸せ・感謝・尊敬する人からの助言という4つの問いに向き合ううちに、自分でも気づいていなかった価値観が輪郭を持ちはじめる。引き出した言葉は、外から借りたものではなかった。</p>
     </a>
     <a class="row" data-cat="thinking" href="posts/p008.html">
       <div class="rmeta"><span class="rdate">2026.07.21</span><span class="cat">思考OS</span></div>
       <h2>「何のために学ぶのか」で分けたら、しっくりきた。<span class="arrow">→</span></h2>
-      <p class="excerpt">ホームページのカテゴリーを、当初はジャンル別（暮らし・IT・経営…）で考えていた。でも、目的で分けるほうが自分には自然だと気づく。世界を知る／自分を育てる／自分…</p>
+      <p class="excerpt">ホームページのカテゴリーを、当初はジャンル別（暮らし・IT・経営…）で考えていた。でも、目的で分けるほうが自分には自然だと気づく。世界を知る／自分を育てる／自分を整える／暮らしを整える／未来をつくる——この5つ。</p>
     </a>
     <a class="row" data-cat="explore" href="posts/p007.html">
       <div class="rmeta"><span class="rdate">2026.07.20</span><span class="cat">探求・文化</span></div>
       <h2>『火の鳥』は、未来の技術ではなく未来の人間社会を描いていた。<span class="arrow">→</span></h2>
-      <p class="excerpt">予言の書として語られがちだけど、手塚治虫が描いたのは技術ではなく人間だ。どれだけ技術が進歩しても、権力・戦争・富・永遠の命への欲求という人間の本質は変わらない。…</p>
+      <p class="excerpt">予言の書として語られがちだけど、手塚治虫が描いたのは技術ではなく人間だ。どれだけ技術が進歩しても、権力・戦争・富・永遠の命への欲求という人間の本質は変わらない。復活編のAIとの共存は、いまのAI倫理の議論とそのまま重なる。</p>
     </a>
     <a class="row" data-cat="thinking" href="posts/p006.html">
       <div class="rmeta"><span class="rdate">2026.07.20</span><span class="cat">思考OS</span></div>
       <h2>このサイトはブログじゃない。「思考のOS」だ。<span class="arrow">→</span></h2>
-      <p class="excerpt">気づいてしまった。ここは知識を並べる場所ではなく、世界を理解するための地図。対話 → 整理 → 可視化 → 俯瞰 → 再考、のループを回すたびに、知識・思考・文…</p>
+      <p class="excerpt">気づいてしまった。ここは知識を並べる場所ではなく、世界を理解するための地図。対話 → 整理 → 可視化 → 俯瞰 → 再考、のループを回すたびに、知識・思考・文章・構造が少しずつ洗練される。僕は知識を蓄積しているのではなく、再構成している。</p>
     </a>
     <a class="row" data-cat="thinking" href="posts/p005.html">
       <div class="rmeta"><span class="rdate">2026.07.20</span><span class="cat">思考OS</span></div>
       <h2>北極星を、言葉にした。<span class="arrow">→</span></h2>
-      <p class="excerpt">実現したいことを5つの柱に分けた——人・挑戦・探求・創造と貢献・削ぎ落とし。それぞれに「このアイデアはこの柱に効くか？」という評価の問いを添える。週次レビューで…</p>
+      <p class="excerpt">実現したいことを5つの柱に分けた——人・挑戦・探求・創造と貢献・削ぎ落とし。それぞれに「このアイデアはこの柱に効くか？」という評価の問いを添える。週次レビューで、この星に照らしてアイデアを選んでいく。</p>
     </a>
     <a class="row" data-cat="ai" href="posts/p004.html">
       <div class="rmeta"><span class="rdate">2026.07.20</span><span class="cat">AI</span></div>
       <h2>AIは、驚くほど人間に似ている。<span class="arrow">→</span></h2>
-      <p class="excerpt">脳＝LLM、記憶＝Embedding／Vector Database、思い出す＝RAG、行動＝Function Calling、そして神経＝MCP。仕組みを人間…</p>
+      <p class="excerpt">脳＝LLM、記憶＝Embedding／Vector Database、思い出す＝RAG、行動＝Function Calling、そして神経＝MCP。仕組みを人間の認知になぞらえると、急に腑に落ちる。この比喩を精緻にすれば、人にAIを説明する「形」になりそうだ。</p>
     </a>
     <a class="row" data-cat="explore" href="posts/p002.html">
       <div class="rmeta"><span class="rdate">2026.07.20</span><span class="cat">探求・文化</span></div>
@@ -189,12 +206,12 @@
     <a class="row" data-cat="thinking" href="posts/p003.html">
       <div class="rmeta"><span class="rdate">2026.07.19</span><span class="cat">思考OS</span></div>
       <h2>アイデア ＝ 問い × 静けさ。<span class="arrow">→</span></h2>
-      <p class="excerpt">いいアイデアはいつも、朝の散歩・シャワー・湯船・サウナ後の外気浴・寝る前の瞑想で浮かぶ。共通点は、認知負荷が低く、未解決の問いだけが頭の片隅に残っていること。考…</p>
+      <p class="excerpt">いいアイデアはいつも、朝の散歩・シャワー・湯船・サウナ後の外気浴・寝る前の瞑想で浮かぶ。共通点は、認知負荷が低く、未解決の問いだけが頭の片隅に残っていること。考えるのを止めた瞬間に、無意識が勝手に組み合わせ始める。</p>
     </a>
     <a class="row" data-cat="ai" href="posts/p001.html">
       <div class="rmeta"><span class="rdate">2026.06.20</span><span class="cat">AI</span></div>
       <h2>AIの仕組みを、一気に地図にした日。<span class="arrow">→</span></h2>
-      <p class="excerpt">LLMから始めて、Transformer・Attention・Token・Embedding・Vector Database・RAG・MCP・Function …</p>
+      <p class="excerpt">LLMから始めて、Transformer・Attention・Token・Embedding・Vector Database・RAG・MCP・Function Calling・AIエージェントまで。バラバラだった用語が、一本の線でつながった。理解とは、点を線にすることなのかもしれない。</p>
     </a>
   </main>
   <p class="empty" id="empty">このカテゴリの投稿はありません。</p>

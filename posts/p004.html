@@ -52,7 +52,7 @@
   .row h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.12rem,3vw,1.32rem);line-height:1.55;
     letter-spacing:.02em;margin:0 0 6px;color:var(--ink);text-wrap:balance}
   .row:hover h2{color:var(--accent-ink)}
-  .excerpt{font-size:14px;color:var(--muted);margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .excerpt{font-size:14px;color:var(--muted);margin:0;line-height:1.85;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
   .arrow{color:var(--faint);margin-left:6px}
   .pending-badge{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;color:#fff;
     background:var(--faint);padding:2px 8px;border-radius:4px}
@@ -67,6 +67,23 @@
     letter-spacing:.03em;margin:0 0 22px;text-wrap:balance}
   .article .abody{font-size:16.5px;line-height:2;color:var(--ink)}
   .article .abody p{margin:0 0 20px}
+  .abody .lead{font-family:var(--serif);color:var(--muted);font-size:1.05rem;line-height:1.95;
+    padding:0 0 18px;margin:0 0 24px;border-bottom:1px solid var(--line-soft)}
+  .abody h2{font-family:var(--serif);font-weight:600;font-size:1.3rem;letter-spacing:.02em;
+    margin:34px 0 12px;line-height:1.5}
+  .abody h3{font-family:var(--serif);font-weight:600;font-size:1.1rem;margin:26px 0 10px}
+  .abody ul,.abody ol{margin:0 0 20px;padding-left:1.4em}
+  .abody li{margin:0 0 7px;line-height:1.85}
+  .abody blockquote{margin:0 0 20px;padding:4px 0 4px 20px;border-left:2px solid var(--accent);
+    color:var(--muted);font-family:var(--serif)}
+  .abody pre{background:var(--surface);border:1px solid var(--line);border-radius:6px;
+    padding:14px 16px;overflow-x:auto;margin:0 0 20px}
+  .abody pre code{font-family:var(--mono);font-size:13px;color:var(--ink);white-space:pre}
+  .abody code{font-family:var(--mono);font-size:.9em;background:var(--surface);
+    border:1px solid var(--line-soft);border-radius:3px;padding:1px 5px}
+  .abody pre code{background:none;border:0;padding:0}
+  .abody hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+  .abody strong{font-weight:700}
   .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:22px}
   .tag{font-family:var(--mono);font-size:11.5px;color:var(--faint);border:1px solid var(--line-soft);border-radius:3px;padding:2px 8px}
   .tag::before{content:"#";color:var(--accent);opacity:.7}
@@ -87,7 +104,19 @@
     
     <div class="ameta"><span class="rdate">2026.07.20</span><span class="cat">AI</span></div>
     <h1>AIは、驚くほど人間に似ている。</h1>
-    <div class="abody"><p>脳＝LLM、記憶＝Embedding／Vector Database、思い出す＝RAG、行動＝Function Calling、そして神経＝MCP。仕組みを人間の認知になぞらえると、急に腑に落ちる。この比喩を精緻にすれば、人にAIを説明する「形」になりそうだ。</p></div>
+    <div class="abody"><p class="lead">脳＝LLM、記憶＝Embedding／Vector Database、思い出す＝RAG、行動＝Function Calling、そして神経＝MCP。仕組みを人間の認知になぞらえると、急に腑に落ちる。この比喩を精緻にすれば、人にAIを説明する「形」になりそうだ。</p><h2>AIは人間に似ている</h2>
+<h2>脳</h2>
+<p>LLM</p>
+<h2>記憶</h2>
+<p>Embedding Vector Database</p>
+<h2>思い出す</h2>
+<p>RAG</p>
+<h2>行動</h2>
+<p>Function Calling</p>
+<h2>神経</h2>
+<p>MCP</p>
+<h2>感想</h2>
+<p>AIを学ぶより、 人間を理解した方がAIを理解しやすい。</p></div>
     <div class="tags"><span class="tag">LLM</span><span class="tag">RAG</span><span class="tag">MCP</span><span class="tag">比喩</span></div>
     <nav class="pagenav"><a href="p005.html"><span class="n">← 新しい投稿</span>北極星を、言葉にした。</a><a href="p002.html" style="text-align:right"><span class="n">古い投稿 →</span>対称性は、なぜ存在するんだろう。</a></nav>
   </article>

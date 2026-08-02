@@ -52,7 +52,7 @@
   .row h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.12rem,3vw,1.32rem);line-height:1.55;
     letter-spacing:.02em;margin:0 0 6px;color:var(--ink);text-wrap:balance}
   .row:hover h2{color:var(--accent-ink)}
-  .excerpt{font-size:14px;color:var(--muted);margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .excerpt{font-size:14px;color:var(--muted);margin:0;line-height:1.85;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
   .arrow{color:var(--faint);margin-left:6px}
   .pending-badge{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;color:#fff;
     background:var(--faint);padding:2px 8px;border-radius:4px}
@@ -67,6 +67,23 @@
     letter-spacing:.03em;margin:0 0 22px;text-wrap:balance}
   .article .abody{font-size:16.5px;line-height:2;color:var(--ink)}
   .article .abody p{margin:0 0 20px}
+  .abody .lead{font-family:var(--serif);color:var(--muted);font-size:1.05rem;line-height:1.95;
+    padding:0 0 18px;margin:0 0 24px;border-bottom:1px solid var(--line-soft)}
+  .abody h2{font-family:var(--serif);font-weight:600;font-size:1.3rem;letter-spacing:.02em;
+    margin:34px 0 12px;line-height:1.5}
+  .abody h3{font-family:var(--serif);font-weight:600;font-size:1.1rem;margin:26px 0 10px}
+  .abody ul,.abody ol{margin:0 0 20px;padding-left:1.4em}
+  .abody li{margin:0 0 7px;line-height:1.85}
+  .abody blockquote{margin:0 0 20px;padding:4px 0 4px 20px;border-left:2px solid var(--accent);
+    color:var(--muted);font-family:var(--serif)}
+  .abody pre{background:var(--surface);border:1px solid var(--line);border-radius:6px;
+    padding:14px 16px;overflow-x:auto;margin:0 0 20px}
+  .abody pre code{font-family:var(--mono);font-size:13px;color:var(--ink);white-space:pre}
+  .abody code{font-family:var(--mono);font-size:.9em;background:var(--surface);
+    border:1px solid var(--line-soft);border-radius:3px;padding:1px 5px}
+  .abody pre code{background:none;border:0;padding:0}
+  .abody hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+  .abody strong{font-weight:700}
   .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:22px}
   .tag{font-family:var(--mono);font-size:11.5px;color:var(--faint);border:1px solid var(--line-soft);border-radius:3px;padding:2px 8px}
   .tag::before{content:"#";color:var(--accent);opacity:.7}
@@ -87,7 +104,72 @@
     
     <div class="ameta"><span class="rdate">2026.07.28</span><span class="cat">AI</span></div>
     <h1>組織OSと人間蒸留に関する考察</h1>
-    <div class="abody"><p>人間蒸留とは、知識だけでなく思考・判断基準・経験・価値観をAIや組織へ継承する考え方で、個人では「自分OS」、企業では「組織OS」の構築につながる。 組織OS構築は、目的設定→対象業務の絞り込み→判断ログの記録→判断の標準化→AIへの実装、という順で進める。 ナレッジマネジメント（知識を残す）か…</p></div>
+    <div class="abody"><p class="lead">人間蒸留とは、知識だけでなく思考・判断基準・経験・価値観をAIや組織へ継承する考え方で、個人では「自分OS」、企業では「組織OS」の構築につながる。 組織OS構築は、目的設定→対象業務の絞り込み→判断ログの記録→判断の標準化→AIへの実装、という順で進める。 ナレッジマネジメント（知識を残す）か…</p><h2>概要(3行)</h2>
+<p>人間蒸留とは、知識だけでなく思考・判断基準・経験・価値観をAIや組織へ継承する考え方で、個人では「自分OS」、企業では「組織OS」の構築につながる。 組織OS構築は、目的設定→対象業務の絞り込み→判断ログの記録→判断の標準化→AIへの実装、という順で進める。 ナレッジマネジメント（知識を残す）から組織OS（良い判断を再現できる仕組みを残す）への発展という気付きが本質。</p>
+<p>組織OSと人間蒸留に関する考察</p>
+<p>概要</p>
+<p>人間蒸留とは、人の知識だけではなく、思考・判断基準・経験・価値観をAIや組織へ継承する考え方である。</p>
+<p>個人では「自分OS」を構築し、自分の能力を拡張することが目的となる。一方、企業では「組織OS」を構築し、組織全体の意思決定の品質と再現性を高めることが目的となる。</p>
+<hr>
+<p>個人OSと組織OSの違い</p>
+<p>個人OS</p>
+<p>目的</p>
+<ul><li>自分の能力を拡張する</li><li>AIが自分らしい判断を再現できるようにする</li><li>思考を資産化する</li></ul>
+<p>構成要素</p>
+<ul><li>知識</li><li>経験</li><li>思考法</li><li>判断基準</li><li>価値観</li><li>人格・話し方</li></ul>
+<hr>
+<p>組織OS</p>
+<p>目的</p>
+<ul><li>属人化の解消</li><li>判断品質の標準化</li><li>ナレッジ継承</li><li>AIによる業務支援</li><li>新人教育の高速化</li></ul>
+<p>構成要素</p>
+<ul><li>理念・Mission・Vision</li><li>判断基準</li><li>業務プロセス</li><li>ベストプラクティス</li><li>失敗事例</li><li>振り返りログ</li></ul>
+<hr>
+<p>組織OS構築の進め方</p>
+<ol><li>目的を決める</li></ol>
+<p>例</p>
+<ul><li>営業品質を均一化したい</li><li>ベテランのノウハウを継承したい</li><li>AIで業務支援を実現したい</li></ul>
+<hr>
+<ol><li>対象業務を一つに絞る</li></ol>
+<p>例</p>
+<ul><li>営業</li><li>サポート</li><li>設計</li><li>保守</li></ul>
+<p>最初から全社展開しない。</p>
+<hr>
+<ol><li>判断ログを残す</li></ol>
+<p>テンプレート</p>
+<ul><li>状況</li><li>判断</li><li>判断理由</li><li>結果</li><li>学び</li></ul>
+<p>知識ではなく「なぜそう判断したか」を残すことが重要。</p>
+<hr>
+<ol><li>判断を標準化する</li></ol>
+<p>判断ログから</p>
+<ul><li>判断基準</li><li>チェックリスト</li><li>ベストプラクティス</li></ul>
+<p>を抽出する。</p>
+<hr>
+<ol><li>AIへ実装する</li></ol>
+<p>AIには</p>
+<ul><li>組織の価値観</li><li>判断基準</li><li>業務フロー</li><li>過去事例</li></ul>
+<p>を参照させる。</p>
+<p>AIは「検索」ではなく「組織らしい判断」を支援する存在になる。</p>
+<hr>
+<p>人間にしかできない仕事</p>
+<p>組織OSが発達しても、人間が担うべき領域は残る。</p>
+<p>代表例</p>
+<ul><li>創造性</li><li>新しい価値の創出</li><li>人との信頼関係構築</li><li>倫理判断</li><li>前例のない意思決定</li><li>ビジョン策定</li></ul>
+<p>AIは判断の土台を支援し、人間は未来を決める役割を担う。</p>
+<hr>
+<p>気付き</p>
+<p>従来</p>
+<p>「ナレッジマネジメント」 = 知識を残す</p>
+<p>これから</p>
+<p>「組織OS」 = 良い判断を再現できる仕組みを残す</p>
+<p>という考え方へ発展していく。</p>
+<hr>
+<p>今後深掘りしたいテーマ</p>
+<ul><li>組織OSのアーキテクチャ設計</li><li>判断基準の抽出方法</li><li>AIエージェントとの連携</li><li>Obsidianによる組織知識管理</li><li>組織OSと企業文化の関係</li><li>人間蒸留の倫理・ガバナンス</li></ul>
+<hr>
+<p>一言まとめ</p>
+<p>「知識を残す時代から、良い判断を再現できる組織OSを設計する時代へ。」</p>
+<h2>関連ノート</h2>
+<ul><li>AIエージェントによる学習する組織構想</li><li>ホームページを思考のOSとして育てる</li><li>アイデアが生まれる環境の設計</li><li>起業の教科書 考察メモ</li></ul></div>
     <div class="tags"><span class="tag">人間蒸留</span><span class="tag">組織学習</span><span class="tag">ナレッジマネジメント</span><span class="tag">AIエージェント</span></div>
     <nav class="pagenav"><a href="draft-02.html"><span class="n">← 新しい投稿</span>プロンプトエンジニアリング</a><a href="p014.html" style="text-align:right"><span class="n">古い投稿 →</span>起業の教科書 考察メモ</a></nav>
   </article>

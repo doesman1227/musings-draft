@@ -52,7 +52,7 @@
   .row h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.12rem,3vw,1.32rem);line-height:1.55;
     letter-spacing:.02em;margin:0 0 6px;color:var(--ink);text-wrap:balance}
   .row:hover h2{color:var(--accent-ink)}
-  .excerpt{font-size:14px;color:var(--muted);margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .excerpt{font-size:14px;color:var(--muted);margin:0;line-height:1.85;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
   .arrow{color:var(--faint);margin-left:6px}
   .pending-badge{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;color:#fff;
     background:var(--faint);padding:2px 8px;border-radius:4px}
@@ -67,6 +67,23 @@
     letter-spacing:.03em;margin:0 0 22px;text-wrap:balance}
   .article .abody{font-size:16.5px;line-height:2;color:var(--ink)}
   .article .abody p{margin:0 0 20px}
+  .abody .lead{font-family:var(--serif);color:var(--muted);font-size:1.05rem;line-height:1.95;
+    padding:0 0 18px;margin:0 0 24px;border-bottom:1px solid var(--line-soft)}
+  .abody h2{font-family:var(--serif);font-weight:600;font-size:1.3rem;letter-spacing:.02em;
+    margin:34px 0 12px;line-height:1.5}
+  .abody h3{font-family:var(--serif);font-weight:600;font-size:1.1rem;margin:26px 0 10px}
+  .abody ul,.abody ol{margin:0 0 20px;padding-left:1.4em}
+  .abody li{margin:0 0 7px;line-height:1.85}
+  .abody blockquote{margin:0 0 20px;padding:4px 0 4px 20px;border-left:2px solid var(--accent);
+    color:var(--muted);font-family:var(--serif)}
+  .abody pre{background:var(--surface);border:1px solid var(--line);border-radius:6px;
+    padding:14px 16px;overflow-x:auto;margin:0 0 20px}
+  .abody pre code{font-family:var(--mono);font-size:13px;color:var(--ink);white-space:pre}
+  .abody code{font-family:var(--mono);font-size:.9em;background:var(--surface);
+    border:1px solid var(--line-soft);border-radius:3px;padding:1px 5px}
+  .abody pre code{background:none;border:0;padding:0}
+  .abody hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+  .abody strong{font-weight:700}
   .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:22px}
   .tag{font-family:var(--mono);font-size:11.5px;color:var(--faint);border:1px solid var(--line-soft);border-radius:3px;padding:2px 8px}
   .tag::before{content:"#";color:var(--accent);opacity:.7}
@@ -87,7 +104,184 @@
     
     <div class="ameta"><span class="rdate">2026.07.30</span><span class="cat">思考OS</span></div>
     <h1>戦略思考フレームワーク実践編</h1>
-    <div class="abody"><p>ビッグピクチャーは一段上の視点から全体構造を俯瞰し、部分最適でなく事業全体の因果関係を捉える思考法。 ルール・オブ・ザ・ゲームは市場を「何を競っているゲームか」として捉え、勝敗を決めるKSFと攻略法を明らかにする比喩的思考法で、相互作用を分析するゲーム理論とは別物。 クイック＆ダーティは大きな問…</p></div>
+    <div class="abody"><p class="lead">ビッグピクチャーは一段上の視点から全体構造を俯瞰し、部分最適でなく事業全体の因果関係を捉える思考法。 ルール・オブ・ザ・ゲームは市場を「何を競っているゲームか」として捉え、勝敗を決めるKSFと攻略法を明らかにする比喩的思考法で、相互作用を分析するゲーム理論とは別物。 クイック＆ダーティは大きな問…</p><h2>概要(3行)</h2>
+<p>ビッグピクチャーは一段上の視点から全体構造を俯瞰し、部分最適でなく事業全体の因果関係を捉える思考法。 ルール・オブ・ザ・ゲームは市場を「何を競っているゲームか」として捉え、勝敗を決めるKSFと攻略法を明らかにする比喩的思考法で、相互作用を分析するゲーム理論とは別物。 クイック＆ダーティは大きな問いを立てて本質だけを残しモデル化し、アブダクション→思考実験→反証のサイクルで蓋然性の高い仮説へ素早くたどり着く手法で、3つを統合すると「観察→構造化→仮説→検証」という実践フローになる。</p>
+<p>思考法：ビッグピクチャー／ルール・オブ・ザ・ゲーム／クイック＆ダーティ</p>
+<ol><li>ビッグピクチャー</li></ol>
+<p>定義</p>
+<p>検討しているテーマやイシューを、今の視点より一つ上のレイヤーから捉えること。</p>
+<p>事業を個々のパーツとして見るのではなく、全体のシステムとして捉える。</p>
+<p>問い</p>
+<p>「一段上から見ると、そもそも何が起きているのか？」</p>
+<p>ポイント</p>
+<ul><li>個別問題にいきなり飛びつかない</li><li>問題が発生している「全体構造」を見る</li><li>部分最適ではなく全体最適で考える</li><li>事業全体の因果関係や構造を捉える</li></ul>
+<p>例</p>
+<p>「セキュリティ商材の売上が伸びない」 ↓ 「どうやってセキュリティ商材を売るか？」だけではなく、 ↓ 「顧客との関係性全体の中で、この商材はどんな役割を果たしているのか？」 ↓ 「そもそも当社は、どのように顧客との関係を深め、収益を生み出す事業なのか？」</p>
+<hr>
+<ol><li>ルール・オブ・ザ・ゲーム</li></ol>
+<p>定義</p>
+<p>市場を一つの「ゲーム」として捉え、</p>
+<p>「このゲームでは、結局何を競い合っているのか？」</p>
+<p>を考える。</p>
+<p>そのうえで、ゲームの勝敗を決めるルールと、勝つための攻略法を把握する。</p>
+<p>基本構造</p>
+<p>ゲームの目的 ↓ 勝敗を決める要因 ↓ 攻略法 ↓ KPI</p>
+<p>当社の例</p>
+<p>ゲーム → 顧客をロイヤル化するゲーム</p>
+<p>勝敗 → 顧客との関係性をどれだけ深く・継続的に構築できるか</p>
+<p>重要な指標 → On比率など</p>
+<p>攻略法 → トップとのコミュニケーション → 顧客理解を深める → 接点を増やす → 複数領域で支援する</p>
+<p>重要な問い</p>
+<p>「この市場では、本当は何を競っているのか？」</p>
+<p>「勝っている企業と負けている企業を分けているものは何か？」</p>
+<p>「その勝敗を決めるKSFは何か？」</p>
+<hr>
+<ol><li>「ルール・オブ・ザ・ゲーム」とゲーム理論の違い</li></ol>
+<p>両者は別物。</p>
+<p>ルール・オブ・ザ・ゲーム</p>
+<p>市場をゲームにたとえて、</p>
+<p>「この市場の勝ち筋は何か？」</p>
+<p>を考えるための戦略的な比喩・思考法。</p>
+<p>ゲーム理論</p>
+<p>複数のプレイヤーが、相手の行動を考慮しながら意思決定する状況をモデル化する理論。</p>
+<p>企業間の価格競争など、</p>
+<p>「自社がこう動いたら、競合はどう動くか？」</p>
+<p>という相互作用を分析するのに向いている。</p>
+<p>代表的な概念：</p>
+<ul><li>囚人のジレンマ</li><li>ナッシュ均衡</li><li>利得</li><li>戦略</li><li>協調と裏切り</li></ul>
+<p>ナッシュ均衡</p>
+<p>各プレイヤーが、</p>
+<p>「自分だけ戦略を変えても、今より得にならない」</p>
+<p>という状態。</p>
+<p>つまり、各プレイヤーの戦略がある意味で「落ち着いている」状態。</p>
+<p>ビジネスでの例</p>
+<p>自社が値下げする ↓ 競合も値下げする ↓ 顧客は得をする ↓ しかし業界全体の利益率は下がる</p>
+<p>このように、</p>
+<p>「自社の行動 → 競合の反応 → 自社の次の行動」</p>
+<p>という相互作用を考えるときにゲーム理論が役立つ。</p>
+<hr>
+<ol><li>クイック＆ダーティ（Quick &amp; Dirty）</li></ol>
+<p>定義</p>
+<p>本質を抉り出し、蓋然性の高い仮説に素早くたどり着く思考法。</p>
+<p>本質にもとる枝葉の情報を大胆に切り落とし、本質的な情報だけを使って推論を重ねる。</p>
+<p>「Dirty」は雑に考えるという意味ではなく、</p>
+<p>精緻さよりも、まず本質を捉えることを優先する</p>
+<p>という意味。</p>
+<p>通常の分析</p>
+<p>情報収集 ↓ 網羅的分析 ↓ 結論</p>
+<p>Quick &amp; Dirty</p>
+<p>大きな問い ↓ 本質の抽出 ↓ 単純化・モデル化 ↓ 仮説推論 ↓ 思考実験 ↓ 反証 ↓ 蓋然性の高い仮説 ↓ 必要な情報だけ検証</p>
+<p>つまり、</p>
+<p>全部調べてから考えるのではなく、まず考えて仮説を作り、その仮説を検証するために情報を取りにいく。</p>
+<hr>
+<ol><li>Quick &amp; Dirtyの実施手順</li></ol>
+<p>STEP 1：思考を掻き立てる「大きな問い」に気づく</p>
+<p>目の前の問題をそのまま解こうとしない。</p>
+<p>例</p>
+<p>「セキュリティ商材の売上が伸びない」</p>
+<p>ではなく、</p>
+<p>「そもそも当社の売上を長期的に決めている最大の要因は何か？」</p>
+<p>といった、より本質的な問いを立てる。</p>
+<hr>
+<p>STEP 2：切り口・パースペクティブをインサイトする</p>
+<p>問題を見る「レンズ」を見つける。</p>
+<p>例えば売上を見る場合でも、</p>
+<ul><li>商品</li><li>営業</li><li>顧客関係</li><li>経営者</li><li>競争</li><li>組織</li><li>インセンティブ</li></ul>
+<p>など、さまざまな切り口がある。</p>
+<p>重要なのは、</p>
+<p>「この問題は、どの切り口から見ると最も本質が見えるのか？」</p>
+<p>と考えること。</p>
+<hr>
+<p>STEP 3：3ステップで仮説推論する</p>
+<p>3-1. 大胆に単純化・モデル化する</p>
+<p>本質にもとる情報を大胆に切り捨てる。</p>
+<p>現実をそのまま扱わず、重要な変数だけを残す。</p>
+<p>例：</p>
+<p>経営層との関係性 ↓ 相談される量 ↓ 提案機会 ↓ 売上 ↓ ロイヤル化</p>
+<p>現実そのものではないが、現実を考えるための「モデル」として使う。</p>
+<hr>
+<p>3-2. 単純化したモデルで限界まで思考する</p>
+<p>「もし、このモデルが正しいとしたら？」</p>
+<p>と考えて思考実験を行う。</p>
+<p>例えば、</p>
+<p>「経営層との関係性が極端に強くなったら？」</p>
+<p>↓ 経営課題を早期に把握できる ↓ 相談される ↓ 案件になる前から関与できる ↓ 競合より早く提案できる ↓ 価格競争になりにくくなる ↓ 売上・利益が上がる</p>
+<p>逆に、</p>
+<p>「経営層との関係がゼロなら？」</p>
+<p>という極端なケースも考える。</p>
+<p>モデルを頭の中で限界まで動かしてみる。</p>
+<hr>
+<p>3-3. あらゆる角度から吟味する</p>
+<p>出てきた仮説をそのまま信じない。</p>
+<p>意図的に反証する。</p>
+<p>例えば、</p>
+<ul><li>トップとの関係が強いのに売上が低い顧客は存在しないか？</li><li>現場担当者との関係だけでもロイヤル化できないか？</li><li>価格が圧倒的に重要な市場では成立するか？</li><li>競合も同じ戦略を取ったらどうなるか？</li></ul>
+<p>仮説 ↓ 反証 ↓ 修正 ↓ 再度反証 ↓ より強い仮説</p>
+<p>というサイクルを回す。</p>
+<hr>
+<ol><li>アブダクション（仮説推論）</li></ol>
+<p>Quick &amp; Dirtyの重要な思考方法。</p>
+<p>考え方</p>
+<p>観察された事実から、</p>
+<p>「この事実を最もうまく説明できる仮説は何か？」</p>
+<p>を考える。</p>
+<p>例</p>
+<p>観察 「ロイヤル顧客ほどトップとの接点が多い」</p>
+<p>↓</p>
+<p>仮説 「トップとの接点が顧客ロイヤル化に重要なのではないか？」</p>
+<p>これはまだ証明された事実ではない。</p>
+<p>あくまで、</p>
+<p>観察された事実を説明する、もっともらしい仮説</p>
+<p>である。</p>
+<p>そのため、</p>
+<p>観察 ↓ アブダクション ↓ 仮説 ↓ モデル化 ↓ 思考実験 ↓ 反証 ↓ 仮説修正</p>
+<p>と回して、仮説の蓋然性を高めていく。</p>
+<hr>
+<ol><li>3つの思考法を統合する</li></ol>
+<p>全体の流れ</p>
+<p>① ビッグピクチャー</p>
+<p>「一段上から見ると、そもそも何が起きている？」</p>
+<p>↓</p>
+<p>② ルール・オブ・ザ・ゲーム</p>
+<p>「この市場では、結局何を競っている？」</p>
+<p>↓</p>
+<p>③ KSF</p>
+<p>「そのゲームの勝敗を決めているものは何？」</p>
+<p>↓</p>
+<p>④ 大きな問い</p>
+<p>「本当に解くべき問いは何？」</p>
+<p>↓</p>
+<p>⑤ パースペクティブ</p>
+<p>「どの切り口から見ると本質が見える？」</p>
+<p>↓</p>
+<p>⑥ Quick &amp; Dirty</p>
+<p>「枝葉を捨て、単純化するとどんな構造になる？」</p>
+<p>↓</p>
+<p>⑦ アブダクション</p>
+<p>「観察された事実を最もうまく説明する仮説は？」</p>
+<p>↓</p>
+<p>⑧ 思考実験</p>
+<p>「その仮説が正しいとしたら、何が起きる？」</p>
+<p>↓</p>
+<p>⑨ 反証</p>
+<p>「反例をぶつけても、この仮説は成立する？」</p>
+<p>↓</p>
+<p>⑩ 蓋然性の高い仮説</p>
+<p>「現時点で最も確からしい答えは何か？」</p>
+<p>↓</p>
+<p>⑪ 検証</p>
+<p>「この仮説の真偽を判断するために、最低限何を調べればいい？」</p>
+<hr>
+<p>一言で覚える</p>
+<p>ビッグピクチャー →「そもそも全体はどうなっている？」</p>
+<p>ルール・オブ・ザ・ゲーム →「結局、何に勝てばいい？」</p>
+<p>Quick &amp; Dirty →「本質だけ残したら、何が言えそう？」</p>
+<p>アブダクション →「この事実を最もうまく説明する仮説は？」</p>
+<p>ゲーム理論 →「自分が動いたら相手はどう動き、その結果どうなる？」</p>
+<h2>関連ノート</h2>
+<ul><li>戦略コンサルに学ぶ思考OS</li><li>提案営業の新しいフレームワーク（外部環境起点）</li><li>デシジョンツリーと期待値による意思決定</li><li>起業の教科書 考察メモ</li></ul>
+<h2>今後調べたいこと</h2>
+<ul><li>自社の「ルール・オブ・ザ・ゲーム」（顧客ロイヤル化ゲームの勝敗要因）はOn比率だけで説明しきれるのか、他の変数はないか？</li><li>Quick &amp; Dirtyで作ったモデルをどこまで単純化すれば「本質」を保ったまま使えるか、失敗しやすいポイントは？</li></ul></div>
     <div class="tags"><span class="tag">思考法</span><span class="tag">戦略</span><span class="tag">ゲーム理論</span><span class="tag">仮説思考</span></div>
     <nav class="pagenav"><a href="draft-01.html"><span class="n">← 新しい投稿</span>請負契約と準委任契約・印紙税の整理</a><a href="p016.html" style="text-align:right"><span class="n">古い投稿 →</span>戦略コンサルに学ぶ思考OS</a></nav>
   </article>

@@ -52,7 +52,7 @@
   .row h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.12rem,3vw,1.32rem);line-height:1.55;
     letter-spacing:.02em;margin:0 0 6px;color:var(--ink);text-wrap:balance}
   .row:hover h2{color:var(--accent-ink)}
-  .excerpt{font-size:14px;color:var(--muted);margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .excerpt{font-size:14px;color:var(--muted);margin:0;line-height:1.85;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
   .arrow{color:var(--faint);margin-left:6px}
   .pending-badge{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;color:#fff;
     background:var(--faint);padding:2px 8px;border-radius:4px}
@@ -67,6 +67,23 @@
     letter-spacing:.03em;margin:0 0 22px;text-wrap:balance}
   .article .abody{font-size:16.5px;line-height:2;color:var(--ink)}
   .article .abody p{margin:0 0 20px}
+  .abody .lead{font-family:var(--serif);color:var(--muted);font-size:1.05rem;line-height:1.95;
+    padding:0 0 18px;margin:0 0 24px;border-bottom:1px solid var(--line-soft)}
+  .abody h2{font-family:var(--serif);font-weight:600;font-size:1.3rem;letter-spacing:.02em;
+    margin:34px 0 12px;line-height:1.5}
+  .abody h3{font-family:var(--serif);font-weight:600;font-size:1.1rem;margin:26px 0 10px}
+  .abody ul,.abody ol{margin:0 0 20px;padding-left:1.4em}
+  .abody li{margin:0 0 7px;line-height:1.85}
+  .abody blockquote{margin:0 0 20px;padding:4px 0 4px 20px;border-left:2px solid var(--accent);
+    color:var(--muted);font-family:var(--serif)}
+  .abody pre{background:var(--surface);border:1px solid var(--line);border-radius:6px;
+    padding:14px 16px;overflow-x:auto;margin:0 0 20px}
+  .abody pre code{font-family:var(--mono);font-size:13px;color:var(--ink);white-space:pre}
+  .abody code{font-family:var(--mono);font-size:.9em;background:var(--surface);
+    border:1px solid var(--line-soft);border-radius:3px;padding:1px 5px}
+  .abody pre code{background:none;border:0;padding:0}
+  .abody hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+  .abody strong{font-weight:700}
   .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:22px}
   .tag{font-family:var(--mono);font-size:11.5px;color:var(--faint);border:1px solid var(--line-soft);border-radius:3px;padding:2px 8px}
   .tag::before{content:"#";color:var(--accent);opacity:.7}
@@ -87,7 +104,123 @@
     
     <div class="ameta"><span class="rdate">2026.07.19</span><span class="cat">思考OS</span></div>
     <h1>アイデア ＝ 問い × 静けさ。</h1>
-    <div class="abody"><p>いいアイデアはいつも、朝の散歩・シャワー・湯船・サウナ後の外気浴・寝る前の瞑想で浮かぶ。共通点は、認知負荷が低く、未解決の問いだけが頭の片隅に残っていること。考えるのを止めた瞬間に、無意識が勝手に組み合わせ始める。</p></div>
+    <div class="abody"><p class="lead">いいアイデアはいつも、朝の散歩・シャワー・湯船・サウナ後の外気浴・寝る前の瞑想で浮かぶ。共通点は、認知負荷が低く、未解決の問いだけが頭の片隅に残っていること。考えるのを止めた瞬間に、無意識が勝手に組み合わせ始める。</p><h2>アイデアが生まれる環境の設計</h2>
+<h2>このノートの目的</h2>
+<p>アイデアは「才能」ではなく、「生まれやすい環境」を作ることで再現できるのではないか。</p>
+<p>自分自身がアイデアを思いつく状況を分析し、再現可能な仕組みとして設計する。</p>
+<hr>
+<h2>今回の気付き</h2>
+<p>今回の「アイデアがどんな時に生まれるのか？」という問い自体も、</p>
+<p><strong>散歩中に思いついた。</strong></p>
+<p>つまり、</p>
+<blockquote>「アイデアが生まれる条件を考える」というアイデアも、 アイデアが生まれやすい環境で生まれている。</blockquote>
+<p>これは重要な観察結果。</p>
+<hr>
+<h2>アイデアが生まれる場面</h2>
+<p>現在確認できているシーン</p>
+<ul><li>朝の散歩</li><li>シャワーを浴びている時</li><li>湯船に浸かっている時</li><li>泳いでいる時</li><li>サウナ後の外気浴</li><li>寝る前の瞑想</li></ul>
+<hr>
+<h2>共通点（仮説）</h2>
+<h2>身体</h2>
+<ul><li>一定のリズムで動いている</li><li>力みがない</li><li>呼吸が自然</li></ul>
+<hr>
+<h2>脳</h2>
+<ul><li>認知負荷が低い</li><li>判断をしていない</li><li>考えようとしていない</li><li>頭の中が静か</li></ul>
+<hr>
+<h2>感覚</h2>
+<ul><li>水の音</li><li>温度</li><li>外気</li><li>呼吸</li><li>心地良い刺激だけが存在する</li></ul>
+<hr>
+<h2>環境</h2>
+<ul><li>一人でいる</li><li>時間に追われていない</li><li>スマホを見ていない</li><li>情報入力が止まっている</li></ul>
+<hr>
+<h2>思考</h2>
+<p>完全に何も考えていない訳ではない。</p>
+<p><strong>未解決の問いだけが頭の片隅に残っている。</strong></p>
+<p>この状態で思考を止めると、</p>
+<p>無意識が勝手に組み合わせ始めるのではないか。</p>
+<hr>
+<h2>仮説</h2>
+<p>アイデアは</p>
+<blockquote>問い × 静けさ</blockquote>
+<p>から生まれる可能性がある。</p>
+<p>情報を増やして考える時間ではなく、</p>
+<p>考えることを止めた時に統合が始まる。</p>
+<hr>
+<h2>現時点のアイデア創出フロー</h2>
+<pre><code>① 問いを持つ
+        ↓
+② 情報収集
+        ↓
+③ 身体を動かす
+   （散歩・風呂・泳ぐ）
+        ↓
+④ 思考を手放す
+        ↓
+⑤ キーワードが浮かぶ
+        ↓
+⑥ ChatGPTと壁打ちする
+        ↓
+⑦ アイデアを広げる
+        ↓
+⑧ Markdown化
+        ↓
+⑨ Obsidianへ保存
+        ↓
+⑩ 後日育てる</code></pre>
+<hr>
+<h2>ChatGPTとの役割分担</h2>
+<h2>自分</h2>
+<ul><li>問いを持つ</li><li>生活する</li><li>アイデアを話す</li></ul>
+<hr>
+<h2>ChatGPT</h2>
+<ul><li>壁打ち相手</li><li>思考の整理</li><li>仮説の構造化</li><li>Markdown化</li><li>タイトル付け</li><li>関連ノートとの接続提案</li></ul>
+<hr>
+<h2>理想のワークフロー</h2>
+<pre><code>散歩
+↓
+
+アイデアが浮かぶ
+
+↓
+
+ホーム画面
+「アイデアを話す」
+
+↓
+
+ChatGPTと自由に対話
+
+↓
+
+「Obsidian用にまとめて」
+
+↓
+
+Markdown生成
+
+↓
+
+01_Inboxへ保存
+
+↓
+
+後日整理・育成</code></pre>
+<hr>
+<h2>今回構築した仕組み</h2>
+<h2>iPhoneショートカット</h2>
+<p>ホーム画面に</p>
+<p><strong>「アイデアを話す」</strong></p>
+<p>を作成。</p>
+<p>内容</p>
+<ul><li>ChatGPTを開く</li></ul>
+<p>目的</p>
+<p>アイデアが浮かんだ瞬間に、 迷わず会話を開始できる環境を作ること。</p>
+<hr>
+<h2>今後深掘りしたいテーマ</h2>
+<ul><li>なぜ水に触れている時にアイデアが生まれやすいのか</li><li>なぜ歩行中は思考が整理されるのか</li><li>Default Mode Network（DMN）との関係</li><li>認知負荷と創造性の関係</li><li>無意識はどのように情報を統合しているのか</li><li>「問い」の質によってアイデアの質は変わるのか</li><li>アイデア創出プロセスを体系化できるか</li></ul>
+<hr>
+<h2>次回ChatGPTに相談すること</h2>
+<ul><li>アイデア創出モデルの設計</li><li>アイデアが生まれる条件を科学的に整理</li><li>自分専用の創造性フレームワークを作る</li><li>Obsidianとの連携をさらに自動化する方法</li></ul></div>
     <div class="tags"><span class="tag">創造性</span><span class="tag">DMN</span><span class="tag">散歩</span></div>
     <nav class="pagenav"><a href="p002.html"><span class="n">← 新しい投稿</span>対称性は、なぜ存在するんだろう。</a><a href="p001.html" style="text-align:right"><span class="n">古い投稿 →</span>AIの仕組みを、一気に地図にした日。</a></nav>
   </article>

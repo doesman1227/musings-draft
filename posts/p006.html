@@ -52,7 +52,7 @@
   .row h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.12rem,3vw,1.32rem);line-height:1.55;
     letter-spacing:.02em;margin:0 0 6px;color:var(--ink);text-wrap:balance}
   .row:hover h2{color:var(--accent-ink)}
-  .excerpt{font-size:14px;color:var(--muted);margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .excerpt{font-size:14px;color:var(--muted);margin:0;line-height:1.85;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
   .arrow{color:var(--faint);margin-left:6px}
   .pending-badge{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;color:#fff;
     background:var(--faint);padding:2px 8px;border-radius:4px}
@@ -67,6 +67,23 @@
     letter-spacing:.03em;margin:0 0 22px;text-wrap:balance}
   .article .abody{font-size:16.5px;line-height:2;color:var(--ink)}
   .article .abody p{margin:0 0 20px}
+  .abody .lead{font-family:var(--serif);color:var(--muted);font-size:1.05rem;line-height:1.95;
+    padding:0 0 18px;margin:0 0 24px;border-bottom:1px solid var(--line-soft)}
+  .abody h2{font-family:var(--serif);font-weight:600;font-size:1.3rem;letter-spacing:.02em;
+    margin:34px 0 12px;line-height:1.5}
+  .abody h3{font-family:var(--serif);font-weight:600;font-size:1.1rem;margin:26px 0 10px}
+  .abody ul,.abody ol{margin:0 0 20px;padding-left:1.4em}
+  .abody li{margin:0 0 7px;line-height:1.85}
+  .abody blockquote{margin:0 0 20px;padding:4px 0 4px 20px;border-left:2px solid var(--accent);
+    color:var(--muted);font-family:var(--serif)}
+  .abody pre{background:var(--surface);border:1px solid var(--line);border-radius:6px;
+    padding:14px 16px;overflow-x:auto;margin:0 0 20px}
+  .abody pre code{font-family:var(--mono);font-size:13px;color:var(--ink);white-space:pre}
+  .abody code{font-family:var(--mono);font-size:.9em;background:var(--surface);
+    border:1px solid var(--line-soft);border-radius:3px;padding:1px 5px}
+  .abody pre code{background:none;border:0;padding:0}
+  .abody hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+  .abody strong{font-weight:700}
   .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:22px}
   .tag{font-family:var(--mono);font-size:11.5px;color:var(--faint);border:1px solid var(--line-soft);border-radius:3px;padding:2px 8px}
   .tag::before{content:"#";color:var(--accent);opacity:.7}
@@ -87,7 +104,138 @@
     
     <div class="ameta"><span class="rdate">2026.07.20</span><span class="cat">思考OS</span></div>
     <h1>このサイトはブログじゃない。「思考のOS」だ。</h1>
-    <div class="abody"><p>気づいてしまった。ここは知識を並べる場所ではなく、世界を理解するための地図。対話 → 整理 → 可視化 → 俯瞰 → 再考、のループを回すたびに、知識・思考・文章・構造が少しずつ洗練される。僕は知識を蓄積しているのではなく、再構成している。</p></div>
+    <div class="abody"><p class="lead">気づいてしまった。ここは知識を並べる場所ではなく、世界を理解するための地図。対話 → 整理 → 可視化 → 俯瞰 → 再考、のループを回すたびに、知識・思考・文章・構造が少しずつ洗練される。僕は知識を蓄積しているのではなく、再構成している。</p><h2>ホームページを「思考のOS」として育てる</h2>
+<h2>概要（3行）</h2>
+<p>ホームページ（m-note.uk）はブログではなく「思考のOS」＝世界を理解するための地図である。 対話→整理→可視化→俯瞰→再考のループ自体が学習システムになっている。 トップページは記事一覧より先に「思考全体の地図」（4つの森）を見せる構成にする。</p>
+<hr>
+<h2>背景</h2>
+<p>現在、自分の考えや学びをホームページ（m-note.uk）として整理している。</p>
+<p>目的は単なる情報発信ではなく、</p>
+<ul><li>自分自身の理解を深める</li><li>思考を体系化する</li><li>学びを継続的にブラッシュアップする</li></ul>
+<p>ことである。</p>
+<hr>
+<h2>現在のワークフロー</h2>
+<pre><code>ChatGPTとの対話
+        ↓
+Markdownとして整理
+        ↓
+Obsidianへ蓄積
+        ↓
+AIでホームページ化
+        ↓
+全体を俯瞰してレビュー
+        ↓
+疑問点・不足点を発見
+        ↓
+ChatGPTと再度対話
+        ↓
+Obsidianへ反映</code></pre>
+<p>このループを繰り返すことで、</p>
+<ul><li>知識</li><li>思考</li><li>文章</li><li>構造</li></ul>
+<p>すべてが少しずつ洗練されていく。</p>
+<hr>
+<h2>この方法の良いところ</h2>
+<h2>1. 思考が構造化される</h2>
+<p>頭の中だけでは曖昧だった考えが</p>
+<ul><li>カテゴリー</li><li>階層</li><li>関係性</li></ul>
+<p>として見えるようになる。</p>
+<hr>
+<h2>2. 自分自身が一番学べる</h2>
+<p>アウトプットすることで</p>
+<p>「本当に理解しているか」</p>
+<p>が分かる。</p>
+<p>説明できない部分は理解が浅いことに気付ける。</p>
+<hr>
+<h2>3. AIとの対話が深くなる</h2>
+<p>ホームページという「見える形」があることで、</p>
+<p>AIから</p>
+<ul><li>疑問点</li><li>改善点</li><li>足りない視点</li></ul>
+<p>をフィードバックしてもらいやすくなる。</p>
+<hr>
+<h2>4. 思考が資産になる</h2>
+<p>会話は消えていくが、</p>
+<p>Markdown</p>
+<p>Obsidian</p>
+<p>ホームページ</p>
+<p>という形にすることで、</p>
+<p>知識が積み重なっていく。</p>
+<hr>
+<h2>ホームページの価値</h2>
+<p>今回気付いたこと。</p>
+<p>このサイトは</p>
+<p>「ブログ」</p>
+<p>ではない。</p>
+<p>「思考のOS」</p>
+<p>である。</p>
+<p>つまり、</p>
+<p>知識を並べる場所ではなく、</p>
+<p>世界を理解するための地図である。</p>
+<hr>
+<h2>トップページ改善案</h2>
+<p>現在は世界観は伝わる。</p>
+<p>一方で、</p>
+<p>初めて訪れた人には</p>
+<p>「何のサイトなのか」</p>
+<p>が少し分かりにくい。</p>
+<p>そこで、</p>
+<p>記事一覧より先に</p>
+<p><strong>思考全体の地図</strong></p>
+<p>を見せると良い。</p>
+<p>例えば</p>
+<pre><code>世界を理解する
+    ├── AI
+    ├── 数学
+    ├── 量子力学
+    ├── 科学
+    └── システム思考
+
+自分を理解する
+    ├── マインドフルネス
+    ├── 心理学
+    ├── 哲学
+    └── 習慣
+
+創る
+    ├── プログラミング
+    ├── デザイン
+    ├── AI活用
+    └── プロジェクト
+
+人生
+    ├── 働き方
+    ├── 学び
+    ├── 健康
+    └── 幸福</code></pre>
+<p>まず森（全体像）を見せ、</p>
+<p>その後に木（記事）へ入る構成が分かりやすい。</p>
+<hr>
+<h2>印象に残った考え</h2>
+<p>現在行っているサイクルは</p>
+<p>「知識を蓄積している」</p>
+<p>のではない。</p>
+<p><strong>知識を再構成している。</strong></p>
+<p>会話し、</p>
+<p>整理し、</p>
+<p>可視化し、</p>
+<p>俯瞰し、</p>
+<p>また考える。</p>
+<p>この循環そのものが、</p>
+<p>学習システムになっている。</p>
+<hr>
+<h2>今後の方向性</h2>
+<p>ホームページを</p>
+<p>「記事を読む場所」</p>
+<p>ではなく、</p>
+<p><strong>世界を探索する地図</strong></p>
+<p>として設計していく。</p>
+<p>訪問者だけでなく、</p>
+<p>未来の自分自身が</p>
+<p>思考を深められる場所に育てていく。</p>
+<hr>
+<h2>関連ノート</h2>
+<ul><li>目標 — 「形に残す」（柱4）と「素敵な人達に囲まれる」（柱1）に同時に効く出口</li><li>アイデアが生まれる環境の設計 — vaultに入るまでの前段のループ</li><li>トップページを思考の地図にする — このアイデアから生まれたプロジェクト</li></ul>
+<h2>今後調べたいこと</h2>
+<ul><li>森→木の情報設計で参考になる先行例（デジタルガーデン、Zettelkastenの公開事例）</li></ul></div>
     <div class="tags"><span class="tag">思考OS</span><span class="tag">セカンドブレイン</span><span class="tag">m-note</span></div>
     <nav class="pagenav"><a href="p007.html"><span class="n">← 新しい投稿</span>『火の鳥』は、未来の技術ではなく未来の人間社会を</a><a href="p005.html" style="text-align:right"><span class="n">古い投稿 →</span>北極星を、言葉にした。</a></nav>
   </article>

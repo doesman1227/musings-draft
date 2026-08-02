@@ -52,7 +52,7 @@
   .row h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.12rem,3vw,1.32rem);line-height:1.55;
     letter-spacing:.02em;margin:0 0 6px;color:var(--ink);text-wrap:balance}
   .row:hover h2{color:var(--accent-ink)}
-  .excerpt{font-size:14px;color:var(--muted);margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .excerpt{font-size:14px;color:var(--muted);margin:0;line-height:1.85;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
   .arrow{color:var(--faint);margin-left:6px}
   .pending-badge{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;color:#fff;
     background:var(--faint);padding:2px 8px;border-radius:4px}
@@ -67,6 +67,23 @@
     letter-spacing:.03em;margin:0 0 22px;text-wrap:balance}
   .article .abody{font-size:16.5px;line-height:2;color:var(--ink)}
   .article .abody p{margin:0 0 20px}
+  .abody .lead{font-family:var(--serif);color:var(--muted);font-size:1.05rem;line-height:1.95;
+    padding:0 0 18px;margin:0 0 24px;border-bottom:1px solid var(--line-soft)}
+  .abody h2{font-family:var(--serif);font-weight:600;font-size:1.3rem;letter-spacing:.02em;
+    margin:34px 0 12px;line-height:1.5}
+  .abody h3{font-family:var(--serif);font-weight:600;font-size:1.1rem;margin:26px 0 10px}
+  .abody ul,.abody ol{margin:0 0 20px;padding-left:1.4em}
+  .abody li{margin:0 0 7px;line-height:1.85}
+  .abody blockquote{margin:0 0 20px;padding:4px 0 4px 20px;border-left:2px solid var(--accent);
+    color:var(--muted);font-family:var(--serif)}
+  .abody pre{background:var(--surface);border:1px solid var(--line);border-radius:6px;
+    padding:14px 16px;overflow-x:auto;margin:0 0 20px}
+  .abody pre code{font-family:var(--mono);font-size:13px;color:var(--ink);white-space:pre}
+  .abody code{font-family:var(--mono);font-size:.9em;background:var(--surface);
+    border:1px solid var(--line-soft);border-radius:3px;padding:1px 5px}
+  .abody pre code{background:none;border:0;padding:0}
+  .abody hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+  .abody strong{font-weight:700}
   .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:22px}
   .tag{font-family:var(--mono);font-size:11.5px;color:var(--faint);border:1px solid var(--line-soft);border-radius:3px;padding:2px 8px}
   .tag::before{content:"#";color:var(--accent);opacity:.7}
@@ -87,7 +104,126 @@
     
     <div class="ameta"><span class="rdate">2026.07.27</span><span class="cat">探求・文化</span></div>
     <h1>デシジョンツリーと期待値による意思決定</h1>
-    <div class="abody"><p>デシジョンツリーで選択肢と未来のシナリオを木構造に整理し、期待値計算（Σ確率×収支）で各シナリオの平均的な価値を数値化する手法。 投資判断や新規事業判断に応用でき、企業経営では期待値に加えてリスクや長期戦略との整合も考慮する。 本質は計算そのものではなく、確率や収支という入力値の精度をどれだけ高…</p></div>
+    <div class="abody"><p class="lead">デシジョンツリーで選択肢と未来のシナリオを木構造に整理し、期待値計算（Σ確率×収支）で各シナリオの平均的な価値を数値化する手法。 投資判断や新規事業判断に応用でき、企業経営では期待値に加えてリスクや長期戦略との整合も考慮する。 本質は計算そのものではなく、確率や収支という入力値の精度をどれだけ高…</p><h2>概要(3行)</h2>
+<p>デシジョンツリーで選択肢と未来のシナリオを木構造に整理し、期待値計算（Σ確率×収支）で各シナリオの平均的な価値を数値化する手法。 投資判断や新規事業判断に応用でき、企業経営では期待値に加えてリスクや長期戦略との整合も考慮する。 本質は計算そのものではなく、確率や収支という入力値の精度をどれだけ高められるかにある。</p>
+<p>デシジョンツリーと期待値による意思決定</p>
+<p>概要</p>
+<p>デシジョンツリー（Decision Tree）は、「どのような選択肢があり、その結果何が起こるか」を木構造で整理する手法である。</p>
+<p>期待値計算（Expected Value）は、「各選択肢が長期的にどれだけ価値があるか」を数値で評価する手法である。</p>
+<p>この2つを組み合わせることで、合理的な意思決定が可能になる。</p>
+<hr>
+<p>デシジョンツリーとは</p>
+<p>構成要素</p>
+<ul><li>ノード（Node）：判断するポイント</li><li>ブランチ（Branch）：条件による分岐</li><li>リーフ（Leaf）：最終結果</li></ul>
+<p>例</p>
+<p>新規事業を始める？ │ YES ─┴─ NO │        │ 開始     開始しない</p>
+<hr>
+<p>期待値とは</p>
+<p>期待値とは、</p>
+<p>「同じ意思決定を何度も繰り返したときの平均的な結果」</p>
+<p>である。</p>
+<p>計算式</p>
+<p>期待値 = Σ（確率 × 収支）</p>
+<p>例</p>
+<p>シナリオ	確率	利益 成功	70%	+100万円 失敗	30%	-20万円</p>
+<p>期待値</p>
+<p>100万円 × 0.7 -20万円 × 0.3 = 64万円</p>
+<p>期待値がプラスなら、長期的には有利な意思決定となる。</p>
+<hr>
+<p>デシジョンツリーと期待値の関係</p>
+<p>デシジョンツリーは</p>
+<p>「どんな未来が考えられるか」</p>
+<p>を整理する。</p>
+<p>期待値は</p>
+<p>「その未来を考慮した場合、平均するとどれくらい得か」</p>
+<p>を計算する。</p>
+<p>つまり</p>
+<p>デシジョンツリー ↓ シナリオを整理 ↓ 各シナリオに ・確率 ・収支 を設定 ↓ 期待値を計算 ↓ 意思決定</p>
+<hr>
+<p>個別株投資への応用</p>
+<p>投資では</p>
+<ul><li>起こる確率</li><li>リターン</li></ul>
+<p>を推定する。</p>
+<p>例</p>
+<p>シナリオ	確率	株価変動 好決算	60%	+40% 悪決算	40%	-15%</p>
+<p>期待リターン</p>
+<p>0.6 × 40% + 0.4 × (-15%) = +18%</p>
+<hr>
+<p>重要なポイント</p>
+<p>期待値の計算自体は簡単である。</p>
+<p>難しいのは</p>
+<ul><li>確率をどう見積もるか</li><li>利益・損失をどう予測するか</li></ul>
+<p>である。</p>
+<p>つまり投資の本質は</p>
+<p>期待値の計算ではなく、入力値（確率・収支）の精度を高めること</p>
+<p>にある。</p>
+<hr>
+<p>確率をどう推定するか</p>
+<p>投資家は</p>
+<ul><li>売上成長率</li><li>利益率</li><li>配当性向</li><li>業界動向</li><li>経営者</li><li>競争優位性</li><li>過去の実績</li></ul>
+<p>などから主観確率を作る。</p>
+<p>100%正確である必要はなく、</p>
+<p>他の投資家より少しだけ精度が高い</p>
+<p>ことが重要である。</p>
+<hr>
+<p>企業経営への応用</p>
+<p>企業では</p>
+<p>期待値 × リスク × 戦略</p>
+<p>の3つを考慮して意思決定する。</p>
+<hr>
+<p>例：新規事業</p>
+<p>シナリオ	確率	利益 大成功	20%	+1億円 普通	50%	+2,000万円 失敗	30%	-3,000万円</p>
+<p>期待利益</p>
+<p>0.2 × 1億円 + 0.5 × 2,000万円 + 0.3 × (-3,000万円) = 2,100万円</p>
+<p>期待値だけを見ると実施した方が良い。</p>
+<p>しかし企業は</p>
+<ul><li>最悪ケース</li><li>資金繰り</li><li>ブランド</li><li>人材</li><li>長期戦略</li></ul>
+<p>まで考えて最終判断する。</p>
+<hr>
+<p>企業が見る評価項目</p>
+<p>企業では期待値以外にも</p>
+<ul><li>市場規模</li><li>成長性</li><li>競争優位性</li><li>利益率</li><li>投資回収期間</li><li>キャッシュフロー</li><li>リスク</li><li>長期戦略との整合</li></ul>
+<p>を評価する。</p>
+<hr>
+<p>リアルオプション</p>
+<p>企業は</p>
+<p>「今の利益」</p>
+<p>だけではなく</p>
+<p>「将来の選択肢」</p>
+<p>にも投資する。</p>
+<p>例えば</p>
+<p>AI事業は初年度赤字でも</p>
+<ul><li>AI人材育成</li><li>技術獲得</li><li>将来の新規事業</li></ul>
+<p>につながるなら投資価値がある。</p>
+<p>これを</p>
+<p>リアルオプション</p>
+<p>という。</p>
+<hr>
+<p>AI時代の意思決定</p>
+<p>AIは</p>
+<ul><li>市場データ</li><li>財務データ</li><li>顧客データ</li><li>ニュース</li><li>過去実績</li></ul>
+<p>から</p>
+<ul><li>成功確率</li><li>売上予測</li><li>利益予測</li></ul>
+<p>をリアルタイムで更新できる。</p>
+<p>人間はその結果をもとに最終判断を行う。</p>
+<hr>
+<p>本質</p>
+<p>デシジョンツリーは</p>
+<p>「未来の可能性を整理する地図」</p>
+<p>期待値は</p>
+<p>「各選択肢の価値を測るものさし」</p>
+<p>企業経営とは</p>
+<p>限られた資源（人・モノ・金・時間）を、最も企業価値が高まる選択肢へ配分すること</p>
+<p>であり、そのために</p>
+<ol><li>デシジョンツリーでシナリオを整理する</li><li>各シナリオの確率を推定する</li><li>各シナリオの収支を試算する</li><li>期待値を計算する</li><li>リスクを評価する</li><li>長期戦略との整合性を確認する</li></ol>
+<p>という流れで意思決定を行う。</p>
+<hr>
+<p>キーワード</p>
+<ul><li>デシジョンツリー（Decision Tree）</li><li>期待値（Expected Value）</li><li>シナリオ分析</li><li>リスク分析</li><li>意思決定分析（Decision Analysis）</li><li>リアルオプション</li><li>ベイズ更新</li><li>長期的企業価値</li><li>AIによる意思決定支援</li><li>確率思考</li></ul>
+<h2>関連ノート</h2>
+<ul><li>AIドリブン経営について考えた日</li><li>提案営業の新しいフレームワーク（外部環境起点）</li><li>組織OSと人間蒸留に関する考察</li></ul>
+<h2>今後調べたいこと</h2>
+<ul><li>期待値計算における確率推定の精度をどう高めるか</li><li>リアルオプション思考を日々の投資・事業判断にどう組み込むか</li></ul></div>
     <div class="tags"><span class="tag">意思決定</span><span class="tag">期待値</span><span class="tag">戦略</span><span class="tag">AI</span></div>
     <nav class="pagenav"><a href="p014.html"><span class="n">← 新しい投稿</span>起業の教科書 考察メモ</a><a href="p011.html" style="text-align:right"><span class="n">古い投稿 →</span>新しい人と話すことは、自分でも知らなかった価値観</a></nav>
   </article>

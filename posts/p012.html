@@ -52,7 +52,7 @@
   .row h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.12rem,3vw,1.32rem);line-height:1.55;
     letter-spacing:.02em;margin:0 0 6px;color:var(--ink);text-wrap:balance}
   .row:hover h2{color:var(--accent-ink)}
-  .excerpt{font-size:14px;color:var(--muted);margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .excerpt{font-size:14px;color:var(--muted);margin:0;line-height:1.85;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
   .arrow{color:var(--faint);margin-left:6px}
   .pending-badge{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;color:#fff;
     background:var(--faint);padding:2px 8px;border-radius:4px}
@@ -67,6 +67,23 @@
     letter-spacing:.03em;margin:0 0 22px;text-wrap:balance}
   .article .abody{font-size:16.5px;line-height:2;color:var(--ink)}
   .article .abody p{margin:0 0 20px}
+  .abody .lead{font-family:var(--serif);color:var(--muted);font-size:1.05rem;line-height:1.95;
+    padding:0 0 18px;margin:0 0 24px;border-bottom:1px solid var(--line-soft)}
+  .abody h2{font-family:var(--serif);font-weight:600;font-size:1.3rem;letter-spacing:.02em;
+    margin:34px 0 12px;line-height:1.5}
+  .abody h3{font-family:var(--serif);font-weight:600;font-size:1.1rem;margin:26px 0 10px}
+  .abody ul,.abody ol{margin:0 0 20px;padding-left:1.4em}
+  .abody li{margin:0 0 7px;line-height:1.85}
+  .abody blockquote{margin:0 0 20px;padding:4px 0 4px 20px;border-left:2px solid var(--accent);
+    color:var(--muted);font-family:var(--serif)}
+  .abody pre{background:var(--surface);border:1px solid var(--line);border-radius:6px;
+    padding:14px 16px;overflow-x:auto;margin:0 0 20px}
+  .abody pre code{font-family:var(--mono);font-size:13px;color:var(--ink);white-space:pre}
+  .abody code{font-family:var(--mono);font-size:.9em;background:var(--surface);
+    border:1px solid var(--line-soft);border-radius:3px;padding:1px 5px}
+  .abody pre code{background:none;border:0;padding:0}
+  .abody hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+  .abody strong{font-weight:700}
   .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:22px}
   .tag{font-family:var(--mono);font-size:11.5px;color:var(--faint);border:1px solid var(--line-soft);border-radius:3px;padding:2px 8px}
   .tag::before{content:"#";color:var(--accent);opacity:.7}
@@ -87,7 +104,171 @@
     
     <div class="ameta"><span class="rdate">2026.07.25</span><span class="cat">AI</span></div>
     <h1>AIエージェントによる学習する組織構想</h1>
-    <div class="abody"><p>AIを人間の代替ではなく学習サイクルを加速する存在と位置づけ、組織全体の学習速度を競争優位の源泉とする「学習する組織（Learning Organization）」構想。 Observation／Analysis／Prototype／Learning／Recommendationの5つのAIエー…</p></div>
+    <div class="abody"><p class="lead">AIを人間の代替ではなく学習サイクルを加速する存在と位置づけ、組織全体の学習速度を競争優位の源泉とする「学習する組織（Learning Organization）」構想。 Observation／Analysis／Prototype／Learning／Recommendationの5つのAIエー…</p><h2>概要(3行)</h2>
+<ul><li>AIを人間の代替ではなく学習サイクルを加速する存在と位置づけ、組織全体の学習速度を競争優位の源泉とする「学習する組織（Learning Organization）」構想。</li><li>Observation／Analysis／Prototype／Learning／Recommendationの5つのAIエージェントが、観察→構造化→試作→知識化→再利用の学習サイクルを回す構成を提案している。</li><li>Teams・Copilot Studio・Power Automate・Azure OpenAI・SharePoint・Power BIを組み合わせ、日報を組織のナレッジへ変換する「組織OS」構築をフェーズ1〜4で計画している。</li></ul>
+<p>AIエージェントによる「学習する組織（Learning Organization）」構想</p>
+<p>背景</p>
+<p>AIによって開発コストが大幅に低下したことで、競争力の源泉は「コードを書くこと」ではなく、</p>
+<ul><li>顧客の業務を理解する</li><li>課題を構造化する</li><li>小さく実験する</li><li>学びを組織へ蓄積する</li></ul>
+<p>ことへ移りつつある。</p>
+<p>組織全体の学習速度を高めることが競争優位となる。</p>
+<hr>
+<p>コンセプト</p>
+<p>AI = 人を置き換えるものではない</p>
+<p>AIは業務を代替するのではなく、</p>
+<p>人間の学習サイクルを支援・加速する存在</p>
+<p>として設計する。</p>
+<p>目的は</p>
+<p>Learning Company（学習する会社）</p>
+<p>を実現すること。</p>
+<hr>
+<p>学習サイクル</p>
+<p>観察 ↓ 構造化 ↓ 小さく試す ↓ 学びを知識化 ↓ 次の案件へ活かす</p>
+<hr>
+<p>AIエージェント構成</p>
+<p>① Observation Agent（観察）</p>
+<p>役割</p>
+<ul><li>業務内容の収集</li><li>現場情報の整理</li></ul>
+<p>入力</p>
+<ul><li>Teamsチャット</li><li>音声</li><li>写真</li><li>添付資料</li><li>日報</li></ul>
+<p>出力</p>
+<ul><li>業務内容</li><li>業務フロー</li><li>気付き</li><li>違和感</li></ul>
+<hr>
+<p>② Analysis Agent（分析）</p>
+<p>役割</p>
+<p>業務を構造化する</p>
+<p>実施内容</p>
+<ul><li>業務分類</li><li>5Why</li><li>業務フロー生成</li><li>ボトルネック抽出</li><li>入力・処理・出力の整理</li></ul>
+<p>出力</p>
+<ul><li>課題一覧</li><li>原因</li><li>改善候補</li></ul>
+<hr>
+<p>③ Prototype Agent（試作）</p>
+<p>役割</p>
+<p>改善案をすぐ形にする</p>
+<p>例</p>
+<ul><li>Power Apps</li><li>Power Automate</li><li>Copilot Agent</li><li>モックアップ</li></ul>
+<p>目的</p>
+<p>「考える」ではなく</p>
+<p>まず試す</p>
+<hr>
+<p>④ Learning Agent（知識化）</p>
+<p>役割</p>
+<p>案件終了後に知識へ変換</p>
+<p>自動生成</p>
+<ul><li>成功事例</li><li>失敗事例</li><li>テンプレート</li><li>チェックリスト</li><li>FAQ</li><li>業務マニュアル</li></ul>
+<hr>
+<p>⑤ Recommendation Agent（推薦）</p>
+<p>役割</p>
+<p>次案件へ知識を再利用</p>
+<p>例</p>
+<p>営業が製造業へ訪問</p>
+<p>↓</p>
+<p>AI</p>
+<p>「過去17件類似案件があります」</p>
+<p>↓</p>
+<p>テンプレート提案</p>
+<p>↓</p>
+<p>改善案提示</p>
+<hr>
+<p>最終イメージ</p>
+<p>顧客 ↓ Observation Agent ↓ Analysis Agent ↓ Prototype Agent ↓ Learning Agent ↓ Knowledge Base ↑ Recommendation Agent</p>
+<hr>
+<p>新しいアイデア</p>
+<p>日報を組織の知識へ変える</p>
+<p>現在</p>
+<p>社員 ↓ 日報提出 ↓ 終わり</p>
+<p>理想</p>
+<p>社員 ↓ Teams日報 ↓ AIが分析 ↓ 業務マニュアル生成 ↓ 改善案生成 ↓ ナレッジ蓄積 ↓ 他部署へ展開</p>
+<hr>
+<p>Teams × Copilot Studio構想</p>
+<p>Teams</p>
+<p>役割</p>
+<p>社員との入口</p>
+<p>社員は</p>
+<p>「今日の日報」</p>
+<p>だけ入力すればよい。</p>
+<hr>
+<p>Copilot Studio</p>
+<p>役割</p>
+<p>インタビュー</p>
+<p>例</p>
+<ul><li>今日何をしましたか？</li><li>使用したシステムは？</li><li>作成した成果物は？</li><li>困ったことは？</li><li>改善できそうなことは？</li></ul>
+<p>必要に応じて追加質問する。</p>
+<hr>
+<p>Power Automate</p>
+<p>役割</p>
+<p>処理の自動化</p>
+<p>処理内容</p>
+<ul><li>SharePoint保存</li><li>Azure OpenAI呼び出し</li><li>業務分類</li><li>要約</li><li>タグ付け</li><li>通知</li></ul>
+<hr>
+<p>SharePoint Lists</p>
+<p>役割</p>
+<p>データベース</p>
+<p>保持情報</p>
+<ul><li>業務</li><li>顧客</li><li>作業内容</li><li>使用システム</li><li>成果物</li><li>課題</li><li>改善案</li></ul>
+<hr>
+<p>Azure OpenAI</p>
+<p>役割</p>
+<p>知識生成</p>
+<p>生成内容</p>
+<ul><li>業務フロー</li><li>業務マニュアル</li><li>SOP</li><li>改善候補</li><li>FAQ</li><li>類似案件抽出</li></ul>
+<hr>
+<p>Power BI</p>
+<p>役割</p>
+<p>可視化</p>
+<p>表示例</p>
+<ul><li>業務マップ</li><li>ボトルネック</li><li>改善ランキング</li><li>部門比較</li><li>業務時間分析</li></ul>
+<hr>
+<p>日々の流れ</p>
+<p>朝</p>
+<p>AI</p>
+<p>「今日の予定を教えてください。」</p>
+<p>↓</p>
+<p>社員回答</p>
+<hr>
+<p>業務中</p>
+<p>AI</p>
+<p>必要に応じて質問</p>
+<ul><li>写真ありますか？</li><li>添付できますか？</li><li>何分かかりましたか？</li></ul>
+<hr>
+<p>終業時</p>
+<p>AI</p>
+<p>今日の業務を要約</p>
+<p>↓</p>
+<p>改善候補を提示</p>
+<p>↓</p>
+<p>ナレッジ登録</p>
+<hr>
+<p>将来像</p>
+<p>AIチャットボットではない</p>
+<p>目指すものは</p>
+<p>組織OS（Organization Operating System）</p>
+<p>会社全体の知識を循環させる仕組み。</p>
+<hr>
+<p>今後設計したいもの</p>
+<p>フェーズ1</p>
+<ul><li>Teamsチャット</li><li>Copilot Studio質問フロー</li><li>日報取得</li></ul>
+<hr>
+<p>フェーズ2</p>
+<ul><li>SharePoint Lists設計</li><li>Power Automate</li><li>Azure OpenAI連携</li></ul>
+<hr>
+<p>フェーズ3</p>
+<ul><li>業務マニュアル自動生成</li><li>業務フロー自動生成</li><li>FAQ生成</li></ul>
+<hr>
+<p>フェーズ4</p>
+<ul><li>類似案件推薦</li><li>改善案レコメンド</li><li>Power BI分析</li></ul>
+<hr>
+<p>この構想の本質</p>
+<p>目指すのは</p>
+<p>業務を管理するシステムではない。</p>
+<p>会社が毎日学習し続けるAI搭載の組織OSを構築することである。</p>
+<p>社員一人ひとりの経験を、組織全体の知識へ変換し、次の案件へ再利用する。</p>
+<p>つまり、</p>
+<p>「人が学ぶ会社」ではなく、「会社そのものが学び続ける仕組み」を作る。</p>
+<h2>関連ノート</h2>
+<ul><li>AIエージェント</li><li>AIドリブン経営について考えた日</li></ul>
+<h2>今後調べたいこと</h2>
+<ul><li>Observation Agentが収集する現場情報（音声・写真・チャット）のプライバシー・情報セキュリティをどう担保するか？</li><li>学習サイクルの効果（学習速度・改善提案の質など）をどのような指標で測定するか？</li><li>フェーズ1〜4を実際にどのようなスケジュールとリソースで実装していくか？</li></ul></div>
     <div class="tags"><span class="tag">AI</span><span class="tag">AIエージェント</span><span class="tag">組織学習</span><span class="tag">ナレッジマネジメント</span></div>
     <nav class="pagenav"><a href="p011.html"><span class="n">← 新しい投稿</span>新しい人と話すことは、自分でも知らなかった価値観</a><a href="p010.html" style="text-align:right"><span class="n">古い投稿 →</span>間違いを気にせず、まず話す。</a></nav>
   </article>
