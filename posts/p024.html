@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>コンテキストエンジニアリングと市場調査AI化構想 — 日々のつぶやき</title>
+<meta name="description" content="AI活用の考え方が「プロンプトエンジニアリング」から「コンテキストエンジニアリング」「ハーネスエンジニアリング」「ループエンジニアリング」へ進化していることを整理した。 自分にとっての優先順位はコンテ…">
+<meta name="robots" content="noindex, nofollow"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#F4F2EB;--surface:#FCFBF6;--ink:#24261E;--muted:#5E6252;--faint:#949585;
+    --line:#E3E0D5;--line-soft:#ECEAE1;--accent:#4C7A5A;--accent-ink:#3C6349;--accent-wash:#E7EEE7;
+    --serif:"Noto Serif JP",serif;--sans:"Noto Sans JP",system-ui,sans-serif;
+    --mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;}
+  @media(prefers-color-scheme:dark){:root{--bg:#15161A;--surface:#1D1F23;--ink:#E9E8DF;--muted:#A0A296;
+    --faint:#6E7166;--line:#2C2E2C;--line-soft:#26282A;--accent:#84AE8D;--accent-ink:#9DC4A5;--accent-wash:#202a22;}}
+  :root[data-theme="dark"]{--bg:#15161A;--surface:#1D1F23;--ink:#E9E8DF;--muted:#A0A296;
+    --faint:#6E7166;--line:#2C2E2C;--line-soft:#26282A;--accent:#84AE8D;--accent-ink:#9DC4A5;--accent-wash:#202a22;}
+  :root[data-theme="light"]{--bg:#F4F2EB;--surface:#FCFBF6;--ink:#24261E;--muted:#5E6252;--faint:#949585;
+    --line:#E3E0D5;--line-soft:#ECEAE1;--accent:#4C7A5A;--accent-ink:#3C6349;--accent-wash:#E7EEE7;}
+  *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;
+    line-height:1.9;letter-spacing:.01em;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:680px;margin:0 auto;padding:0 22px}
+  a{color:var(--accent-ink)}
+  .topnav{padding:22px 0 0;display:flex;justify-content:space-between;gap:12px}
+  .topnav a{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--muted);text-decoration:none}
+  .topnav a:hover{color:var(--accent-ink)}
+  header.masthead{padding:36px 0 22px}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent-ink);margin:0 0 16px}
+  h1.title{font-family:var(--serif);font-weight:700;font-size:clamp(2rem,6vw,2.9rem);line-height:1.3;
+    letter-spacing:.04em;margin:0 0 14px;text-wrap:balance}
+  .intro{font-family:var(--serif);font-weight:500;font-size:clamp(1rem,2.2vw,1.1rem);line-height:1.9;
+    color:var(--muted);margin:0;max-width:42ch}
+  .counter{margin-top:18px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--faint)}
+  .counter b{color:var(--muted);font-weight:700}
+  /* filters */
+  .filters{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:8px;padding:14px 0;margin-bottom:6px;
+    background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line-soft)}
+  .chip{font-family:var(--sans);font-size:13px;font-weight:500;padding:6px 14px;border:1px solid var(--line);
+    border-radius:100px;background:var(--surface);color:var(--muted);cursor:pointer;letter-spacing:.02em;
+    transition:background .18s,color .18s,border-color .18s}
+  .chip:hover{border-color:var(--accent);color:var(--accent-ink)}
+  .chip.active{background:var(--accent);border-color:var(--accent);color:#fff}
+  :root[data-theme="dark"] .chip.active{color:#16181a}
+  @media(prefers-color-scheme:dark){.chip.active{color:#16181a}}
+  /* list */
+  .list{padding:12px 0 20px;display:flex;flex-direction:column;gap:2px}
+  .row{display:block;text-decoration:none;color:inherit;padding:20px 4px;border-bottom:1px solid var(--line-soft)}
+  .row:hover{background:var(--surface)}
+  .row .rmeta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:7px}
+  .rdate{font-family:var(--mono);font-size:12.5px;color:var(--faint);font-variant-numeric:tabular-nums}
+  .cat{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--accent-ink);background:var(--accent-wash);padding:3px 9px;border-radius:4px}
+  .row h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.12rem,3vw,1.32rem);line-height:1.55;
+    letter-spacing:.02em;margin:0 0 6px;color:var(--ink);text-wrap:balance}
+  .row:hover h2{color:var(--accent-ink)}
+  .excerpt{font-size:14px;color:var(--muted);margin:0;line-height:1.85;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .arrow{color:var(--faint);margin-left:6px}
+  .pending-badge{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;color:#fff;
+    background:var(--faint);padding:2px 8px;border-radius:4px}
+  :root[data-theme="dark"] .pending-badge{color:#16181a}
+  @media(prefers-color-scheme:dark){.pending-badge{color:#16181a}}
+  .row.hide{display:none}
+  .empty{display:none;text-align:center;padding:50px 0;color:var(--faint);font-family:var(--serif)}
+  /* detail */
+  .article{padding:20px 0 8px}
+  .article .ameta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+  .article h1{font-family:var(--serif);font-weight:700;font-size:clamp(1.5rem,4.4vw,2.1rem);line-height:1.45;
+    letter-spacing:.03em;margin:0 0 22px;text-wrap:balance}
+  .article .abody{font-size:16.5px;line-height:2;color:var(--ink)}
+  .article .abody p{margin:0 0 20px}
+  .abody .lead{font-family:var(--serif);color:var(--muted);font-size:1.05rem;line-height:1.95;
+    padding:0 0 18px;margin:0 0 24px;border-bottom:1px solid var(--line-soft)}
+  .abody h2{font-family:var(--serif);font-weight:600;font-size:1.3rem;letter-spacing:.02em;
+    margin:34px 0 12px;line-height:1.5}
+  .abody h3{font-family:var(--serif);font-weight:600;font-size:1.1rem;margin:26px 0 10px}
+  .abody ul,.abody ol{margin:0 0 20px;padding-left:1.4em}
+  .abody li{margin:0 0 7px;line-height:1.85}
+  .abody blockquote{margin:0 0 20px;padding:4px 0 4px 20px;border-left:2px solid var(--accent);
+    color:var(--muted);font-family:var(--serif)}
+  .abody pre{background:var(--surface);border:1px solid var(--line);border-radius:6px;
+    padding:14px 16px;overflow-x:auto;margin:0 0 20px}
+  .abody pre code{font-family:var(--mono);font-size:13px;color:var(--ink);white-space:pre}
+  .abody code{font-family:var(--mono);font-size:.9em;background:var(--surface);
+    border:1px solid var(--line-soft);border-radius:3px;padding:1px 5px}
+  .abody pre code{background:none;border:0;padding:0}
+  .abody hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+  .abody strong{font-weight:700}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:22px}
+  .tag{font-family:var(--mono);font-size:11.5px;color:var(--faint);border:1px solid var(--line-soft);border-radius:3px;padding:2px 8px}
+  .tag::before{content:"#";color:var(--accent);opacity:.7}
+  .pagenav{display:flex;justify-content:space-between;gap:12px;margin-top:40px;padding-top:20px;border-top:1px solid var(--line-soft)}
+  .pagenav a{font-family:var(--sans);font-size:13.5px;text-decoration:none;color:var(--muted);max-width:46%}
+  .pagenav a:hover{color:var(--accent-ink)}
+  .pagenav .n{display:block;font-family:var(--mono);font-size:11px;color:var(--faint);margin-bottom:3px}
+  .draftnote{font-family:var(--mono);font-size:12px;color:var(--faint);background:var(--surface);
+    border:1px dashed var(--line);border-radius:6px;padding:10px 14px;margin:0 0 22px}
+  footer{margin-top:20px;padding:34px 0 60px;border-top:1px solid var(--line)}
+  footer .back{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-decoration:none}
+  footer .back:hover{color:var(--accent-ink)}
+  .disclaimer{margin-top:16px;font-size:12px;line-height:1.8;color:var(--faint);max-width:52ch}
+</style></head><body>
+<div class="wrap">
+  <nav class="topnav"><a href="../">← つぶやき一覧</a><a href="../../">m-note トップ</a></nav>
+  <article class="article">
+    
+    <div class="ameta"><span class="rdate">2026.08.06</span><span class="cat">AI</span></div>
+    <h1>コンテキストエンジニアリングと市場調査AI化構想</h1>
+    <div class="abody"><h2>AIエージェント設計・コンテキストエンジニアリング・市場調査自動化</h2>
+<h2>概要</h2>
+<p>AI活用の考え方が「プロンプトエンジニアリング」から「コンテキストエンジニアリング」「ハーネスエンジニアリング」「ループエンジニアリング」へ進化していることを整理した。 自分にとっての優先順位はコンテキスト＞ループ＞ハーネス＞プロンプトであり、情報資産・知識ベース・ワークフロー設計の方が重要という結論。 自身の市場調査業務（UTM・SASE・EPP・EDR・IDaaS等）を題材に、AIエージェント化による自動化イメージ（Web検索→数値抽出→Excel整理→AIレビュー）を具体的に検討した。</p>
+<hr>
+<p><strong>日時</strong>: 2026-08-06</p>
+<h2>概要</h2>
+<p>AI活用の考え方が「プロンプトエンジニアリング」から「コンテキストエンジニアリング」「ハーネスエンジニアリング」「ループエンジニアリング」へ進化していることを学んだ。</p>
+<p>また、自身の市場調査業務（UTM、SASE、EPP、EDR、IDaaSなど）のAIエージェント化について検討した。</p>
+<hr>
+<h2>AI活用の4つの考え方</h2>
+<h2>1. プロンプトエンジニアリング</h2>
+<h3>概要</h3>
+<p>AIへの指示文を最適化する。</p>
+<h3>ポイント</h3>
+<ul><li>役割</li><li>目的</li><li>制約条件</li><li>出力形式</li><li>出力例</li></ul>
+<p>を明確にする。</p>
+<hr>
+<h2>2. コンテキストエンジニアリング（現在最重要）</h2>
+<h3>概要</h3>
+<p>AIに何を知った状態で考えさせるかを設計する。</p>
+<h3>例</h3>
+<ul><li>Obsidian</li><li>社内資料</li><li>過去の会話</li><li>RAG</li><li>業界情報</li><li>ナレッジベース</li></ul>
+<p>これらを適切なタイミングでAIへ渡す。</p>
+<h3>ポイント</h3>
+<p>プロンプトよりも、</p>
+<blockquote><strong>AIへ渡す情報の質</strong></blockquote>
+<p>が重要になってきている。</p>
+<hr>
+<h2>3. ハーネスエンジニアリング</h2>
+<h3>概要</h3>
+<p>AI・ツール・ワークフロー全体を設計すること。</p>
+<p>例</p>
+<ul><li>ChatGPT</li><li>Claude</li><li>検索</li><li>Excel</li><li>Obsidian</li><li>n8n</li><li>Make</li></ul>
+<p>これらを組み合わせて一つのシステムとして動かす。</p>
+<hr>
+<h2>4. ループエンジニアリング</h2>
+<h3>概要</h3>
+<p>一発回答を求めず、</p>
+<pre><code>計画
+↓
+実行
+↓
+レビュー
+↓
+改善
+↓
+再実行</code></pre>
+<p>を何度も繰り返す設計。</p>
+<p>AIエージェントの中心的な考え方。</p>
+<hr>
+<h2>自分に最適な優先順位</h2>
+<ol><li>コンテキストエンジニアリング</li><li>ループエンジニアリング</li><li>ハーネスエンジニアリング</li><li>プロンプトエンジニアリング</li></ol>
+<p>プロンプトを書く能力より、</p>
+<ul><li>情報資産</li><li>知識ベース</li><li>ワークフロー設計</li></ul>
+<p>の方が重要。</p>
+<hr>
+<h2>AIを使う成長ステップ</h2>
+<h2>レベル1</h2>
+<p>プロンプトを資産化</p>
+<p>テンプレートを作る。</p>
+<hr>
+<h2>レベル2</h2>
+<p>コンテキストを資産化</p>
+<p>Obsidianへ知識を蓄積する。</p>
+<hr>
+<h2>レベル3</h2>
+<p>AIの役割分担</p>
+<p>例</p>
+<ul><li>リサーチ担当</li><li>企画担当</li><li>レビュー担当</li><li>編集担当</li></ul>
+<hr>
+<h2>レベル4</h2>
+<p>ループ設計</p>
+<pre><code>構成作成
+↓
+不足洗い出し
+↓
+追加調査
+↓
+レビュー
+↓
+修正
+↓
+完成</code></pre>
+<hr>
+<h2>AIエージェント構築に必要なもの</h2>
+<h2>レベル1</h2>
+<p>ChatGPT Plus</p>
+<p>Claude Pro</p>
+<p>だけでも十分。</p>
+<hr>
+<h2>レベル2</h2>
+<p>追加</p>
+<ul><li>Obsidian</li><li>n8n</li><li>Make</li><li>Google Drive</li></ul>
+<p>など。</p>
+<hr>
+<h2>レベル3</h2>
+<p>本格的なAIエージェント</p>
+<p>例</p>
+<ul><li>API利用</li><li>複数AI</li><li>自動実行</li><li>自動評価</li><li>データベース更新</li></ul>
+<hr>
+<h2>自分の市場調査業務</h2>
+<p>現在調査している市場</p>
+<ul><li>UTM</li><li>SASE</li><li>EPP</li><li>EDR</li><li>IDaaS</li></ul>
+<p>など。</p>
+<hr>
+<h2>現在の業務フロー</h2>
+<pre><code>市場を決める
+
+↓
+
+Google検索
+
+↓
+
+各種レポート確認
+
+↓
+
+市場規模を確認
+
+↓
+
+プレーヤーを確認
+
+↓
+
+特徴を整理
+
+↓
+
+Excelへ転記
+
+↓
+
+分析</code></pre>
+<p>かなり手作業が多い。</p>
+<hr>
+<h2>Excelでまとめたい項目</h2>
+<ul><li>市場名</li><li>市場規模予測（年別）</li><li>主要プレーヤー</li><li>市場の特徴</li><li>外部環境変化</li><li>社会的背景</li></ul>
+<hr>
+<h2>AIエージェント化後のイメージ</h2>
+<pre><code>① 調査対象を決定
+
+↓
+
+② AIがWeb検索
+
+↓
+
+③ 数値抽出
+
+↓
+
+④ 出典整理
+
+↓
+
+⑤ Excelへ自動整理
+
+↓
+
+⑥ AIレビュー
+
+・数字の矛盾
+・古い情報
+・出典漏れ
+
+↓
+
+⑦ 完成</code></pre>
+<hr>
+<h2>将来的な理想</h2>
+<p>Excelを最終成果物ではなく、</p>
+<p><strong>データベース</strong></p>
+<p>として扱う。</p>
+<p>そのデータから</p>
+<ul><li>グラフ</li><li>PowerPoint</li><li>提案資料</li><li>市場分析</li></ul>
+<p>をAIが自動生成できる状態を目指す。</p>
+<hr>
+<h2>今後やること</h2>
+<h2>Step1</h2>
+<p>Excelのフォーマットを固定する。</p>
+<hr>
+<h2>Step2</h2>
+<p>調査項目を標準化する。</p>
+<p>例</p>
+<ul><li>市場規模</li><li>CAGR</li><li>プレーヤー</li><li>成長要因</li><li>リスク</li><li>市場特徴</li><li>出典</li></ul>
+<hr>
+<h2>Step3</h2>
+<p>AIにリサーチを担当させる。</p>
+<hr>
+<h2>Step4</h2>
+<p>レビューAIを追加する。</p>
+<ul><li>数字確認</li><li>出典確認</li><li>矛盾確認</li></ul>
+<hr>
+<h2>Step5</h2>
+<p>n8nなどを使って自動化する。</p>
+<hr>
+<h2>学び</h2>
+<p>これから重要なのは</p>
+<p><strong>「良いプロンプトを書くこと」ではない。</strong></p>
+<p>重要なのは</p>
+<ul><li>コンテキストを整える</li><li>AIの役割を分ける</li><li>ループを設計する</li><li>ナレッジを資産化する</li></ul>
+<p>ことである。</p>
+<p>AIを単なるチャットツールではなく、</p>
+<p><strong>「一緒に仕事をするチームメンバー」として設計すること</strong></p>
+<p>が今後のAI活用の鍵になる。</p>
+<hr>
+<h2>関連ノート</h2>
+<ul><li>AIエージェント — エージェント設計の技術的基盤</li><li>プロンプトエンジニアリング — 4つの考え方の出発点</li><li>AIドリブン経営について考えた日 — AIを仕事にどう活かすかという同系統の考察</li><li>AIエージェントによる学習する組織構想 — 業務のAIエージェント化という共通テーマ</li></ul>
+<h2>今後調べたいこと</h2>
+<ul><li>コンテキストエンジニアリングを実践するために、Obsidianの知識をどう構造化・資産化するか</li><li>市場調査のExcelフォーマット・調査項目の標準化を、どこから着手するか</li><li>レビューAI（数字確認・出典確認）をどう設計・実装するか</li></ul></div>
+    <div class="tags"><span class="tag">AI</span><span class="tag">AIエージェント</span><span class="tag">コンテキストエンジニアリング</span><span class="tag">洞察</span></div>
+    <nav class="pagenav"><span></span><a href="p023.html" style="text-align:right"><span class="n">古い投稿 →</span>占いの仕組みとAI自己理解パートナー構想</a></nav>
+  </article>
+  <footer>
+    <a class="back" href="../">← つぶやき一覧へ戻る</a>
+    <p class="disclaimer">専門家ではない個人が、日々の思考を書き留めた個人的なまとめです。内容の正確性を保証するものではありません。</p>
+  </footer>
+</div>
+</body></html>

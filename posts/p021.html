@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JAL×Hiltonマイル最適化ダッシュボード構想 — 日々のつぶやき</title>
+<meta name="description" content="JALカード（Club-A/Gold）とHilton Amex（Standard/Premium）を併用するユーザー向けに、年間利用額の最適配分を計算しマイル・宿泊特典の価値を最大化するインタラクティ…">
+<meta name="robots" content="noindex, nofollow"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#F4F2EB;--surface:#FCFBF6;--ink:#24261E;--muted:#5E6252;--faint:#949585;
+    --line:#E3E0D5;--line-soft:#ECEAE1;--accent:#4C7A5A;--accent-ink:#3C6349;--accent-wash:#E7EEE7;
+    --serif:"Noto Serif JP",serif;--sans:"Noto Sans JP",system-ui,sans-serif;
+    --mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;}
+  @media(prefers-color-scheme:dark){:root{--bg:#15161A;--surface:#1D1F23;--ink:#E9E8DF;--muted:#A0A296;
+    --faint:#6E7166;--line:#2C2E2C;--line-soft:#26282A;--accent:#84AE8D;--accent-ink:#9DC4A5;--accent-wash:#202a22;}}
+  :root[data-theme="dark"]{--bg:#15161A;--surface:#1D1F23;--ink:#E9E8DF;--muted:#A0A296;
+    --faint:#6E7166;--line:#2C2E2C;--line-soft:#26282A;--accent:#84AE8D;--accent-ink:#9DC4A5;--accent-wash:#202a22;}
+  :root[data-theme="light"]{--bg:#F4F2EB;--surface:#FCFBF6;--ink:#24261E;--muted:#5E6252;--faint:#949585;
+    --line:#E3E0D5;--line-soft:#ECEAE1;--accent:#4C7A5A;--accent-ink:#3C6349;--accent-wash:#E7EEE7;}
+  *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;
+    line-height:1.9;letter-spacing:.01em;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:680px;margin:0 auto;padding:0 22px}
+  a{color:var(--accent-ink)}
+  .topnav{padding:22px 0 0;display:flex;justify-content:space-between;gap:12px}
+  .topnav a{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--muted);text-decoration:none}
+  .topnav a:hover{color:var(--accent-ink)}
+  header.masthead{padding:36px 0 22px}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent-ink);margin:0 0 16px}
+  h1.title{font-family:var(--serif);font-weight:700;font-size:clamp(2rem,6vw,2.9rem);line-height:1.3;
+    letter-spacing:.04em;margin:0 0 14px;text-wrap:balance}
+  .intro{font-family:var(--serif);font-weight:500;font-size:clamp(1rem,2.2vw,1.1rem);line-height:1.9;
+    color:var(--muted);margin:0;max-width:42ch}
+  .counter{margin-top:18px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--faint)}
+  .counter b{color:var(--muted);font-weight:700}
+  /* filters */
+  .filters{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:8px;padding:14px 0;margin-bottom:6px;
+    background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line-soft)}
+  .chip{font-family:var(--sans);font-size:13px;font-weight:500;padding:6px 14px;border:1px solid var(--line);
+    border-radius:100px;background:var(--surface);color:var(--muted);cursor:pointer;letter-spacing:.02em;
+    transition:background .18s,color .18s,border-color .18s}
+  .chip:hover{border-color:var(--accent);color:var(--accent-ink)}
+  .chip.active{background:var(--accent);border-color:var(--accent);color:#fff}
+  :root[data-theme="dark"] .chip.active{color:#16181a}
+  @media(prefers-color-scheme:dark){.chip.active{color:#16181a}}
+  /* list */
+  .list{padding:12px 0 20px;display:flex;flex-direction:column;gap:2px}
+  .row{display:block;text-decoration:none;color:inherit;padding:20px 4px;border-bottom:1px solid var(--line-soft)}
+  .row:hover{background:var(--surface)}
+  .row .rmeta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:7px}
+  .rdate{font-family:var(--mono);font-size:12.5px;color:var(--faint);font-variant-numeric:tabular-nums}
+  .cat{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--accent-ink);background:var(--accent-wash);padding:3px 9px;border-radius:4px}
+  .row h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.12rem,3vw,1.32rem);line-height:1.55;
+    letter-spacing:.02em;margin:0 0 6px;color:var(--ink);text-wrap:balance}
+  .row:hover h2{color:var(--accent-ink)}
+  .excerpt{font-size:14px;color:var(--muted);margin:0;line-height:1.85;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .arrow{color:var(--faint);margin-left:6px}
+  .pending-badge{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;color:#fff;
+    background:var(--faint);padding:2px 8px;border-radius:4px}
+  :root[data-theme="dark"] .pending-badge{color:#16181a}
+  @media(prefers-color-scheme:dark){.pending-badge{color:#16181a}}
+  .row.hide{display:none}
+  .empty{display:none;text-align:center;padding:50px 0;color:var(--faint);font-family:var(--serif)}
+  /* detail */
+  .article{padding:20px 0 8px}
+  .article .ameta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+  .article h1{font-family:var(--serif);font-weight:700;font-size:clamp(1.5rem,4.4vw,2.1rem);line-height:1.45;
+    letter-spacing:.03em;margin:0 0 22px;text-wrap:balance}
+  .article .abody{font-size:16.5px;line-height:2;color:var(--ink)}
+  .article .abody p{margin:0 0 20px}
+  .abody .lead{font-family:var(--serif);color:var(--muted);font-size:1.05rem;line-height:1.95;
+    padding:0 0 18px;margin:0 0 24px;border-bottom:1px solid var(--line-soft)}
+  .abody h2{font-family:var(--serif);font-weight:600;font-size:1.3rem;letter-spacing:.02em;
+    margin:34px 0 12px;line-height:1.5}
+  .abody h3{font-family:var(--serif);font-weight:600;font-size:1.1rem;margin:26px 0 10px}
+  .abody ul,.abody ol{margin:0 0 20px;padding-left:1.4em}
+  .abody li{margin:0 0 7px;line-height:1.85}
+  .abody blockquote{margin:0 0 20px;padding:4px 0 4px 20px;border-left:2px solid var(--accent);
+    color:var(--muted);font-family:var(--serif)}
+  .abody pre{background:var(--surface);border:1px solid var(--line);border-radius:6px;
+    padding:14px 16px;overflow-x:auto;margin:0 0 20px}
+  .abody pre code{font-family:var(--mono);font-size:13px;color:var(--ink);white-space:pre}
+  .abody code{font-family:var(--mono);font-size:.9em;background:var(--surface);
+    border:1px solid var(--line-soft);border-radius:3px;padding:1px 5px}
+  .abody pre code{background:none;border:0;padding:0}
+  .abody hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+  .abody strong{font-weight:700}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:22px}
+  .tag{font-family:var(--mono);font-size:11.5px;color:var(--faint);border:1px solid var(--line-soft);border-radius:3px;padding:2px 8px}
+  .tag::before{content:"#";color:var(--accent);opacity:.7}
+  .pagenav{display:flex;justify-content:space-between;gap:12px;margin-top:40px;padding-top:20px;border-top:1px solid var(--line-soft)}
+  .pagenav a{font-family:var(--sans);font-size:13.5px;text-decoration:none;color:var(--muted);max-width:46%}
+  .pagenav a:hover{color:var(--accent-ink)}
+  .pagenav .n{display:block;font-family:var(--mono);font-size:11px;color:var(--faint);margin-bottom:3px}
+  .draftnote{font-family:var(--mono);font-size:12px;color:var(--faint);background:var(--surface);
+    border:1px dashed var(--line);border-radius:6px;padding:10px 14px;margin:0 0 22px}
+  footer{margin-top:20px;padding:34px 0 60px;border-top:1px solid var(--line)}
+  footer .back{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-decoration:none}
+  footer .back:hover{color:var(--accent-ink)}
+  .disclaimer{margin-top:16px;font-size:12px;line-height:1.8;color:var(--faint);max-width:52ch}
+</style></head><body>
+<div class="wrap">
+  <nav class="topnav"><a href="../">← つぶやき一覧</a><a href="../../">m-note トップ</a></nav>
+  <article class="article">
+    
+    <div class="ameta"><span class="rdate">2026.08.06</span><span class="cat">探求・文化</span></div>
+    <h1>JAL×Hiltonマイル最適化ダッシュボード構想</h1>
+    <div class="abody"><h2>JAL × Hilton Travel Rewards Optimizer</h2>
+<h2>概要</h2>
+<p>JALカード（Club-A/Gold）とHilton Amex（Standard/Premium）を併用するユーザー向けに、年間利用額の最適配分を計算しマイル・宿泊特典の価値を最大化するインタラクティブダッシュボードの設計。 デフォルト条件（年間300万円利用）ではHilton全額配分が最適（年間52万円相当）という試算結果と、その計算ロジック（JAL式・Hilton式・最適配分探索）をまとめた。 Vanilla JS + Chart.jsによる静的サイトとして実装済みで、スライダーによるシミュレーションと5年間の累積推移を可視化する。</p>
+<hr>
+<blockquote>[!info] 概要 JALカード（Club-A / Club-A Gold）とHilton Amex（Standard / Premium）の両方を保有するユーザー向けに、年間カード利用額の最適配分を計算し、マイルと無料宿泊特典の価値を最大化するインタラクティブダッシュボード。</blockquote>
+<h2>ダッシュボードURL</h2>
+<ul><li><strong>プレビュー</strong>: Perplexity Computer のスレッド内にデプロイ済み</li><li><strong>技術構成</strong>: 静的サイト（Vanilla JS + Chart.js 4.4.7）、全計算はクライアントサイド</li></ul>
+<hr>
+<h2>カードデータ（日本市場・2025-2026）</h2>
+<h3>JALカード</h3>
+<p>| 項目 | Club-A | Club-A Gold | |------|--------|------------| | 年会費 | ¥11,000 | ¥17,600 | | マイル還元率 | ¥200 = 1マイル（0.5%） | ¥100 = 1マイル（1.0%） | | フライトボーナス | 25% | 25% | | 空港ラウンジ | ❌ | ✅ 国内 + ホノルル | | 保険価値 | ¥5,000 | ¥10,000 |</p>
+<h3>Hilton Amexカード</h3>
+<p>| 項目 | Standard | Premium | |------|----------|---------| | 年会費 | ¥16,500 | ¥66,000 | | 通常ポイント還元 | ¥100 = 2pt | ¥100 = 3pt | | Hilton利用時還元 | ¥100 = 3pt | ¥100 = 7pt | | Hilton Goldステータス | ✅ 自動付与 | ✅ 自動付与 | | 無料宿泊特典① | ¥150万利用で1泊 | 無条件で1泊 | | 無料宿泊特典② | — | ¥300万利用で1泊 | | Diamondステータス | N/A | ¥200万利用で達成 | | 空港ラウンジ | ✅ | ✅ |</p>
+<hr>
+<h2>JAL国内線特典航空券マイル一覧</h2>
+<blockquote>[!note] ワンウェイ（片道）必要マイル数</blockquote>
+<p>| ゾーン | 路線例 | Economy | Class J | |--------|--------|---------|---------| | C | 東京⇔大阪 | 6,500 | 7,500 | | E | 東京⇔福岡 | 8,500 | 10,000 | | F | 東京⇔沖縄 | 9,500 | 11,500 |</p>
+<hr>
+<h2>Hilton Honorsティア一覧</h2>
+<p>| ティア | 達成条件（宿泊/泊数/年間支出） | ポイントボーナス | 主な特典 | |--------|------|---------|---------| | Silver | 4 stays / 10 nights / $2,500 | 20% | — | | <strong>Gold</strong> | 15 stays / 25 nights / $6,000 | <strong>80%</strong> | ルームアップグレード、無料朝食、レイトチェックアウト | | <strong>Diamond</strong> | 25 stays / 50 nights / $11,500 | <strong>100%</strong> | Gold特典 + スイートアップグレード、エグゼクティブラウンジ |</p>
+<blockquote>[!tip] Hilton Amex Premium は自動的に Gold ステータス付与 年間¥200万の利用で Diamond ステータス達成（カード特典として）</blockquote>
+<hr>
+<h2>計算モデル</h2>
+<h3>価値評価の前提（ASSUMPTIONS）</h3>
+<p>| パラメータ | 値 | 備考 | |-----------|-----|------| | JALマイル価値 | ¥2/mile | 1マイルあたりの換算価値 | | Hiltonポイント価値 | ¥0.5/pt | 1ポイントあたりの換算価値 | | 無料宿泊特典価値 | ¥100,000/枚 | 1枚あたりの控えめ評価 | | 平均フライトセクター | 800マイル | 片道あたりの平均マイル数 | | 平均Hilton宿泊費 | ¥30,000/泊 | 1泊あたりの平均レート | | Gold朝食価値 | ¥5,000/泊 | 2名分 | | Goldアップグレード価値 | ¥10,000/泊 | 1泊あたり | | Goldレイトチェックアウト | ¥3,000/滞在 | 1滞在あたり | | Diamond追加価値 | ¥5,000/泊 | ラウンジ + スイートアップグレード | | JALラウンジ価値 | ¥1,000/回 | 国内線ラウンジ1回あたり | | Class Jアップグレード | ¥3,000/回 | 1フライトあたり |</p>
+<h3>最適化アルゴリズム</h3>
+<ol><li>0%〜100%を1%刻みでJAL/Hilton配分を全パターン計算</li><li>各配分で以下を算出:</li></ol>
+<ul><li>JAL: カードマイル + フライトボーナス + 特典航空券 + ラウンジ + Class Jアップグレード + 保険 − 年会費</li><li>Hilton: カードポイント + ホテルポイント + ステータスボーナス + 無料宿泊特典 + ステータス特典 − 年会費</li></ul>
+<ol><li><code>合計純リワード価値 = JAL純利益 + Hilton純利益</code> が最大となる配分を推奨</li></ol>
+<h3>年別計算（5年間）</h3>
+<ul><li>毎年同じ利用パターンを仮定</li><li>マイル・ポイントは繰越（年間累積）</li><li>無料宿泊特典は毎年再獲得</li><li>累積マイル/ポイント × 単価 = 累積価値</li></ul>
+<hr>
+<h2>デフォルト設定での計算結果</h2>
+<blockquote>[!example] 入力条件 - 年間利用額: ¥3,000,000 - 配分: 50% / 50%（JAL ¥150万 / Hilton ¥150万） - フライト回数: 12回/年（片道） - Hilton宿泊: 15泊/年 - カード: JAL Club-A + Hilton Amex Premium</blockquote>
+<h3>サマリー</h3>
+<p>| 項目 | 値 | |------|-----| | 年間総合リワード価値 | <strong>¥44万</strong> | | JALマイル価値 | ¥5万（9,900マイル、純益¥4万） | | Hiltonリワード価値 | ¥39万（94,500pt、無料宿泊1泊、純益¥32万） | | 年会費合計 | ¥77,000（JAL ¥11,000 + Hilton ¥66,000） |</p>
+<h3>最適配分の推奨</h3>
+<p>| 項目 | 値 | |------|-----| | 推奨配分 | <strong>JAL 0%</strong>（全額Hilton） | | 最適時の価値 | ¥52万 | | 理由 | Hilton Premium の還元率（3%）が JAL Club-A（0.5%）を大幅に上回るため |</p>
+<blockquote>[!warning] 最適配分 = 0%の意味 純粋なリワード価値の最大化ではHilton全額が優位。ただし、JALマイルを特典航空券として使いたい場合など、独自の目標がある場合は配分を調整すべき。</blockquote>
+<h3>JAL特典の内訳（50%配分時）</h3>
+<p>| 特典 | 値 | |------|-----| | カード利用マイル | 7,500マイル | | フライトボーナスマイル | 2,400マイル（25%） | | マイル価値 | ¥20,000 | | 特典航空券 | 1枚（¥30,000） | | 空港ラウンジ | Club-A Gold以上が必要 | | Class Jアップグレード | ¥0 | | 年会費 | ▲¥11,000 |</p>
+<h3>Hilton特典の内訳（50%配分時）</h3>
+<p>| 特典 | 値 | |------|-----| | カード利用ポイント | 45,000pt | | ホテル宿泊ポイント | 31,500pt | | ステータスボーナス | 18,000pt（Gold +80%） | | ポイント価値 | ¥50,000 | | 無料宿泊特典 | 1泊（¥100,000） | | 朝食（2名・15泊） | ¥240,000 | | Diamond追加価値 | あり（¥150万≥¥200万で達成） | | 年会費 | ▲¥66,000 |</p>
+<h3>しきい値アラート</h3>
+<p>| しきい値 | 残り | 達成条件 | |----------|------|---------| | Diamondステータス | ¥500,000 | ¥2,000,000で達成 | | 2泊目の無料宿泊特典 | ¥1,500,000 | ¥3,000,000で達成 | | JAL国内線特典航空券 | 1,000マイル | ¥200,000相当の利用 |</p>
+<h3>5年間の累積推移</h3>
+<p>| 年 | JAL累積マイル | Hilton累積ポイント | 累積総価値 | |----|-------------|------------------|----------| | 1年目 | 9,900mi | 94,500pt | ¥44万 | | 2年目 | 19,800mi | 189,000pt | ¥88万 | | 3年目 | 29,700mi | 283,500pt | ¥132万 | | 4年目 | 39,600mi | 378,000pt | ¥176万 | | 5年目 | 49,500mi | 472,500pt | ¥220万 |</p>
+<hr>
+<h2>ダッシュボード機能一覧</h2>
+<p>| 機能 | 説明 | |------|------| | スライダー: 年間利用額 | ¥50万〜¥600万 | | スライダー: JAL/Hilton配分 | 0%〜100%（1%刻み） | | スライダー: フライト回数 | 0〜40回/年（片道） | | スライダー: Hilton宿泊泊数 | 0〜60泊/年 | | カード選択 | JAL Club-A / Gold、Hilton Standard / Premium | | ドーナツチャート | JAL vs Hilton の年間リワード価値内訳 | | 棒グラフ | 5年間の累積マイル・ポイント価値推移 | | ラインチャート | 配分比率ごとの最適化分析（3ライン） | | 年別比較テーブル | 5年間のマイル・ポイント・特典・純利益 | | 特典内訳カード | 獲得マイル、ボーナス、ラウンジ等の個別価値 | | しきい値アラート | 次のステータス/特典までの残り額 | | ダークモード | ライト/ダーク切替対応 | | レスポンシブ | モバイル（390px）対応 | | 情報源パネル | 全データの出典URLを表示 |</p>
+<hr>
+<h2>計算ロジックの詳細</h2>
+<h3>JAL計算式</h3>
+<pre><code>カードマイル = floor(JAL利用額 / mileRate)
+  Club-A: mileRate = 200 → ¥200 = 1マイル
+  Club-A Gold: mileRate = 100 → ¥100 = 1マイル
+
+フライトボーナス = floor(フライト回数 × 800 × 0.25)
+
+総マイル = カードマイル + フライトボーナス
+
+マイル価値 = 総マイル × ¥2
+
+特典航空券 = floor(総マイル / 8,500) × ¥25,000
+
+Class Jアップグレード = min(フライト数, floor(総マイル / 10,000)) × ¥3,000
+
+ラウンジ価値 = Club-A Gold のみ: フライト数 × ¥1,000
+
+総価値 = マイル価値 + 特典航空券 + アップグレード + ラウンジ + 保険
+純利益 = 総価値 − 年会費</code></pre>
+<h3>Hilton計算式</h3>
+<pre><code>カードポイント = floor(Hilton利用額 / 100 × pointRate)
+  Standard: 2pt / Premium: 3pt
+
+ホテル宿泊ポイント = floor(泊数 × ¥30,000 / 100 × hiltonPointRate)
+  Standard: 3pt / Premium: 7pt
+
+ステータスボーナス = floor(泊数 × 1,500 × bonusPct)
+  Gold: 80% / Diamond: 100%
+
+総ポイント = カードポイント + ホテルポイント + ステータスボーナス
+
+ポイント価値 = 総ポイント × ¥0.5
+
+無料宿泊特典:
+  Standard: ¥150万利用 → 1泊
+  Premium: 無条件1泊 + ¥300万利用で2泊目
+
+ステータス特典価値 (Gold):
+  朝食 = 泊数 × ¥5,000
+  アップグレード = 泊数 × ¥10,000
+  レイトチェックアウト = ceil(泊数/3) × ¥3,000
+
+Diamond追加価値 = 泊数 × ¥5,000
+
+総価値 = ポイント価値 + 無料宿泊 + ステータス特典
+純利益 = 総価値 − 年会費</code></pre>
+<h3>最適配分計算</h3>
+<pre><code>for split = 0 to 100 (step 1):
+  state.split = split
+  result = calculateTotal()
+  if result.totalNet &gt; best.totalNet:
+    best = { split, value: result.totalNet }
+推奨配分 = best.split</code></pre>
+<hr>
+<h2>技術仕様</h2>
+<p>| 項目 | 値 | |------|-----| | フロントエンド | Vanilla JavaScript | | チャートライブラリ | Chart.js 4.4.7（CDN） | | フォント | Satoshi（Fontshare）+ JetBrains Mono | | デザイン | Premium navy + gold、ダーク/ライトモード | | ストレージ | なし（全計算はクライアントサイド） | | ファイル構成 | <code>index.html</code> / <code>styles.css</code> / <code>app.js</code> |</p>
+<hr>
+<h2>出典</h2>
+<ol><li>[JAL Card benefit tiers (note.com)](https://note.com/joyful_allium943/n/nb1a665bb5e05)</li><li>[JAL Domestic Award Chart](https://www.jal.co.jp/jp/en/jalmile/use/jal/domestic-award/miles/)</li><li>[JAL Mileage Bank](https://www.jal.co.jp/arl/en/jmb/)</li><li>[Hilton Amex Premium (jprimetravel)](https://jprimetravel.com/credit-card/hilton-amex/hilton-amex-premium/)</li><li>[Hilton Amex comparison (monsterism)](https://www.monsterism.net/28847/)</li><li>[Amex Japan Weekend Free Night](https://www.americanexpress.com/ja-jp/benefits/hilton/weekend-free-stay/)</li><li>[Hilton Honors Tiers &amp; Benefits](https://www.hilton.com/en/hilton-honors/terms/)</li></ol>
+<hr>
+<h2>関連ノート</h2>
+<ul><li>クレジットカード比較</li><li>JALマイルの貯め方・使い方</li><li>Hilton Honorsステータス戦略</li><li>AWSコスト最適化 — SMB向けクラウドコスト管理</li></ul>
+<hr>
+<h2>今後調べたいこと</h2>
+<ul><li>実際の利用実績データを使って計算モデルの前提（マイル価値・宿泊費単価等）を検証できないか</li><li>JALマイルを特典航空券として使う場合の効用を、リワード価値の最大化とは別軸でどう評価するか</li></ul></div>
+    <div class="tags"><span class="tag">旅行</span><span class="tag">マイル</span><span class="tag">JAL</span><span class="tag">Hilton</span></div>
+    <nav class="pagenav"><a href="p022.html"><span class="n">← 新しい投稿</span>IQ・知的好奇心・発達障害の関係</a><a href="p020.html" style="text-align:right"><span class="n">古い投稿 →</span>セカンドブレインの想起をAIに任せる</a></nav>
+  </article>
+  <footer>
+    <a class="back" href="../">← つぶやき一覧へ戻る</a>
+    <p class="disclaimer">専門家ではない個人が、日々の思考を書き留めた個人的なまとめです。内容の正確性を保証するものではありません。</p>
+  </footer>
+</div>
+</body></html>

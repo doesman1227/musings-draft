@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>プロンプトエンジニアリング — 日々のつぶやき</title>
-<meta name="description" content="[[LLM]]から望む出力を引き出すための、指示（プロンプト）の設計技術。 役割の指定・手順の分解・例示（Few-shot）などの工夫で精度が変わる。 モデルの性能を最大限に活かすための「問いの立て方…">
+<title>セカンドブレインの想起をAIに任せる — 日々のつぶやき</title>
+<meta name="description" content="ノートが増えると「どこに何を書いたか」を自分で探せなくなり、キーワード検索もタグも取りこぼす。 そこで「探す＝想起」という行為そのものをAIに委ね、自然言語で問えば関連ノートを提示させる。 vault…">
 <meta name="robots" content="noindex, nofollow"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{--bg:#F4F2EB;--surface:#FCFBF6;--ink:#24261E;--muted:#5E6252;--faint:#949585;
@@ -101,12 +101,22 @@
 <div class="wrap">
   <nav class="topnav"><a href="../">← つぶやき一覧</a><a href="../../">m-note トップ</a></nav>
   <article class="article">
-    <p class="draftnote">これは下書きプレビューです。まだ公開されていません。</p>
-    <div class="ameta"><span class="rdate">2026.07.29</span><span class="cat">探求・文化</span></div>
-    <h1>プロンプトエンジニアリング</h1>
-    <div class="abody"><p>[[LLM]]から望む出力を引き出すための、指示（プロンプト）の設計技術。 役割の指定・手順の分解・例示（Few-shot）などの工夫で精度が変わる。 モデルの性能を最大限に活かすための「問いの立て方」とも言える。</p></div>
-    <div class="tags"><span class="tag">AI</span></div>
-    <nav class="pagenav"><a href="p016.html"><span class="n">← 新しい投稿</span>戦略コンサルに学ぶ思考OS</a><a href="p015.html" style="text-align:right"><span class="n">古い投稿 →</span>組織OSと人間蒸留に関する考察</a></nav>
+    
+    <div class="ameta"><span class="rdate">2026.08.03</span><span class="cat">AI</span></div>
+    <h1>セカンドブレインの想起をAIに任せる</h1>
+    <div class="abody"><h2>概要</h2>
+<p>ノートが増えると「どこに何を書いたか」を自分で探せなくなり、キーワード検索もタグも取りこぼす。 そこで「探す＝想起」という行為そのものをAIに委ね、自然言語で問えば関連ノートを提示させる。 vault全体を Embedding して RAG 的に検索し、第二の脳の"想起"を AIエージェントが担う構想。</p>
+<hr>
+<h2>詳細</h2>
+<ul><li>ノートが増えてくると、結局どこに何を書いたか自分でも探せなくなる。</li><li>検索しても言葉が一致しないと出てこない。タグも付け忘れる。</li><li>いっそ「探す」という行為そのものをAIに任せられないか。</li><li>自然言語で「あの、環境と静けさの話どこだっけ」と聞いたら該当ノートを出してくれる。</li><li>RAG的に自分のvault全体をEmbeddingしておいて、質問したら関連ノートを提示。</li><li>第二の脳の"想起"の部分をAIエージェントが担う感じ。</li><li>Obsidianのローカル検索の弱さを補完する位置づけ。あとで壁打ちしたい。</li></ul>
+<hr>
+<h2>関連ノート</h2>
+<ul><li>RAG ・ Embedding ・ Vector Database — 想起の技術的な土台</li><li>AIエージェント ・ NotebookLM — 「自分の資料に基づいて答える」実例</li><li>AIは人間に似ている — 記憶・想起を人間になぞらえる視点と直結</li><li>アイデアが生まれる環境の設計 — 「問い」を起点に想起する流れとつながる</li></ul>
+<hr>
+<h2>今後調べたいこと</h2>
+<ul><li>Obsidian で使える RAG/embedding プラグイン（Smart Connections 等）の実力</li><li>vault をローカルで embedding する場合のモデル・コスト・プライバシー</li><li>「タグ付け忘れ」を前提に、検索を意味ベースへ寄せる設計</li></ul></div>
+    <div class="tags"><span class="tag">AI</span><span class="tag">RAG</span><span class="tag">SecondBrain</span><span class="tag">AIエージェント</span></div>
+    <nav class="pagenav"><a href="p021.html"><span class="n">← 新しい投稿</span>JAL×Hiltonマイル最適化ダッシュボード構</a><a href="p019.html" style="text-align:right"><span class="n">古い投稿 →</span>セミの一生と生存戦略</a></nav>
   </article>
   <footer>
     <a class="back" href="../">← つぶやき一覧へ戻る</a>
