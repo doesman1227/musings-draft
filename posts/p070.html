@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>感じていなくても、身体は反応していた — 日々のつぶやき</title>
-<meta name="description" content="ストレスって結局、自分がどう感じるか次第なのではないか、と思った。 出来事そのものと、それをどう評価・解釈するかは別で、同じ出来事でも「大変だ」と捉えるか「面白い経験だ」と捉えるかで、感じるストレスの…">
+<title>使うほど、自分がわかっていく — 日々のつぶやき</title>
+<meta name="description" content="Claude CodeのSkillsで、開発からnote記事の下書き保存までを自動化する事例を見ていて、大事なのは「note投稿の自動化」そのものではないと思った。 普段行っている作業のプロセスそのも…">
 <meta name="robots" content="noindex, nofollow"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{--bg:#F4F2EB;--surface:#FCFBF6;--ink:#24261E;--muted:#5E6252;--faint:#949585;
@@ -101,12 +101,25 @@
 <div class="wrap">
   <nav class="topnav"><a href="../">← つぶやき一覧</a><a href="../../">m-note トップ</a></nav>
   <article class="article">
-    <p class="draftnote">これは下書きプレビューです。まだ公開されていません。</p>
-    <div class="ameta"><span class="rdate">2026.08.11</span><span class="cat">内省・学び</span></div>
-    <h1>感じていなくても、身体は反応していた</h1>
-    <div class="abody"><p>ストレスって結局、自分がどう感じるか次第なのではないか、と思った。 出来事そのものと、それをどう評価・解釈するかは別で、同じ出来事でも「大変だ」と捉えるか「面白い経験だ」と捉えるかで、感じるストレスの大きさは変わってくる。</p></div>
-    <div class="tags"><span class="tag">自己理解</span><span class="tag">マインドフルネス</span><span class="tag">健康</span><span class="tag">習慣化</span></div>
-    <nav class="pagenav"><a href="draft-04.html"><span class="n">← 新しい投稿</span>危険にではなく、未知に惹かれていた</a><a href="draft-06.html" style="text-align:right"><span class="n">古い投稿 →</span>景色ではなく、心を整える環境</a></nav>
+    
+    <div class="ameta"><span class="rdate">2026.08.11</span><span class="cat">AI</span></div>
+    <h1>使うほど、自分がわかっていく</h1>
+    <div class="abody"><blockquote>使えば使うほど「自分についての知識」が増え、AIとの協働方法も進化していくシステムを目指す。</blockquote>
+<h2>気づいたこと</h2>
+<p>Claude CodeのSkillsで、開発からnote記事の下書き保存までを自動化する事例を見ていて、大事なのは「note投稿の自動化」そのものではないと思った。 普段行っている作業のプロセスそのものを、AIが実行できるSkillとして定義するという発想の方が本質だった。</p>
+<p>特に効くのは「コンテキスト」だった。 普通にAIへ「ブログを書いて」と頼むと、完成した成果物しかAIは知らない。 一方Claude Codeでのやり取りなら、何を作ったか・なぜ作ったか・どう考えたか・どこで失敗したか・どう修正したかという制作過程そのものを一次情報として使える。</p>
+<p>これは、以前から考えていた「AIによる人間蒸留」とつながっていた。 日々の活動をAIとの会話にして、AIが整理し、知識・気づき・問いとして保存し、長期的に蓄積する。 そうやってAIを、自分の経験・思考・価値観を継続的に蒸留する装置として使う。 Obsidianを単なるメモ置き場ではなく、自分の思考が長期的に蓄積されるデータベースとして使うと、この仕組みと相性が良かった。</p>
+<p>最初から完璧な「AI自分モデル」を作る必要はない。 自分が活動する→AIが記録する→整理する→Obsidianに蓄積する→AIが過去を分析する→自分について新しい発見が生まれる→また蓄積する、という自己改善ループを回すことの方が大事だった。</p>
+<h2>まとまったこと</h2>
+<ul><li>最初に作るSkillは4つ: /capture(その場の記録)/insight(会話から自分について分かることを抽出)/question(次に考えるべき問いを抽出)/note(記事化)</li><li>Memory(自分はどんな人か)/Context(今何をしているか)/Knowledge(過去に何を考えたか)/Skill(その状況で何をするか)の4層で役割を分ける</li><li>MVPはまず/capture /insight /question /noteの4つだけを作り、1〜2週間使ってから次のSkill(/review /decision等)を足す</li><li>答えを集めるSecond Brainから、問いを育てるSecond Brainへ</li></ul>
+<h2>まだ言葉になっていないこと</h2>
+<ul><li>自分の価値観をAIにどう組み込めるか</li><li>AIは人間の価値観をどこまで正確にモデル化できるのか</li><li>自分の価値観が変化した場合、AIのモデルはどう更新すべきか</li></ul>
+<h2>関連ノート</h2>
+<ul><li>分身ではなく、専用のパートナー — 同じ「AIによる人間蒸留」を、パートナーAIという切り口から考えた回</li><li>知識ではなく、判断を残す — 組織版の人間蒸留(組織OS)</li><li>ホームページを思考のOSとして育てる — Obsidianを蓄積した先の出口としてのホームページ構想</li></ul>
+<h2>元の対話</h2>
+<ul><li>Archive/対話ログ/Claude Code × Obsidianによる「自分専用AI OS」構想</li></ul></div>
+    <div class="tags"><span class="tag">AI</span><span class="tag">AIエージェント</span><span class="tag">SecondBrain</span><span class="tag">ナレッジマネジメント</span></div>
+    <nav class="pagenav"><a href="p071.html"><span class="n">← 新しい投稿</span>分身ではなく、専用のパートナー</a><a href="p069.html" style="text-align:right"><span class="n">古い投稿 →</span>存在するかより、必要としたか</a></nav>
   </article>
   <footer>
     <a class="back" href="../">← つぶやき一覧へ戻る</a>
