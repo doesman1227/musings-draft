@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>安心して、ほどける — 日々のつぶやき</title>
-<meta name="description" content="ジムの給湯設備が壊れていて水しか出なかった。 最初は「冷たいな」と感じただけだったが、そこからサウナ後の水風呂や「ととのう」という感覚について考え始めた。">
+<title>資産の存在を忘れないためのサービス — 日々のつぶやき</title>
+<meta name="description" content="YouTubeで、資産が増えてきたら自分の金融資産がどこにあるのか家族などが分かるようにしておいた方がいいという話を聞いた。 資産が増えるほど、万が一のときに本人しか資産の所在を把握していない状態はリ…">
 <meta name="robots" content="noindex, nofollow"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{--bg:#F4F2EB;--surface:#FCFBF6;--ink:#24261E;--muted:#5E6252;--faint:#949585;
@@ -101,12 +101,25 @@
 <div class="wrap">
   <nav class="topnav"><a href="../">← つぶやき一覧</a><a href="../../">m-note トップ</a></nav>
   <article class="article">
-    <p class="draftnote">これは下書きプレビューです。まだ公開されていません。</p>
-    <div class="ameta"><span class="rdate">2026.08.24</span><span class="cat">内省・学び</span></div>
-    <h1>安心して、ほどける</h1>
-    <div class="abody"><p>ジムの給湯設備が壊れていて水しか出なかった。 最初は「冷たいな」と感じただけだったが、そこからサウナ後の水風呂や「ととのう」という感覚について考え始めた。</p></div>
-    <div class="tags"><span class="tag">健康</span><span class="tag">マインドフルネス</span><span class="tag">洞察</span><span class="tag">自己理解</span></div>
-    <nav class="pagenav"><a href="draft-03.html"><span class="n">← 新しい投稿</span>いかに楽しむかが勝負</a><a href="draft-05.html" style="text-align:right"><span class="n">古い投稿 →</span>ゲームにするのではなく、面白くする</a></nav>
+    
+    <div class="ameta"><span class="rdate">2026.08.25</span><span class="cat">探求・文化</span></div>
+    <h1>資産の存在を忘れないためのサービス</h1>
+    <div class="abody"><h2>【お金】資産の存在を忘れないためのサービス</h2>
+<blockquote>このサービスの本質は、「資産を管理するサービス」ではなく、「資産の存在を忘れないためのサービス」。</blockquote>
+<h2>気づいたこと</h2>
+<p>YouTubeで、資産が増えてきたら自分の金融資産がどこにあるのか家族などが分かるようにしておいた方がいいという話を聞いた。 資産が増えるほど、万が一のときに本人しか資産の所在を把握していない状態はリスクになると感じた。 特にネット証券・ネット銀行は紙の通帳や郵送物がないため、本人以外から見ると資産の所在が分からなくなりやすいと思った。</p>
+<p>重要なのは、「資産の所在」と「ログイン情報」を分けて考えることだと思った。 ID、パスワード、暗証番号、クレジットカード番号のような機密性が極めて高い情報は入力させず、あくまで「どこに何の資産・契約があるのか」だけを整理するサービスにすべきだと考えた。 ログイン情報は別途パスワードマネージャーなどで管理してもらう。</p>
+<p>サービス側にユーザーの情報を長期間保存しないことを前提にすることが、特に面白い発想だと感じた。 入力 → 整理 → PDF化 → 自分で保管 → Web上には残さない、という流れにすれば、サービス側の情報保有を減らせる。 「保存しない」こと自体をサービスの特徴にできるのではないかと思った。</p>
+<p>単に入力内容をPDFにするだけでなく、「何を書いておけばいいのか分からない」という問題を解決することが重要だと考えた。 「証券口座はありますか」だけでなく、「ネット証券を利用していますか。利用している場合は証券会社名を記録しておきましょう」のように、質問形式で案内する方が親切だと思った。 AIを使えば、「保険について記載がありません」のような抜け漏れチェックもできそうだと思った。</p>
+<p>最初から大きく作らず、「5分で自分の資産情報一覧PDFを作れるサービス」くらいに絞るのが現実的だと考えた。</p>
+<h2>まとまったこと</h2>
+<ul><li>整理する情報: 銀行口座・証券口座・NISA・iDeCo・保険・不動産・暗号資産・サブスク・ローンなど</li><li>サービスフロー: アクセス → 質問に回答 → 入力内容の整理 → PDF生成 → ダウンロード → サービス側のデータ削除</li><li>MVPに必要な機能: 入力フォーム、入力項目のガイド、入力漏れチェック、PDF生成、サーバー側に原則保存しない設計</li><li>将来の拡張: 相続用・終活用・デジタル資産整理・家族向け引き継ぎ資料・定期的な見直し</li></ul>
+<h2>まだ言葉になっていないこと</h2>
+<ul><li>本当に「保存しない」設計を、技術的・事業的にどこまで徹底できるか</li><li>相続・終活分野の既存サービスとの境界をどう引くか</li><li>誰をターゲットにし、無料・有料のどちらにするか</li></ul>
+<h2>元の対話</h2>
+<ul><li>資産情報を整理・PDF化するウェブサービス構想</li></ul></div>
+    <div class="tags"><span class="tag">資産形成</span><span class="tag">フレームワーク</span><span class="tag">自動化</span><span class="tag">終活</span></div>
+    <nav class="pagenav"><a href="p087.html"><span class="n">← 新しい投稿</span>気づいていない自分の興味を知る</a><a href="p085.html" style="text-align:right"><span class="n">古い投稿 →</span>脳が選択して構成した世界</a></nav>
   </article>
   <footer>
     <a class="back" href="../">← つぶやき一覧へ戻る</a>
