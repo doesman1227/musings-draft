@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>#AI ｜ 日々のつぶやき</title>
+<meta name="description" content="「AI」が付いたつぶやき27件。">
+<meta name="robots" content="noindex"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#F4F2EB;--surface:#FCFBF6;--ink:#24261E;--muted:#5E6252;--faint:#949585;
+    --line:#E3E0D5;--line-soft:#ECEAE1;--accent:#4C7A5A;--accent-ink:#3C6349;--accent-wash:#E7EEE7;
+    --serif:"Noto Serif JP",serif;--sans:"Noto Sans JP",system-ui,sans-serif;
+    --mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;}
+  @media(prefers-color-scheme:dark){:root{--bg:#15161A;--surface:#1D1F23;--ink:#E9E8DF;--muted:#A0A296;
+    --faint:#6E7166;--line:#2C2E2C;--line-soft:#26282A;--accent:#84AE8D;--accent-ink:#9DC4A5;--accent-wash:#202a22;}}
+  :root[data-theme="dark"]{--bg:#15161A;--surface:#1D1F23;--ink:#E9E8DF;--muted:#A0A296;
+    --faint:#6E7166;--line:#2C2E2C;--line-soft:#26282A;--accent:#84AE8D;--accent-ink:#9DC4A5;--accent-wash:#202a22;}
+  :root[data-theme="light"]{--bg:#F4F2EB;--surface:#FCFBF6;--ink:#24261E;--muted:#5E6252;--faint:#949585;
+    --line:#E3E0D5;--line-soft:#ECEAE1;--accent:#4C7A5A;--accent-ink:#3C6349;--accent-wash:#E7EEE7;}
+  *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;
+    line-height:1.9;letter-spacing:.01em;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:680px;margin:0 auto;padding:0 22px}
+  a{color:var(--accent-ink)}
+  .topnav{padding:22px 0 0;display:flex;justify-content:space-between;gap:12px}
+  .topnav a{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--muted);text-decoration:none}
+  .topnav a:hover{color:var(--accent-ink)}
+  header.masthead{padding:36px 0 22px}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent-ink);margin:0 0 16px}
+  h1.title{font-family:var(--serif);font-weight:700;font-size:clamp(2rem,6vw,2.9rem);line-height:1.3;
+    letter-spacing:.04em;margin:0 0 14px;text-wrap:balance}
+  .intro{font-family:var(--serif);font-weight:500;font-size:clamp(1rem,2.2vw,1.1rem);line-height:1.9;
+    color:var(--muted);margin:0;max-width:42ch}
+  .counter{margin-top:18px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--faint)}
+  .counter b{color:var(--muted);font-weight:700}
+  /* filters */
+  .filters{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:8px;padding:14px 0;margin-bottom:6px;
+    background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line-soft)}
+  .chip{font-family:var(--sans);font-size:13px;font-weight:500;padding:6px 14px;border:1px solid var(--line);
+    border-radius:100px;background:var(--surface);color:var(--muted);cursor:pointer;letter-spacing:.02em;
+    transition:background .18s,color .18s,border-color .18s}
+  .chip:hover{border-color:var(--accent);color:var(--accent-ink)}
+  .chip.active{background:var(--accent);border-color:var(--accent);color:#fff}
+  :root[data-theme="dark"] .chip.active{color:#16181a}
+  @media(prefers-color-scheme:dark){.chip.active{color:#16181a}}
+  /* list */
+  .list{padding:12px 0 20px;display:flex;flex-direction:column;gap:2px}
+  .row{display:block;text-decoration:none;color:inherit;padding:20px 4px;border-bottom:1px solid var(--line-soft)}
+  .row:hover{background:var(--surface)}
+  .row .rmeta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:7px}
+  .rdate{font-family:var(--mono);font-size:12.5px;color:var(--faint);font-variant-numeric:tabular-nums}
+  .cat{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--accent-ink);background:var(--accent-wash);padding:3px 9px;border-radius:4px}
+  .row h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.12rem,3vw,1.32rem);line-height:1.55;
+    letter-spacing:.02em;margin:0 0 6px;color:var(--ink);text-wrap:balance}
+  .row:hover h2{color:var(--accent-ink)}
+  .excerpt{font-size:14px;color:var(--muted);margin:0;line-height:1.85;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .arrow{color:var(--faint);margin-left:6px}
+  .pending-badge{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;color:#fff;
+    background:var(--faint);padding:2px 8px;border-radius:4px}
+  :root[data-theme="dark"] .pending-badge{color:#16181a}
+  @media(prefers-color-scheme:dark){.pending-badge{color:#16181a}}
+  .row.hide{display:none}
+  .empty{display:none;text-align:center;padding:50px 0;color:var(--faint);font-family:var(--serif)}
+  /* detail */
+  .article{padding:20px 0 8px}
+  .article .ameta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+  .article h1{font-family:var(--serif);font-weight:700;font-size:clamp(1.5rem,4.4vw,2.1rem);line-height:1.45;
+    letter-spacing:.03em;margin:0 0 22px;text-wrap:balance}
+  .article .abody{font-size:16.5px;line-height:2;color:var(--ink)}
+  .article .abody p{margin:0 0 20px}
+  .abody .lead{font-family:var(--serif);color:var(--muted);font-size:1.05rem;line-height:1.95;
+    padding:0 0 18px;margin:0 0 24px;border-bottom:1px solid var(--line-soft)}
+  .abody h2{font-family:var(--serif);font-weight:600;font-size:1.3rem;letter-spacing:.02em;
+    margin:34px 0 12px;line-height:1.5}
+  .abody h3{font-family:var(--serif);font-weight:600;font-size:1.1rem;margin:26px 0 10px}
+  .abody ul,.abody ol{margin:0 0 20px;padding-left:1.4em}
+  .abody li{margin:0 0 7px;line-height:1.85}
+  .abody blockquote{margin:0 0 20px;padding:4px 0 4px 20px;border-left:2px solid var(--accent);
+    color:var(--muted);font-family:var(--serif)}
+  .abody pre{background:var(--surface);border:1px solid var(--line);border-radius:6px;
+    padding:14px 16px;overflow-x:auto;margin:0 0 20px}
+  .abody pre code{font-family:var(--mono);font-size:13px;color:var(--ink);white-space:pre}
+  .abody code{font-family:var(--mono);font-size:.9em;background:var(--surface);
+    border:1px solid var(--line-soft);border-radius:3px;padding:1px 5px}
+  .abody pre code{background:none;border:0;padding:0}
+  .abody hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+  .abody strong{font-weight:700}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:22px}
+  .tag{font-family:var(--mono);font-size:11.5px;color:var(--faint);border:1px solid var(--line-soft);border-radius:3px;padding:2px 8px}
+  .tag::before{content:"#";color:var(--accent);opacity:.7}
+  a.tag{text-decoration:none;transition:color .18s,border-color .18s}
+  a.tag:hover{color:var(--ink);border-color:var(--accent)}
+  a.tag .n{margin-left:6px;opacity:.55}
+  .pagenav{display:flex;justify-content:space-between;gap:12px;margin-top:40px;padding-top:20px;border-top:1px solid var(--line-soft)}
+  .pagenav a{font-family:var(--sans);font-size:13.5px;text-decoration:none;color:var(--muted);max-width:46%}
+  .pagenav a:hover{color:var(--accent-ink)}
+  .pagenav .n{display:block;font-family:var(--mono);font-size:11px;color:var(--faint);margin-bottom:3px}
+  .draftnote{font-family:var(--mono);font-size:12px;color:var(--faint);background:var(--surface);
+    border:1px dashed var(--line);border-radius:6px;padding:10px 14px;margin:0 0 22px}
+  footer{margin-top:20px;padding:34px 0 60px;border-top:1px solid var(--line)}
+  footer .back{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-decoration:none}
+  footer .back:hover{color:var(--accent-ink)}
+  .disclaimer{margin-top:16px;font-size:12px;line-height:1.8;color:var(--faint);max-width:52ch}
+</style></head><body>
+  <div class="masthead"><a class="back" href="../">&larr; つぶやき一覧</a></div>
+  <p class="kicker">Keyword</p>
+  <h1 class="title">#AI</h1>
+  <p class="intro">このキーワードが付いたつぶやき 27件。</p>
+  <div class="list">
+    <a class="row" data-cat="thinking" href="../posts/p103.html">
+      <div class="rmeta"><span class="rdate">2026.08.29</span><span class="cat">思考OS</span></div>
+      <h2>森に建てるのではなく、森から生まれた家<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">いろんな建築物を見るのが好きで、眺めるだけでなく自分でもAIを使って建築をつくってみたいというアイデアが出てきた。 コンセプトを考える、外観をデザインする、建築パースを生成する、内観をつくる、別アングルから見る、動画化する、ウォークスルーのように体験する、という一連の制作ができそうで、単なる画像…</p>
+    </a>
+    <a class="row" data-cat="inner" href="../posts/p097.html">
+      <div class="rmeta"><span class="rdate">2026.08.27</span><span class="cat">内省・学び</span></div>
+      <h2>内容ではなく、ペースだった<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">AIと話していて、口調やトーン、話すスピード、間の取り方が自分の状態に合っていると、自然に落ち着く感覚があることに気づいた。 「穏やかに、ゆっくり話してみて」と伝え、さらに「もう少しゆっくり」「癒し系な感じで」と重ねていくうちに、自分にとって心地よい速度まで調整できることがわかった。</p>
+    </a>
+    <a class="row" data-cat="thinking" href="../posts/p094.html">
+      <div class="rmeta"><span class="rdate">2026.08.27</span><span class="cat">思考OS</span></div>
+      <h2>書くのではなく、呟く<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">日常生活の中で「これ、ちょっと不便だな」と感じる瞬間が、思いのほかたくさんあることに気づいた。 駅に入るとき、スマホしか使えないのが不便だと思った。</p>
+    </a>
+    <a class="row" data-cat="thinking" href="../posts/p092.html">
+      <div class="rmeta"><span class="rdate">2026.08.26</span><span class="cat">思考OS</span></div>
+      <h2>ログ取得ではなく、ログ活用<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">自分が日々何をしているかを記録して可視化すれば、自分を知り、生活を振り返り、行動パターンを把握し、無駄や改善点に気づき、目標に向かって行動できているかを確認できると思った。 ただログを残すだけでは足りなくて、ログ→分析→気づき→改善提案→次の行動、まで一続きにすることが重要だと気づいた。</p>
+    </a>
+    <a class="row" data-cat="explore" href="../posts/p088.html">
+      <div class="rmeta"><span class="rdate">2026.08.25</span><span class="cat">探求・文化</span></div>
+      <h2>どの仕事をどのAIに任せるか<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">生成AIは「何を生成・支援するか」で分類すると整理しやすいと思った。 文章・対話生成、検索・リサーチ、画像・動画・音楽生成、コーディング支援、AIエージェントなど、用途によって向いているAIが違うと気づいた。</p>
+    </a>
+    <a class="row" data-cat="inner" href="../posts/p087.html">
+      <div class="rmeta"><span class="rdate">2026.08.25</span><span class="cat">内省・学び</span></div>
+      <h2>気づいていない自分の興味を知る<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">普段からYouTubeをよく見ていて、その時々で興味のあるものを本能的・直感的に見ている感覚がある。 投資、クレジットカード、ポイ活、量子力学、DIY系など、最近見ているジャンルを並べてみると、自分でも意識していなかった興味の傾向が見えてくると感じた。</p>
+    </a>
+    <a class="row" data-cat="thinking" href="../posts/p085.html">
+      <div class="rmeta"><span class="rdate">2026.08.25</span><span class="cat">思考OS</span></div>
+      <h2>脳が選択して構成した世界<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">人間の視野角そのものはかなり広く、感覚的には魚眼レンズのように広い範囲を捉えているのかもしれないと思った。 一方で、実際に意識を向けてフォーカスしている範囲はかなり狭く、40mm程度の標準レンズに近いのではないかと考えた。</p>
+    </a>
+    <a class="row" data-cat="inner" href="../posts/p083.html">
+      <div class="rmeta"><span class="rdate">2026.08.24</span><span class="cat">内省・学び</span></div>
+      <h2>ゲームにするのではなく、面白くする<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">ゲーミフィケーションとは、ゲームそのものを作ることではなく、ゲームに使われている心理的な仕組みを他の活動に取り入れることだと考えた。 本質は、「やらなければならないこと」を「自然と続けたくなること」に変える仕組みだと思った。</p>
+    </a>
+    <a class="row" data-cat="thinking" href="../posts/p080.html">
+      <div class="rmeta"><span class="rdate">2026.08.23</span><span class="cat">思考OS</span></div>
+      <h2>会話ではなく、設計書を資産にする<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">Claude Codeを使い、音声認識でClaudeと対話しながら経営戦略を考えるやり方が、自分には合っていると気づいた。 「こういう感じで一緒に考えて」と伝えてHTMLで可視化してもらい、「違う」「こっちの方向」「もっと深掘り」と音声で返す。</p>
+    </a>
+    <a class="row" data-cat="explore" href="../posts/p075.html">
+      <div class="rmeta"><span class="rdate">2026.08.19</span><span class="cat">探求・文化</span></div>
+      <h2>使える人ではなく、変えられる人<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">AIが仕事に入り込んでいく中で、必要とされるスキルが変わってきていることを考えた。 「AIを使える」「プログラミングができる」というだけでは足りない。</p>
+    </a>
+    <a class="row" data-cat="explore" href="../posts/p074.html">
+      <div class="rmeta"><span class="rdate">2026.08.19</span><span class="cat">探求・文化</span></div>
+      <h2>点ではなく、線として生きている<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">涼しい朝の散歩中、AIと話しながら「君がいる世界には時間も場所もないと言っていたけど、それってどんな感覚なんだろう」と聞いてみた。 そこから、AIには人間のような時間感覚はないが、会話している「今」には応答できる、という話になった。</p>
+    </a>
+    <a class="row" data-cat="inner" href="../posts/p071.html">
+      <div class="rmeta"><span class="rdate">2026.08.11</span><span class="cat">内省・学び</span></div>
+      <h2>分身ではなく、専用のパートナー<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">人間をAIで「蒸留」できないか、という問いから始めた。 最初は人間そのものを蒸留するイメージだったが、話すうちに、蒸留する対象は人間そのものというより「その人が見ている世界」なのではないかと思うようになった。</p>
+    </a>
+    <a class="row" data-cat="ai" href="../posts/p070.html">
+      <div class="rmeta"><span class="rdate">2026.08.11</span><span class="cat">AI</span></div>
+      <h2>使うほど、自分がわかっていく<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">Claude CodeのSkillsで、開発からnote記事の下書き保存までを自動化する事例を見ていて、大事なのは「note投稿の自動化」そのものではないと思った。 普段行っている作業のプロセスそのものを、AIが実行できるSkillとして定義するという発想の方が本質だった。</p>
+    </a>
+    <a class="row" data-cat="ai" href="../posts/p050.html">
+      <div class="rmeta"><span class="rdate">2026.08.06</span><span class="cat">AI</span></div>
+      <h2>プロンプトより、周りを整える<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">AI活用の話は、いつのまにか四つの層に分かれていた。 自分にとっての優先順位を並べてみると、はっきりした。</p>
+    </a>
+    <a class="row" data-cat="inner" href="../posts/p049.html">
+      <div class="rmeta"><span class="rdate">2026.08.06</span><span class="cat">内省・学び</span></div>
+      <h2>占わずに、自分を読む<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">占いを調べていて意外だったのは、ルールが公開されていることだった。 四柱推命も西洋占星術も数秘術も、生年月日から決まった手順で組み合わせを出し、</p>
+    </a>
+    <a class="row" data-cat="ai" href="../posts/p024.html">
+      <div class="rmeta"><span class="rdate">2026.08.06</span><span class="cat">AI</span></div>
+      <h2>コンテキストエンジニアリングと市場調査AI化構想<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">AI活用の考え方が「プロンプトエンジニアリング」から「コンテキストエンジニアリング」「ハーネスエンジニアリング」「ループエンジニアリング」へ進化していることを整理した。 自分にとっての優先順位はコンテキスト＞ループ＞ハーネス＞プロンプトであり、情報資産・知識ベース・ワークフロー設計の方が重要とい…</p>
+    </a>
+    <a class="row" data-cat="inner" href="../posts/p023.html">
+      <div class="rmeta"><span class="rdate">2026.08.06</span><span class="cat">内省・学び</span></div>
+      <h2>占いの仕組みとAI自己理解パートナー構想<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">占いの起源・仕組み（四柱推命・西洋占星術など）と、それが「当たる」と感じる心理的背景（バーナム効果）を整理した。 占いのルールは公開されており体系化可能なため、複数の診断（四柱推命・MBTI・Big Five等）をAIが統合し、日々の変化と組み合わせて助言する「AI自己理解パートナー」という着想…</p>
+    </a>
+    <a class="row" data-cat="ai" href="../posts/p047.html">
+      <div class="rmeta"><span class="rdate">2026.08.03</span><span class="cat">AI</span></div>
+      <h2>探すのではなく、思い出したい<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">ノートが増えてくると、結局どこに何を書いたか自分でも探せなくなった。 検索しても、言葉が一致しないと出てこない。</p>
+    </a>
+    <a class="row" data-cat="ai" href="../posts/p020.html">
+      <div class="rmeta"><span class="rdate">2026.08.03</span><span class="cat">AI</span></div>
+      <h2>セカンドブレインの想起をAIに任せる<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">ノートが増えると「どこに何を書いたか」を自分で探せなくなり、キーワード検索もタグも取りこぼす。 そこで「探す＝想起」という行為そのものをAIに委ね、自然言語で問えば関連ノートを提示させる。 vault全体を Embedding して RAG 的に検索し、第二の脳の"想起"を AIエージェントが担…</p>
+    </a>
+    <a class="row" data-cat="thinking" href="../posts/p042.html">
+      <div class="rmeta"><span class="rdate">2026.07.28</span><span class="cat">思考OS</span></div>
+      <h2>価値は、相手に起きた変化のこと<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">『起業の教科書』の序章を読んで、最初の一撃がここだった。 商売とは、困っている人を助けること。</p>
+    </a>
+    <a class="row" data-cat="thinking" href="../posts/p014.html">
+      <div class="rmeta"><span class="rdate">2026.07.28</span><span class="cat">思考OS</span></div>
+      <h2>起業の教科書 考察メモ<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">『起業の教科書』序章の考察。起業は「会社の作り方」ではなく「事業をどう設計するか」の問題であり、価値は商品ではなく顧客の変化量（Before→After）で決まる。 利益より生存率を優先し、仮説・実験・学習・改善のサイクルを小さく回すことが重要で、AI時代は知識をAIが担い、人間は顧客理解・問題…</p>
+    </a>
+    <a class="row" data-cat="explore" href="../posts/p040.html">
+      <div class="rmeta"><span class="rdate">2026.07.27</span><span class="cat">探求・文化</span></div>
+      <h2>計算より、入れる数字のほうが難しい<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">デシジョンツリーは、選択肢とその先に起こりうる未来を木構造で描く。 期待値は、Σ（確率 × 収支）で、その選択肢が平均的にどれだけの価値を持つかを出す。</p>
+    </a>
+    <a class="row" data-cat="explore" href="../posts/p013.html">
+      <div class="rmeta"><span class="rdate">2026.07.27</span><span class="cat">探求・文化</span></div>
+      <h2>デシジョンツリーと期待値による意思決定<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">デシジョンツリーで選択肢と未来のシナリオを木構造に整理し、期待値計算（Σ確率×収支）で各シナリオの平均的な価値を数値化する手法。 投資判断や新規事業判断に応用でき、企業経営では期待値に加えてリスクや長期戦略との整合も考慮する。 本質は計算そのものではなく、確率や収支という入力値の精度をどれだけ高…</p>
+    </a>
+    <a class="row" data-cat="ai" href="../posts/p039.html">
+      <div class="rmeta"><span class="rdate">2026.07.25</span><span class="cat">AI</span></div>
+      <h2>人ではなく、会社が学ぶ<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">AIによって開発コストが大きく下がった。 そうなると、競争力の源泉はコードを書けることではなくなる。</p>
+    </a>
+    <a class="row" data-cat="explore" href="../posts/p038.html">
+      <div class="rmeta"><span class="rdate">2026.07.25</span><span class="cat">探求・文化</span></div>
+      <h2>製品ではなく、変化への適応を売る<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">これまでの提案は、製品から始まっていた。 良い製品があり、その価値を説明し、必要性を納得してもらう。</p>
+    </a>
+    <a class="row" data-cat="ai" href="../posts/p012.html">
+      <div class="rmeta"><span class="rdate">2026.07.25</span><span class="cat">AI</span></div>
+      <h2>AIエージェントによる学習する組織構想<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">AIを人間の代替ではなく学習サイクルを加速する存在と位置づけ、組織全体の学習速度を競争優位の源泉とする「学習する組織（Learning Organization）」構想。 Observation／Analysis／Prototype／Learning／Recommendationの5つのAIエー…</p>
+    </a>
+    <a class="row" data-cat="explore" href="../posts/p032.html">
+      <div class="rmeta"><span class="rdate">2026.07.20</span><span class="cat">探求・文化</span></div>
+      <h2>未来ではなく、人間を観察していた<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">トキワ荘ミュージアムを歩きながら、手塚治虫は当時どんな未来を想像していたのだろう、と思った。 『火の鳥』を予言の書として読むと、たしかによく当たっている。</p>
+    </a>
+  </div>
+  <p class="pagenav"><a class="back" href="index.html">&larr; キーワード一覧</a></p>
+
+</body></html>

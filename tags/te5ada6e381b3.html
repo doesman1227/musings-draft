@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>#学び ｜ 日々のつぶやき</title>
+<meta name="description" content="「学び」が付いたつぶやき4件。">
+<meta name="robots" content="noindex"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#F4F2EB;--surface:#FCFBF6;--ink:#24261E;--muted:#5E6252;--faint:#949585;
+    --line:#E3E0D5;--line-soft:#ECEAE1;--accent:#4C7A5A;--accent-ink:#3C6349;--accent-wash:#E7EEE7;
+    --serif:"Noto Serif JP",serif;--sans:"Noto Sans JP",system-ui,sans-serif;
+    --mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;}
+  @media(prefers-color-scheme:dark){:root{--bg:#15161A;--surface:#1D1F23;--ink:#E9E8DF;--muted:#A0A296;
+    --faint:#6E7166;--line:#2C2E2C;--line-soft:#26282A;--accent:#84AE8D;--accent-ink:#9DC4A5;--accent-wash:#202a22;}}
+  :root[data-theme="dark"]{--bg:#15161A;--surface:#1D1F23;--ink:#E9E8DF;--muted:#A0A296;
+    --faint:#6E7166;--line:#2C2E2C;--line-soft:#26282A;--accent:#84AE8D;--accent-ink:#9DC4A5;--accent-wash:#202a22;}
+  :root[data-theme="light"]{--bg:#F4F2EB;--surface:#FCFBF6;--ink:#24261E;--muted:#5E6252;--faint:#949585;
+    --line:#E3E0D5;--line-soft:#ECEAE1;--accent:#4C7A5A;--accent-ink:#3C6349;--accent-wash:#E7EEE7;}
+  *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;
+    line-height:1.9;letter-spacing:.01em;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:680px;margin:0 auto;padding:0 22px}
+  a{color:var(--accent-ink)}
+  .topnav{padding:22px 0 0;display:flex;justify-content:space-between;gap:12px}
+  .topnav a{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--muted);text-decoration:none}
+  .topnav a:hover{color:var(--accent-ink)}
+  header.masthead{padding:36px 0 22px}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent-ink);margin:0 0 16px}
+  h1.title{font-family:var(--serif);font-weight:700;font-size:clamp(2rem,6vw,2.9rem);line-height:1.3;
+    letter-spacing:.04em;margin:0 0 14px;text-wrap:balance}
+  .intro{font-family:var(--serif);font-weight:500;font-size:clamp(1rem,2.2vw,1.1rem);line-height:1.9;
+    color:var(--muted);margin:0;max-width:42ch}
+  .counter{margin-top:18px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--faint)}
+  .counter b{color:var(--muted);font-weight:700}
+  /* filters */
+  .filters{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:8px;padding:14px 0;margin-bottom:6px;
+    background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line-soft)}
+  .chip{font-family:var(--sans);font-size:13px;font-weight:500;padding:6px 14px;border:1px solid var(--line);
+    border-radius:100px;background:var(--surface);color:var(--muted);cursor:pointer;letter-spacing:.02em;
+    transition:background .18s,color .18s,border-color .18s}
+  .chip:hover{border-color:var(--accent);color:var(--accent-ink)}
+  .chip.active{background:var(--accent);border-color:var(--accent);color:#fff}
+  :root[data-theme="dark"] .chip.active{color:#16181a}
+  @media(prefers-color-scheme:dark){.chip.active{color:#16181a}}
+  /* list */
+  .list{padding:12px 0 20px;display:flex;flex-direction:column;gap:2px}
+  .row{display:block;text-decoration:none;color:inherit;padding:20px 4px;border-bottom:1px solid var(--line-soft)}
+  .row:hover{background:var(--surface)}
+  .row .rmeta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:7px}
+  .rdate{font-family:var(--mono);font-size:12.5px;color:var(--faint);font-variant-numeric:tabular-nums}
+  .cat{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--accent-ink);background:var(--accent-wash);padding:3px 9px;border-radius:4px}
+  .row h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.12rem,3vw,1.32rem);line-height:1.55;
+    letter-spacing:.02em;margin:0 0 6px;color:var(--ink);text-wrap:balance}
+  .row:hover h2{color:var(--accent-ink)}
+  .excerpt{font-size:14px;color:var(--muted);margin:0;line-height:1.85;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .arrow{color:var(--faint);margin-left:6px}
+  .pending-badge{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;color:#fff;
+    background:var(--faint);padding:2px 8px;border-radius:4px}
+  :root[data-theme="dark"] .pending-badge{color:#16181a}
+  @media(prefers-color-scheme:dark){.pending-badge{color:#16181a}}
+  .row.hide{display:none}
+  .empty{display:none;text-align:center;padding:50px 0;color:var(--faint);font-family:var(--serif)}
+  /* detail */
+  .article{padding:20px 0 8px}
+  .article .ameta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+  .article h1{font-family:var(--serif);font-weight:700;font-size:clamp(1.5rem,4.4vw,2.1rem);line-height:1.45;
+    letter-spacing:.03em;margin:0 0 22px;text-wrap:balance}
+  .article .abody{font-size:16.5px;line-height:2;color:var(--ink)}
+  .article .abody p{margin:0 0 20px}
+  .abody .lead{font-family:var(--serif);color:var(--muted);font-size:1.05rem;line-height:1.95;
+    padding:0 0 18px;margin:0 0 24px;border-bottom:1px solid var(--line-soft)}
+  .abody h2{font-family:var(--serif);font-weight:600;font-size:1.3rem;letter-spacing:.02em;
+    margin:34px 0 12px;line-height:1.5}
+  .abody h3{font-family:var(--serif);font-weight:600;font-size:1.1rem;margin:26px 0 10px}
+  .abody ul,.abody ol{margin:0 0 20px;padding-left:1.4em}
+  .abody li{margin:0 0 7px;line-height:1.85}
+  .abody blockquote{margin:0 0 20px;padding:4px 0 4px 20px;border-left:2px solid var(--accent);
+    color:var(--muted);font-family:var(--serif)}
+  .abody pre{background:var(--surface);border:1px solid var(--line);border-radius:6px;
+    padding:14px 16px;overflow-x:auto;margin:0 0 20px}
+  .abody pre code{font-family:var(--mono);font-size:13px;color:var(--ink);white-space:pre}
+  .abody code{font-family:var(--mono);font-size:.9em;background:var(--surface);
+    border:1px solid var(--line-soft);border-radius:3px;padding:1px 5px}
+  .abody pre code{background:none;border:0;padding:0}
+  .abody hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+  .abody strong{font-weight:700}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:22px}
+  .tag{font-family:var(--mono);font-size:11.5px;color:var(--faint);border:1px solid var(--line-soft);border-radius:3px;padding:2px 8px}
+  .tag::before{content:"#";color:var(--accent);opacity:.7}
+  a.tag{text-decoration:none;transition:color .18s,border-color .18s}
+  a.tag:hover{color:var(--ink);border-color:var(--accent)}
+  a.tag .n{margin-left:6px;opacity:.55}
+  .pagenav{display:flex;justify-content:space-between;gap:12px;margin-top:40px;padding-top:20px;border-top:1px solid var(--line-soft)}
+  .pagenav a{font-family:var(--sans);font-size:13.5px;text-decoration:none;color:var(--muted);max-width:46%}
+  .pagenav a:hover{color:var(--accent-ink)}
+  .pagenav .n{display:block;font-family:var(--mono);font-size:11px;color:var(--faint);margin-bottom:3px}
+  .draftnote{font-family:var(--mono);font-size:12px;color:var(--faint);background:var(--surface);
+    border:1px dashed var(--line);border-radius:6px;padding:10px 14px;margin:0 0 22px}
+  footer{margin-top:20px;padding:34px 0 60px;border-top:1px solid var(--line)}
+  footer .back{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-decoration:none}
+  footer .back:hover{color:var(--accent-ink)}
+  .disclaimer{margin-top:16px;font-size:12px;line-height:1.8;color:var(--faint);max-width:52ch}
+</style></head><body>
+  <div class="masthead"><a class="back" href="../">&larr; つぶやき一覧</a></div>
+  <p class="kicker">Keyword</p>
+  <h1 class="title">#学び</h1>
+  <p class="intro">このキーワードが付いたつぶやき 4件。</p>
+  <div class="list">
+    <a class="row" data-cat="thinking" href="../posts/p085.html">
+      <div class="rmeta"><span class="rdate">2026.08.25</span><span class="cat">思考OS</span></div>
+      <h2>脳が選択して構成した世界<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">人間の視野角そのものはかなり広く、感覚的には魚眼レンズのように広い範囲を捉えているのかもしれないと思った。 一方で、実際に意識を向けてフォーカスしている範囲はかなり狭く、40mm程度の標準レンズに近いのではないかと考えた。</p>
+    </a>
+    <a class="row" data-cat="explore" href="../posts/p069.html">
+      <div class="rmeta"><span class="rdate">2026.08.11</span><span class="cat">探求・文化</span></div>
+      <h2>存在するかより、必要としたか<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">イタコ、ユタ、シャーマン、ミディアム。 互いに交流がなかったはずの文化に、よく似た役割の人がいる。</p>
+    </a>
+    <a class="row" data-cat="explore" href="../posts/p068.html">
+      <div class="rmeta"><span class="rdate">2026.08.11</span><span class="cat">探求・文化</span></div>
+      <h2>少ない要素から、複雑が生まれる<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">物事を深く掘り下げていくと、複雑に見えていたものが、少数の要素やルールに還元できることがある。 DNAはA・C・G・Tのたった4種類の塩基の組み合わせで、あれだけ複雑な生命現象を生み出している。</p>
+    </a>
+    <a class="row" data-cat="explore" href="../posts/p061.html">
+      <div class="rmeta"><span class="rdate">2026.08.09</span><span class="cat">探求・文化</span></div>
+      <h2>決めることと、強制することは別<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">日の丸も君が代も、法律で正式に国旗・国歌と定められたのは1999年の「国旗及び国歌に関する法律」だと知った。 ただ、その年に突然生まれたわけではなかった。</p>
+    </a>
+  </div>
+  <p class="pagenav"><a class="back" href="index.html">&larr; キーワード一覧</a></p>
+
+</body></html>

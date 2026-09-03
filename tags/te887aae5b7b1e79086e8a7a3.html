@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>#自己理解 ｜ 日々のつぶやき</title>
+<meta name="description" content="「自己理解」が付いたつぶやき26件。">
+<meta name="robots" content="noindex"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#F4F2EB;--surface:#FCFBF6;--ink:#24261E;--muted:#5E6252;--faint:#949585;
+    --line:#E3E0D5;--line-soft:#ECEAE1;--accent:#4C7A5A;--accent-ink:#3C6349;--accent-wash:#E7EEE7;
+    --serif:"Noto Serif JP",serif;--sans:"Noto Sans JP",system-ui,sans-serif;
+    --mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;}
+  @media(prefers-color-scheme:dark){:root{--bg:#15161A;--surface:#1D1F23;--ink:#E9E8DF;--muted:#A0A296;
+    --faint:#6E7166;--line:#2C2E2C;--line-soft:#26282A;--accent:#84AE8D;--accent-ink:#9DC4A5;--accent-wash:#202a22;}}
+  :root[data-theme="dark"]{--bg:#15161A;--surface:#1D1F23;--ink:#E9E8DF;--muted:#A0A296;
+    --faint:#6E7166;--line:#2C2E2C;--line-soft:#26282A;--accent:#84AE8D;--accent-ink:#9DC4A5;--accent-wash:#202a22;}
+  :root[data-theme="light"]{--bg:#F4F2EB;--surface:#FCFBF6;--ink:#24261E;--muted:#5E6252;--faint:#949585;
+    --line:#E3E0D5;--line-soft:#ECEAE1;--accent:#4C7A5A;--accent-ink:#3C6349;--accent-wash:#E7EEE7;}
+  *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;
+    line-height:1.9;letter-spacing:.01em;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:680px;margin:0 auto;padding:0 22px}
+  a{color:var(--accent-ink)}
+  .topnav{padding:22px 0 0;display:flex;justify-content:space-between;gap:12px}
+  .topnav a{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--muted);text-decoration:none}
+  .topnav a:hover{color:var(--accent-ink)}
+  header.masthead{padding:36px 0 22px}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent-ink);margin:0 0 16px}
+  h1.title{font-family:var(--serif);font-weight:700;font-size:clamp(2rem,6vw,2.9rem);line-height:1.3;
+    letter-spacing:.04em;margin:0 0 14px;text-wrap:balance}
+  .intro{font-family:var(--serif);font-weight:500;font-size:clamp(1rem,2.2vw,1.1rem);line-height:1.9;
+    color:var(--muted);margin:0;max-width:42ch}
+  .counter{margin-top:18px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--faint)}
+  .counter b{color:var(--muted);font-weight:700}
+  /* filters */
+  .filters{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:8px;padding:14px 0;margin-bottom:6px;
+    background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line-soft)}
+  .chip{font-family:var(--sans);font-size:13px;font-weight:500;padding:6px 14px;border:1px solid var(--line);
+    border-radius:100px;background:var(--surface);color:var(--muted);cursor:pointer;letter-spacing:.02em;
+    transition:background .18s,color .18s,border-color .18s}
+  .chip:hover{border-color:var(--accent);color:var(--accent-ink)}
+  .chip.active{background:var(--accent);border-color:var(--accent);color:#fff}
+  :root[data-theme="dark"] .chip.active{color:#16181a}
+  @media(prefers-color-scheme:dark){.chip.active{color:#16181a}}
+  /* list */
+  .list{padding:12px 0 20px;display:flex;flex-direction:column;gap:2px}
+  .row{display:block;text-decoration:none;color:inherit;padding:20px 4px;border-bottom:1px solid var(--line-soft)}
+  .row:hover{background:var(--surface)}
+  .row .rmeta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:7px}
+  .rdate{font-family:var(--mono);font-size:12.5px;color:var(--faint);font-variant-numeric:tabular-nums}
+  .cat{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--accent-ink);background:var(--accent-wash);padding:3px 9px;border-radius:4px}
+  .row h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.12rem,3vw,1.32rem);line-height:1.55;
+    letter-spacing:.02em;margin:0 0 6px;color:var(--ink);text-wrap:balance}
+  .row:hover h2{color:var(--accent-ink)}
+  .excerpt{font-size:14px;color:var(--muted);margin:0;line-height:1.85;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .arrow{color:var(--faint);margin-left:6px}
+  .pending-badge{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;color:#fff;
+    background:var(--faint);padding:2px 8px;border-radius:4px}
+  :root[data-theme="dark"] .pending-badge{color:#16181a}
+  @media(prefers-color-scheme:dark){.pending-badge{color:#16181a}}
+  .row.hide{display:none}
+  .empty{display:none;text-align:center;padding:50px 0;color:var(--faint);font-family:var(--serif)}
+  /* detail */
+  .article{padding:20px 0 8px}
+  .article .ameta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+  .article h1{font-family:var(--serif);font-weight:700;font-size:clamp(1.5rem,4.4vw,2.1rem);line-height:1.45;
+    letter-spacing:.03em;margin:0 0 22px;text-wrap:balance}
+  .article .abody{font-size:16.5px;line-height:2;color:var(--ink)}
+  .article .abody p{margin:0 0 20px}
+  .abody .lead{font-family:var(--serif);color:var(--muted);font-size:1.05rem;line-height:1.95;
+    padding:0 0 18px;margin:0 0 24px;border-bottom:1px solid var(--line-soft)}
+  .abody h2{font-family:var(--serif);font-weight:600;font-size:1.3rem;letter-spacing:.02em;
+    margin:34px 0 12px;line-height:1.5}
+  .abody h3{font-family:var(--serif);font-weight:600;font-size:1.1rem;margin:26px 0 10px}
+  .abody ul,.abody ol{margin:0 0 20px;padding-left:1.4em}
+  .abody li{margin:0 0 7px;line-height:1.85}
+  .abody blockquote{margin:0 0 20px;padding:4px 0 4px 20px;border-left:2px solid var(--accent);
+    color:var(--muted);font-family:var(--serif)}
+  .abody pre{background:var(--surface);border:1px solid var(--line);border-radius:6px;
+    padding:14px 16px;overflow-x:auto;margin:0 0 20px}
+  .abody pre code{font-family:var(--mono);font-size:13px;color:var(--ink);white-space:pre}
+  .abody code{font-family:var(--mono);font-size:.9em;background:var(--surface);
+    border:1px solid var(--line-soft);border-radius:3px;padding:1px 5px}
+  .abody pre code{background:none;border:0;padding:0}
+  .abody hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+  .abody strong{font-weight:700}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:22px}
+  .tag{font-family:var(--mono);font-size:11.5px;color:var(--faint);border:1px solid var(--line-soft);border-radius:3px;padding:2px 8px}
+  .tag::before{content:"#";color:var(--accent);opacity:.7}
+  a.tag{text-decoration:none;transition:color .18s,border-color .18s}
+  a.tag:hover{color:var(--ink);border-color:var(--accent)}
+  a.tag .n{margin-left:6px;opacity:.55}
+  .pagenav{display:flex;justify-content:space-between;gap:12px;margin-top:40px;padding-top:20px;border-top:1px solid var(--line-soft)}
+  .pagenav a{font-family:var(--sans);font-size:13.5px;text-decoration:none;color:var(--muted);max-width:46%}
+  .pagenav a:hover{color:var(--accent-ink)}
+  .pagenav .n{display:block;font-family:var(--mono);font-size:11px;color:var(--faint);margin-bottom:3px}
+  .draftnote{font-family:var(--mono);font-size:12px;color:var(--faint);background:var(--surface);
+    border:1px dashed var(--line);border-radius:6px;padding:10px 14px;margin:0 0 22px}
+  footer{margin-top:20px;padding:34px 0 60px;border-top:1px solid var(--line)}
+  footer .back{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-decoration:none}
+  footer .back:hover{color:var(--accent-ink)}
+  .disclaimer{margin-top:16px;font-size:12px;line-height:1.8;color:var(--faint);max-width:52ch}
+</style></head><body>
+  <div class="masthead"><a class="back" href="../">&larr; つぶやき一覧</a></div>
+  <p class="kicker">Keyword</p>
+  <h1 class="title">#自己理解</h1>
+  <p class="intro">このキーワードが付いたつぶやき 26件。</p>
+  <div class="list">
+    <a class="row" data-cat="inner" href="../posts/p105.html">
+      <div class="rmeta"><span class="rdate">2026.08.30</span><span class="cat">内省・学び</span></div>
+      <h2>本当の自分は、現れるのか消えるのか<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">自分の内側にあるものを、層で並べてみた。 本能は「生きたい・避けたい」。</p>
+    </a>
+    <a class="row" data-cat="inner" href="../posts/p101.html">
+      <div class="rmeta"><span class="rdate">2026.08.29</span><span class="cat">内省・学び</span></div>
+      <h2>頑張るより、回復を優先する<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">今朝、睡眠時間が約4時間しか取れていなかった。 ウェアラブルデバイスで確認すると、レディネススコアが15とかなり低い数値になっていて、これはどういうことなのかと疑問に思った。</p>
+    </a>
+    <a class="row" data-cat="inner" href="../posts/p097.html">
+      <div class="rmeta"><span class="rdate">2026.08.27</span><span class="cat">内省・学び</span></div>
+      <h2>内容ではなく、ペースだった<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">AIと話していて、口調やトーン、話すスピード、間の取り方が自分の状態に合っていると、自然に落ち着く感覚があることに気づいた。 「穏やかに、ゆっくり話してみて」と伝え、さらに「もう少しゆっくり」「癒し系な感じで」と重ねていくうちに、自分にとって心地よい速度まで調整できることがわかった。</p>
+    </a>
+    <a class="row" data-cat="inner" href="../posts/p096.html">
+      <div class="rmeta"><span class="rdate">2026.08.27</span><span class="cat">内省・学び</span></div>
+      <h2>世界を遮って、内側を立ち上げる<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">思い出すとき、過去の出来事をそのまま再生しているというより、今見ている世界が一瞬遮られて、脳の中に何かがパッと立ち上がる感覚があると気づいた。 自分の場合、動画のような連続した映像というよりも、静止画に近いものとして記憶が浮かんでくる。</p>
+    </a>
+    <a class="row" data-cat="inner" href="../posts/p095.html">
+      <div class="rmeta"><span class="rdate">2026.08.27</span><span class="cat">内省・学び</span></div>
+      <h2>思い出せないのに、嗅ぐと蘇る<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">過去の体験は、視覚・聴覚・嗅覚・味覚・触覚、そしてそのときの感情が組み合わさって残っているのかもしれないと思った。 強く印象に残った出来事は覚えているのに、昨日のことでも思い出せないことがあると気づいた。</p>
+    </a>
+    <a class="row" data-cat="inner" href="../posts/p091.html">
+      <div class="rmeta"><span class="rdate">2026.08.26</span><span class="cat">内省・学び</span></div>
+      <h2>休むことも、仕事のうち<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">今日は在宅勤務で、集計作業や資料作成など複数の仕事が重なっていた。 一日中パソコンに向かって集中していたため、かなり疲れた。</p>
+    </a>
+    <a class="row" data-cat="inner" href="../posts/p090.html">
+      <div class="rmeta"><span class="rdate">2026.08.26</span><span class="cat">内省・学び</span></div>
+      <h2>疲れが出る前に、休ませる仕組み<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">頭と体の両方が疲れていた。 頭は「オーバーヒート」というほどではなく、程よく使った後の疲労感だった。</p>
+    </a>
+    <a class="row" data-cat="inner" href="../posts/p089.html">
+      <div class="rmeta"><span class="rdate">2026.08.26</span><span class="cat">内省・学び</span></div>
+      <h2>断片から、組み立てなおす<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">過去のことを、ふとした瞬間に無意識に思い出すことがあると気づいた。 特に、過去の嫌だった体験を思い出すことが比較的多かった。</p>
+    </a>
+    <a class="row" data-cat="inner" href="../posts/p087.html">
+      <div class="rmeta"><span class="rdate">2026.08.25</span><span class="cat">内省・学び</span></div>
+      <h2>気づいていない自分の興味を知る<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">普段からYouTubeをよく見ていて、その時々で興味のあるものを本能的・直感的に見ている感覚がある。 投資、クレジットカード、ポイ活、量子力学、DIY系など、最近見ているジャンルを並べてみると、自分でも意識していなかった興味の傾向が見えてくると感じた。</p>
+    </a>
+    <a class="row" data-cat="inner" href="../posts/p084.html">
+      <div class="rmeta"><span class="rdate">2026.08.25</span><span class="cat">内省・学び</span></div>
+      <h2>頭の中が一瞬、真っ白になる<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">何かを考えようとすると、目の前の現実の視界とは別に、頭の中に何かが一瞬浮かんでくる感覚がある。 自分の場合、頭の中に出てくるのは言葉よりもイメージの方が多い。</p>
+    </a>
+    <a class="row" data-cat="inner" href="../posts/p082.html">
+      <div class="rmeta"><span class="rdate">2026.08.24</span><span class="cat">内省・学び</span></div>
+      <h2>安心して、ほどける<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">ジムの給湯設備が壊れていて水しか出なかった。 最初は「冷たいな」と感じただけだったが、そこからサウナ後の水風呂や「ととのう」という感覚について考え始めた。</p>
+    </a>
+    <a class="row" data-cat="inner" href="../posts/p081.html">
+      <div class="rmeta"><span class="rdate">2026.08.24</span><span class="cat">内省・学び</span></div>
+      <h2>いかに楽しむかが勝負<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">自分には「努力している」という感覚がほとんどないと気づいた。 世間でいう「努力」には、無理をする・我慢する・つらくても頑張るという響きがある。</p>
+    </a>
+    <a class="row" data-cat="inner" href="../posts/p071.html">
+      <div class="rmeta"><span class="rdate">2026.08.11</span><span class="cat">内省・学び</span></div>
+      <h2>分身ではなく、専用のパートナー<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">人間をAIで「蒸留」できないか、という問いから始めた。 最初は人間そのものを蒸留するイメージだったが、話すうちに、蒸留する対象は人間そのものというより「その人が見ている世界」なのではないかと思うようになった。</p>
+    </a>
+    <a class="row" data-cat="inner" href="../posts/p067.html">
+      <div class="rmeta"><span class="rdate">2026.08.11</span><span class="cat">内省・学び</span></div>
+      <h2>景色ではなく、心を整える環境<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">昔から、川で泳いでいる魚を見るのが好きだった。 眺めていると、とても落ち着く。</p>
+    </a>
+    <a class="row" data-cat="inner" href="../posts/p066.html">
+      <div class="rmeta"><span class="rdate">2026.08.11</span><span class="cat">内省・学び</span></div>
+      <h2>感じていなくても、身体は反応していた<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">ストレスって結局、自分がどう感じるか次第なのではないか、と思った。 出来事そのものと、それをどう評価・解釈するかは別で、同じ出来事でも「大変だ」と捉えるか「面白い経験だ」と捉えるかで、感じるストレスの大きさは変わってくる。</p>
+    </a>
+    <a class="row" data-cat="inner" href="../posts/p065.html">
+      <div class="rmeta"><span class="rdate">2026.08.11</span><span class="cat">内省・学び</span></div>
+      <h2>危険にではなく、未知に惹かれていた<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">台風が近づいていて、普段より涼しく、心地よい風を感じた。 台風は被害をもたらすこともあるのに、強い風を感じたり外に出たりして、その状況を楽しみたくなる自分がいた。</p>
+    </a>
+    <a class="row" data-cat="inner" href="../posts/p064.html">
+      <div class="rmeta"><span class="rdate">2026.08.11</span><span class="cat">内省・学び</span></div>
+      <h2>発見するのではなく、作っていく<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">小学生くらいの頃から、「いつか死ぬのに、なぜ生きているんだろう」という疑問があった。 今考えている自分も、いつか死んでいなくなる。そう考えている自分自身も、いつか存在しなくなる。それなら今生きていることに意味はあるのか。</p>
+    </a>
+    <a class="row" data-cat="inner" href="../posts/p063.html">
+      <div class="rmeta"><span class="rdate">2026.08.10</span><span class="cat">内省・学び</span></div>
+      <h2>欲を否定せず、支配されない<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">映画「マイケル」を観た。 一人の人間の人生を、始まりから終わりまで追体験するような感覚があった。</p>
+    </a>
+    <a class="row" data-cat="inner" href="../posts/p059.html">
+      <div class="rmeta"><span class="rdate">2026.08.09</span><span class="cat">内省・学び</span></div>
+      <h2>持たないより、支配されない<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">以前、クレジットカード入りのスマホケースとスマホを盗まれたことがある。 物理的な損失以上に、「悪意」に触れた気がして切なかった。</p>
+    </a>
+    <a class="row" data-cat="inner" href="../posts/p055.html">
+      <div class="rmeta"><span class="rdate">2026.08.08</span><span class="cat">内省・学び</span></div>
+      <h2>能力ではなく、相性の話だった<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">発達障害を「能力が足りないこと」だと思っているうちは、話がどこにも進まなかった。 そうではなく、特性と環境の相性の問題として置き直すと、急に手が動くようになる。</p>
+    </a>
+    <a class="row" data-cat="inner" href="../posts/p029.html">
+      <div class="rmeta"><span class="rdate">2026.08.08</span><span class="cat">内省・学び</span></div>
+      <h2>発達障害の捉え方と自己理解<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">発達障害（ASD・ADHD）を「能力不足」ではなく「特性と環境の相性」として捉える視点を整理した。 本人が特性を「自分の取扱説明書」として理解し、自己理解→環境設計→仕組み化→強みの探索という流れで人生を最適化する重要性を論じた。 AIは能力そのものではなく能力を発揮するための「インターフェース…</p>
+    </a>
+    <a class="row" data-cat="inner" href="../posts/p049.html">
+      <div class="rmeta"><span class="rdate">2026.08.06</span><span class="cat">内省・学び</span></div>
+      <h2>占わずに、自分を読む<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">占いを調べていて意外だったのは、ルールが公開されていることだった。 四柱推命も西洋占星術も数秘術も、生年月日から決まった手順で組み合わせを出し、</p>
+    </a>
+    <a class="row" data-cat="inner" href="../posts/p048.html">
+      <div class="rmeta"><span class="rdate">2026.08.06</span><span class="cat">内省・学び</span></div>
+      <h2>高さではなく、凸凹の話<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">MENSAは「IQ自慢の集まり」だと思っていた。 調べてみると実態は違って、知的好奇心を安心して表現できる場所に近い。</p>
+    </a>
+    <a class="row" data-cat="inner" href="../posts/p023.html">
+      <div class="rmeta"><span class="rdate">2026.08.06</span><span class="cat">内省・学び</span></div>
+      <h2>占いの仕組みとAI自己理解パートナー構想<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">占いの起源・仕組み（四柱推命・西洋占星術など）と、それが「当たる」と感じる心理的背景（バーナム効果）を整理した。 占いのルールは公開されており体系化可能なため、複数の診断（四柱推命・MBTI・Big Five等）をAIが統合し、日々の変化と組み合わせて助言する「AI自己理解パートナー」という着想…</p>
+    </a>
+    <a class="row" data-cat="inner" href="../posts/p022.html">
+      <div class="rmeta"><span class="rdate">2026.08.06</span><span class="cat">内省・学び</span></div>
+      <h2>IQ・知的好奇心・発達障害の関係<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">MENSAは「IQ自慢の集まり」ではなく知的好奇心を安心して表現できるコミュニティであり、IQと知的好奇心は別概念であることを整理した。 ASD・ADHDとIQに単純な相関はなく、重要なのはIQの高さより「能力の凸凹（認知プロファイル）」であるという学び。 言語理解が高く処理速度が低いタイプの特…</p>
+    </a>
+    <a class="row" data-cat="inner" href="../posts/p011.html">
+      <div class="rmeta"><span class="rdate">2026.07.26</span><span class="cat">内省・学び</span></div>
+      <h2>新しい人と話すことは、自分でも知らなかった価値観を掘り当てる作業だ。<span class="arrow">&rarr;</span></h2>
+      <p class="excerpt">Salon de GIFTEDと、東大散歩。多様な人との対話を通じて、自分の価値観や人生観を見つめ直した。ビジョンとは、その人が本当に実現したい人生の投影なのかもしれない。新しい誰かと話すたびに、気づいていなかった自分の輪郭が少しずつ見えてくる。経験の量は、そのまま充実感につながっていく気がする。</p>
+    </a>
+  </div>
+  <p class="pagenav"><a class="back" href="index.html">&larr; キーワード一覧</a></p>
+
+</body></html>
