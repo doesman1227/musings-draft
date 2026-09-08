@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>実在でも、象徴でもなく — 日々のつぶやき</title>
-<meta name="description" content="真言宗とは何かという関心から始まり、密教、三密、即身成仏、曼荼羅、仏性、空、大日如来という言葉を一つずつ理解しようとしていた。 個別の定義だけでは、相互の関係が分かりにくかった。">
+<title>統一ではなく、集約する — 日々のつぶやき</title>
+<meta name="description" content="スマートウォッチなどから取れる睡眠・心拍・運動・ストレスなどの情報を、何と呼べばいいのか考えていた。 自分に関する健康データ全体を表す言葉として「パーソナルヘルスデータ」、その中の日々の継続的な記録を…">
 <meta name="robots" content="noindex, nofollow"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{--bg:#F4F2EB;--surface:#FCFBF6;--ink:#24261E;--muted:#5E6252;--faint:#949585;
@@ -87,9 +87,6 @@
   .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:22px}
   .tag{font-family:var(--mono);font-size:11.5px;color:var(--faint);border:1px solid var(--line-soft);border-radius:3px;padding:2px 8px}
   .tag::before{content:"#";color:var(--accent);opacity:.7}
-  a.tag{text-decoration:none;transition:color .18s,border-color .18s}
-  a.tag:hover{color:var(--ink);border-color:var(--accent)}
-  a.tag .n{margin-left:6px;opacity:.55}
   .pagenav{display:flex;justify-content:space-between;gap:12px;margin-top:40px;padding-top:20px;border-top:1px solid var(--line-soft)}
   .pagenav a{font-family:var(--sans);font-size:13.5px;text-decoration:none;color:var(--muted);max-width:46%}
   .pagenav a:hover{color:var(--accent-ink)}
@@ -104,12 +101,26 @@
 <div class="wrap">
   <nav class="topnav"><a href="../">← つぶやき一覧</a><a href="../../">m-note トップ</a></nav>
   <article class="article">
-    <p class="draftnote">これは下書きプレビューです。まだ公開されていません。</p>
+    
     <div class="ameta"><span class="rdate">2026.09.07</span><span class="cat">内省・学び</span></div>
-    <h1>実在でも、象徴でもなく</h1>
-    <div class="abody"><p>真言宗とは何かという関心から始まり、密教、三密、即身成仏、曼荼羅、仏性、空、大日如来という言葉を一つずつ理解しようとしていた。 個別の定義だけでは、相互の関係が分かりにくかった。</p></div>
-    <div class="tags"><a class="tag" href="../tags/te4bb8fe69599.html">仏教</a><a class="tag" href="../tags/te5ae97e69599.html">宗教</a><a class="tag" href="../tags/te593b2e5ada6.html">哲学</a><a class="tag" href="../tags/te6b49ee5af9f.html">洞察</a></div>
-    <nav class="pagenav"><a href="draft-01.html"><span class="n">← 新しい投稿</span>宇宙と、自分を分けない</a><a href="draft-03.html" style="text-align:right"><span class="n">古い投稿 →</span>統一ではなく、集約する</a></nav>
+    <h1>統一ではなく、集約する</h1>
+    <div class="abody"><h2>【健康】統一ではなく、集約する</h2>
+<blockquote>データを一つに統一することと、一つに集約することは違う。</blockquote>
+<h2>気づいたこと</h2>
+<p>スマートウォッチなどから取れる睡眠・心拍・運動・ストレスなどの情報を、何と呼べばいいのか考えていた。</p>
+<p>自分に関する健康データ全体を表す言葉として「パーソナルヘルスデータ」、その中の日々の継続的な記録を表す言葉として「ライフログ」がしっくりきた。</p>
+<p>そこから、各ツールで取得したデータを一か所に集約できないかと考えるようになった。 Google Healthの接続画面を見ると、Fitbit Air、Apple ヘルスケア、Stravaがすでに接続されていた。 Apple ヘルスケア側にはさらに多数のアプリが接続されていて、単なる健康アプリというより、複数のサービスからデータを集める中継・統合ハブとして使えることに気づいた。</p>
+<p>複数のデバイス・サービスがあると、データが分散して問題になると最初は思っていた。 でも、必ずしも一つのデバイスに統一する必要はない。 目的ごとに最適なセンサー・サービスを使い、それらを共通のデータ基盤へ集約する方が合理的だと分かった。</p>
+<p>Fitbit Airは睡眠・心拍などの健康トラッキング、HUAWEI WATCH GT 2 Proは日中の運動・活動、という役割分担が見えてきた。 「どのスマートウォッチを使うか」ではなく、「どのデータを、どのセンサーから取得し、どこに集約するか」という視点に変わった。</p>
+<p>同じ指標を複数のデバイスが取得するので、どのデータについてどのデバイスを第一のデータ源とするかを決める必要もあると気づいた。 データの量より、信頼できるデータの方が重要だった。</p>
+<h2>まとまったこと</h2>
+<ul><li>Apple ヘルスケアを収集・整理のハブ、Google Healthを健康状態の把握・分析・AI活用のハブとして使う</li><li>デバイスの役割分担: Fitbit Air＝睡眠・心拍などの健康トラッキング、HUAWEI WATCH GT 2 Pro＝日中の運動・活動</li><li>構造: 各種デバイス・アプリ → Apple ヘルスケア → Google Health → 健康状態の把握・分析・AI活用</li><li>目的は健康データを集めることではなく、データ→気づき→行動→改善の循環をつくること</li></ul>
+<h2>まだ言葉になっていないこと</h2>
+<ul><li>どのデータ項目がApple ヘルスケアに入り、どこまでGoogle Healthへ届いているか</li><li>睡眠・心拍・歩数・運動など、重複するデータについて「正データ源」をどう決めるか</li><li>Google Healthに取り込まれたサードパーティーデータが、どの分析・AI機能に使われるのか</li><li>健康データだけでなく、日記・気分・仕事・生活環境まで統合すると、自分の状態をより正確に理解できるのか</li></ul>
+<h2>元の対話</h2>
+<ul><li>パーソナルヘルスデータをGoogle Healthに集約する仕組み</li></ul></div>
+    <div class="tags"><span class="tag">健康</span><span class="tag">データ活用</span><span class="tag">習慣化</span><span class="tag">自動化</span></div>
+    <nav class="pagenav"><a href="p113.html"><span class="n">← 新しい投稿</span>宇宙と、自分を分けない</a><a href="p111.html" style="text-align:right"><span class="n">古い投稿 →</span>実在でも、象徴でもなく</a></nav>
   </article>
   <footer>
     <a class="back" href="../">← つぶやき一覧へ戻る</a>
