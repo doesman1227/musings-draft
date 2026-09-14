@@ -87,6 +87,9 @@
   .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:22px}
   .tag{font-family:var(--mono);font-size:11.5px;color:var(--faint);border:1px solid var(--line-soft);border-radius:3px;padding:2px 8px}
   .tag::before{content:"#";color:var(--accent);opacity:.7}
+  a.tag{text-decoration:none;transition:color .18s,border-color .18s}
+  a.tag:hover{color:var(--ink);border-color:var(--accent)}
+  a.tag .n{margin-left:6px;opacity:.55}
   .pagenav{display:flex;justify-content:space-between;gap:12px;margin-top:40px;padding-top:20px;border-top:1px solid var(--line-soft)}
   .pagenav a{font-family:var(--sans);font-size:13.5px;text-decoration:none;color:var(--muted);max-width:46%}
   .pagenav a:hover{color:var(--accent-ink)}
@@ -109,7 +112,7 @@
 <p>次に"意味"を扱う仕組み。Embeddingは、文章や単語を「意味の近さ」を表す数値ベクトルに変換する技術で、これをVector Databaseに保存すれば、意味の近い情報を高速に検索できる。この検索を回答に組み込むのがRAG（検索拡張生成）——LLMが答える前に外部知識を調べ、それを踏まえて答える仕組みだ。</p>
 <p>さらにFunction Callingで外部ツールやAPIを呼び出し、MCPという共通プロトコルで安全に接続すれば、「考える・記憶する・思い出す・道具を使う・つなぐ」を組み合わせたAIエージェントになる。目標達成のために複数の処理を自律的に実行できる、従来のチャットAIとは一段違う存在だ。</p>
 <p>面白いのは、この構造が人間の認知——脳（LLM）・記憶（Embedding／Vector DB）・想起（RAG）・行動（Function Calling）・神経（MCP）——に驚くほど似ていること。理解とは、点を線にすることなのかもしれない。</p></div>
-    <div class="tags"><span class="tag">LLM</span><span class="tag">Transformer</span><span class="tag">Attention</span><span class="tag">Embedding</span><span class="tag">AIエージェント</span></div>
+    <div class="tags"><a class="tag" href="../tags/t4c4c4d.html">LLM</a><a class="tag" href="../tags/t5472616e73666f726d6572.html">Transformer</a><a class="tag" href="../tags/t417474656e74696f6e.html">Attention</a><a class="tag" href="../tags/t456d62656464696e67.html">Embedding</a><a class="tag" href="../tags/t4149e382a8e383bce382b8e382a7e383b3e38388.html">AIエージェント</a></div>
     <nav class="pagenav"><a href="p003.html"><span class="n">← 新しい投稿</span>アイデア ＝ 問い × 静けさ。</a><span></span></nav>
   </article>
   <footer>
