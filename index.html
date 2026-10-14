@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>日々のつぶやき — m-note</title>
+<title>日々のつぶやき｜まとめノート</title>
 <meta name="description" content="日々ふと浮かんだ思考を、忘れてしまう前にここへ書きとめておく。まとまる前の断片を、日付とともに残しておく場所。">
 <meta name="robots" content="noindex, nofollow"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -27,6 +27,7 @@
   .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent-ink);margin:0 0 16px}
   h1.title{font-family:var(--serif);font-weight:700;font-size:clamp(2rem,6vw,2.9rem);line-height:1.3;
     letter-spacing:.04em;margin:0 0 14px;text-wrap:balance}
+  .mn-tagline{font-family:var(--serif);font-weight:500;font-size:clamp(1.05rem,2.6vw,1.4rem);line-height:1.75;letter-spacing:.02em;margin:.1em 0 1.1em;opacity:.85}
   .intro{font-family:var(--serif);font-weight:500;font-size:clamp(1rem,2.2vw,1.1rem);line-height:1.9;
     color:var(--muted);margin:0;max-width:42ch}
   .counter{margin-top:18px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--faint)}
@@ -87,6 +88,9 @@
   .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:22px}
   .tag{font-family:var(--mono);font-size:11.5px;color:var(--faint);border:1px solid var(--line-soft);border-radius:3px;padding:2px 8px}
   .tag::before{content:"#";color:var(--accent);opacity:.7}
+  a.tag{text-decoration:none;transition:color .18s,border-color .18s}
+  a.tag:hover{color:var(--ink);border-color:var(--accent)}
+  a.tag .n{margin-left:6px;opacity:.55}
   .pagenav{display:flex;justify-content:space-between;gap:12px;margin-top:40px;padding-top:20px;border-top:1px solid var(--line-soft)}
   .pagenav a{font-family:var(--sans);font-size:13.5px;text-decoration:none;color:var(--muted);max-width:46%}
   .pagenav a:hover{color:var(--accent-ink)}
@@ -103,11 +107,32 @@
   <header class="masthead">
     <p class="kicker">Daily Musings · 下書きプレビュー</p>
     <h1 class="title">日々のつぶやき</h1>
+    <p class="mn-tagline">忘れる前に、書きとめておく。</p>
     <p class="intro">日々ふと浮かんだ思考を、忘れてしまう前にここへ書きとめておく。まとまる前の断片を、日付とともに残しておく場所。</p>
-    <p class="counter"><b>148</b> の断片 · 更新 2026.10.12</p>
+    <p class="counter"><b>152</b> の断片 · 更新 2026.10.14</p>
   </header>
   <div class="filters" id="filters"><button class="chip active" data-filter="all">すべて</button><button class="chip" data-filter="ai">AI</button><button class="chip" data-filter="thinking">思考OS</button><button class="chip" data-filter="inner">内省・学び</button><button class="chip" data-filter="explore">探求・文化</button></div>
   <main class="list" id="list">
+    <a class="row" data-cat="inner" href="posts/draft-01.html">
+      <div class="rmeta"><span class="rdate">2026.10.14</span><span class="cat">内省・学び</span><span class="pending-badge">下書き · 未承認</span></div>
+      <h2>何気ない会話に、人柄がにじむ<span class="arrow">→</span></h2>
+      <p class="excerpt">『本なら売るほど』という漫画が、お気に入りになった。 最初は、なんとなく落ち着く、心地よい雰囲気だと思っていた。</p>
+    </a>
+    <a class="row" data-cat="inner" href="posts/draft-02.html">
+      <div class="rmeta"><span class="rdate">2026.10.13</span><span class="cat">内省・学び</span><span class="pending-badge">下書き · 未承認</span></div>
+      <h2>縛られず、自分の美意識で<span class="arrow">→</span></h2>
+      <p class="excerpt">漫画を読んでいて、あるキャラクターに惹かれた。 和服の着物を、かっこよく着こなしていた。</p>
+    </a>
+    <a class="row" data-cat="inner" href="posts/draft-03.html">
+      <div class="rmeta"><span class="rdate">2026.10.13</span><span class="cat">内省・学び</span><span class="pending-badge">下書き · 未承認</span></div>
+      <h2>全部を同時に、やらなくてもいい<span class="arrow">→</span></h2>
+      <p class="excerpt">今の自分が本当にやりたいことを、飾らずに話してみた。 人生の大きな目標を決めるというより、今の自分が素直に望んでいることを言葉にしたかった。</p>
+    </a>
+    <a class="row" data-cat="inner" href="posts/draft-04.html">
+      <div class="rmeta"><span class="rdate">2026.10.13</span><span class="cat">内省・学び</span><span class="pending-badge">下書き · 未承認</span></div>
+      <h2>新鮮だったのに、興奮はしなかった<span class="arrow">→</span></h2>
+      <p class="excerpt">昨日、演劇のような表現とダンス、音楽が融合したパフォーマンスを見た。 ボーカル、ギター、ドラム、ダンスだけで成立していた。</p>
+    </a>
     <a class="row" data-cat="inner" href="posts/p148.html">
       <div class="rmeta"><span class="rdate">2026.10.12</span><span class="cat">内省・学び</span></div>
       <h2>振り回されず、自分の意思で<span class="arrow">→</span></h2>
